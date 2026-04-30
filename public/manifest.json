@@ -1,0 +1,7854 @@
+[
+  {
+    "page": 1,
+    "imagePath": "/assets/hafs/001.webp",
+    "jsonPath": "/assets/hafs/001.json",
+    "audioPath": "/assets/mp3/Page001.mp3",
+    "audioDuration": 29.858,
+    "surah": {
+      "id": 1,
+      "nameArabic": "الفاتحة",
+      "nameSimple": "Al-Fatihah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 2,
+    "imagePath": "/assets/hafs/002.webp",
+    "jsonPath": "/assets/hafs/002.json",
+    "audioPath": "/assets/mp3/Page002.mp3",
+    "audioDuration": 37.512,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 3,
+    "imagePath": "/assets/hafs/003.webp",
+    "jsonPath": "/assets/hafs/003.json",
+    "audioPath": "/assets/mp3/Page003.mp3",
+    "audioDuration": 121.443,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 4,
+    "imagePath": "/assets/hafs/004.webp",
+    "jsonPath": "/assets/hafs/004.json",
+    "audioPath": "/assets/mp3/Page004.mp3",
+    "audioDuration": 134.766,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 5,
+    "imagePath": "/assets/hafs/005.webp",
+    "jsonPath": "/assets/hafs/005.json",
+    "audioPath": "/assets/mp3/Page005.mp3",
+    "audioDuration": 120.973,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 6,
+    "imagePath": "/assets/hafs/006.webp",
+    "jsonPath": "/assets/hafs/006.json",
+    "audioPath": "/assets/mp3/Page006.mp3",
+    "audioDuration": 134.896,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 7,
+    "imagePath": "/assets/hafs/007.webp",
+    "jsonPath": "/assets/hafs/007.json",
+    "audioPath": "/assets/mp3/Page007.mp3",
+    "audioDuration": 136.908,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 8,
+    "imagePath": "/assets/hafs/008.webp",
+    "jsonPath": "/assets/hafs/008.json",
+    "audioPath": "/assets/mp3/Page008.mp3",
+    "audioDuration": 119.693,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 9,
+    "imagePath": "/assets/hafs/009.webp",
+    "jsonPath": "/assets/hafs/009.json",
+    "audioPath": "/assets/mp3/Page009.mp3",
+    "audioDuration": 118.909,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 10,
+    "imagePath": "/assets/hafs/010.webp",
+    "jsonPath": "/assets/hafs/010.json",
+    "audioPath": "/assets/mp3/Page010.mp3",
+    "audioDuration": 121.992,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 11,
+    "imagePath": "/assets/hafs/011.webp",
+    "jsonPath": "/assets/hafs/011.json",
+    "audioPath": "/assets/mp3/Page011.mp3",
+    "audioDuration": 125.91,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 12,
+    "imagePath": "/assets/hafs/012.webp",
+    "jsonPath": "/assets/hafs/012.json",
+    "audioPath": "/assets/mp3/Page012.mp3",
+    "audioDuration": 124.421,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 13,
+    "imagePath": "/assets/hafs/013.webp",
+    "jsonPath": "/assets/hafs/013.json",
+    "audioPath": "/assets/mp3/Page013.mp3",
+    "audioDuration": 125.858,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 14,
+    "imagePath": "/assets/hafs/014.webp",
+    "jsonPath": "/assets/hafs/014.json",
+    "audioPath": "/assets/mp3/Page014.mp3",
+    "audioDuration": 132.78,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 15,
+    "imagePath": "/assets/hafs/015.webp",
+    "jsonPath": "/assets/hafs/015.json",
+    "audioPath": "/assets/mp3/Page015.mp3",
+    "audioDuration": 119.745,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 16,
+    "imagePath": "/assets/hafs/016.webp",
+    "jsonPath": "/assets/hafs/016.json",
+    "audioPath": "/assets/mp3/Page016.mp3",
+    "audioDuration": 113.894,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 17,
+    "imagePath": "/assets/hafs/017.webp",
+    "jsonPath": "/assets/hafs/017.json",
+    "audioPath": "/assets/mp3/Page017.mp3",
+    "audioDuration": 112.431,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 18,
+    "imagePath": "/assets/hafs/018.webp",
+    "jsonPath": "/assets/hafs/018.json",
+    "audioPath": "/assets/mp3/Page018.mp3",
+    "audioDuration": 114.965,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 19,
+    "imagePath": "/assets/hafs/019.webp",
+    "jsonPath": "/assets/hafs/019.json",
+    "audioPath": "/assets/mp3/Page019.mp3",
+    "audioDuration": 155.193,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 20,
+    "imagePath": "/assets/hafs/020.webp",
+    "jsonPath": "/assets/hafs/020.json",
+    "audioPath": "/assets/mp3/Page020.mp3",
+    "audioDuration": 129.306,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 21,
+    "imagePath": "/assets/hafs/021.webp",
+    "jsonPath": "/assets/hafs/021.json",
+    "audioPath": "/assets/mp3/Page021.mp3",
+    "audioDuration": 126.798,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 1
+  },
+  {
+    "page": 22,
+    "imagePath": "/assets/hafs/022.webp",
+    "jsonPath": "/assets/hafs/022.json",
+    "audioPath": "/assets/mp3/Page022.mp3",
+    "audioDuration": 111.256,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 23,
+    "imagePath": "/assets/hafs/023.webp",
+    "jsonPath": "/assets/hafs/023.json",
+    "audioPath": "/assets/mp3/Page023.mp3",
+    "audioDuration": 110.237,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 24,
+    "imagePath": "/assets/hafs/024.webp",
+    "jsonPath": "/assets/hafs/024.json",
+    "audioPath": "/assets/mp3/Page024.mp3",
+    "audioDuration": 145.763,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 25,
+    "imagePath": "/assets/hafs/025.webp",
+    "jsonPath": "/assets/hafs/025.json",
+    "audioPath": "/assets/mp3/Page025.mp3",
+    "audioDuration": 145.711,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 26,
+    "imagePath": "/assets/hafs/026.webp",
+    "jsonPath": "/assets/hafs/026.json",
+    "audioPath": "/assets/mp3/Page026.mp3",
+    "audioDuration": 132.258,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 27,
+    "imagePath": "/assets/hafs/027.webp",
+    "jsonPath": "/assets/hafs/027.json",
+    "audioPath": "/assets/mp3/Page027.mp3",
+    "audioDuration": 112.431,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 28,
+    "imagePath": "/assets/hafs/028.webp",
+    "jsonPath": "/assets/hafs/028.json",
+    "audioPath": "/assets/mp3/Page028.mp3",
+    "audioDuration": 111.543,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 29,
+    "imagePath": "/assets/hafs/029.webp",
+    "jsonPath": "/assets/hafs/029.json",
+    "audioPath": "/assets/mp3/Page029.mp3",
+    "audioDuration": 102.348,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 30,
+    "imagePath": "/assets/hafs/030.webp",
+    "jsonPath": "/assets/hafs/030.json",
+    "audioPath": "/assets/mp3/Page030.mp3",
+    "audioDuration": 131.239,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 31,
+    "imagePath": "/assets/hafs/031.webp",
+    "jsonPath": "/assets/hafs/031.json",
+    "audioPath": "/assets/mp3/Page031.mp3",
+    "audioDuration": 112.614,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 32,
+    "imagePath": "/assets/hafs/032.webp",
+    "jsonPath": "/assets/hafs/032.json",
+    "audioPath": "/assets/mp3/Page032.mp3",
+    "audioDuration": 118.727,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 33,
+    "imagePath": "/assets/hafs/033.webp",
+    "jsonPath": "/assets/hafs/033.json",
+    "audioPath": "/assets/mp3/Page033.mp3",
+    "audioDuration": 141.662,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 34,
+    "imagePath": "/assets/hafs/034.webp",
+    "jsonPath": "/assets/hafs/034.json",
+    "audioPath": "/assets/mp3/Page034.mp3",
+    "audioDuration": 122.436,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 35,
+    "imagePath": "/assets/hafs/035.webp",
+    "jsonPath": "/assets/hafs/035.json",
+    "audioPath": "/assets/mp3/Page035.mp3",
+    "audioDuration": 118.361,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 36,
+    "imagePath": "/assets/hafs/036.webp",
+    "jsonPath": "/assets/hafs/036.json",
+    "audioPath": "/assets/mp3/Page036.mp3",
+    "audioDuration": 145.554,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 37,
+    "imagePath": "/assets/hafs/037.webp",
+    "jsonPath": "/assets/hafs/037.json",
+    "audioPath": "/assets/mp3/Page037.mp3",
+    "audioDuration": 141.897,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 38,
+    "imagePath": "/assets/hafs/038.webp",
+    "jsonPath": "/assets/hafs/038.json",
+    "audioPath": "/assets/mp3/Page038.mp3",
+    "audioDuration": 140.957,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 39,
+    "imagePath": "/assets/hafs/039.webp",
+    "jsonPath": "/assets/hafs/039.json",
+    "audioPath": "/assets/mp3/Page039.mp3",
+    "audioDuration": 113.554,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 40,
+    "imagePath": "/assets/hafs/040.webp",
+    "jsonPath": "/assets/hafs/040.json",
+    "audioPath": "/assets/mp3/Page040.mp3",
+    "audioDuration": 116.245,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 41,
+    "imagePath": "/assets/hafs/041.webp",
+    "jsonPath": "/assets/hafs/041.json",
+    "audioPath": "/assets/mp3/Page041.mp3",
+    "audioDuration": 113.189,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 2
+  },
+  {
+    "page": 42,
+    "imagePath": "/assets/hafs/042.webp",
+    "jsonPath": "/assets/hafs/042.json",
+    "audioPath": "/assets/mp3/Page042.mp3",
+    "audioDuration": 135.811,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 43,
+    "imagePath": "/assets/hafs/043.webp",
+    "jsonPath": "/assets/hafs/043.json",
+    "audioPath": "/assets/mp3/Page043.mp3",
+    "audioDuration": 179.383,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 44,
+    "imagePath": "/assets/hafs/044.webp",
+    "jsonPath": "/assets/hafs/044.json",
+    "audioPath": "/assets/mp3/Page044.mp3",
+    "audioDuration": 138.841,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 45,
+    "imagePath": "/assets/hafs/045.webp",
+    "jsonPath": "/assets/hafs/045.json",
+    "audioPath": "/assets/mp3/Page045.mp3",
+    "audioDuration": 144.875,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 46,
+    "imagePath": "/assets/hafs/046.webp",
+    "jsonPath": "/assets/hafs/046.json",
+    "audioPath": "/assets/mp3/Page046.mp3",
+    "audioDuration": 116.376,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 47,
+    "imagePath": "/assets/hafs/047.webp",
+    "jsonPath": "/assets/hafs/047.json",
+    "audioPath": "/assets/mp3/Page047.mp3",
+    "audioDuration": 132.153,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 48,
+    "imagePath": "/assets/hafs/048.webp",
+    "jsonPath": "/assets/hafs/048.json",
+    "audioPath": "/assets/mp3/Page048.mp3",
+    "audioDuration": 130.351,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 49,
+    "imagePath": "/assets/hafs/049.webp",
+    "jsonPath": "/assets/hafs/049.json",
+    "audioPath": "/assets/mp3/Page049.mp3",
+    "audioDuration": 138.998,
+    "surah": {
+      "id": 2,
+      "nameArabic": "البقرة",
+      "nameSimple": "Al-Baqarah"
+    },
+    "juz": 3
+  },
+  {
+    "page": 50,
+    "imagePath": "/assets/hafs/050.webp",
+    "jsonPath": "/assets/hafs/050.json",
+    "audioPath": "/assets/mp3/Page050.mp3",
+    "audioDuration": 138.919,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 51,
+    "imagePath": "/assets/hafs/051.webp",
+    "jsonPath": "/assets/hafs/051.json",
+    "audioPath": "/assets/mp3/Page051.mp3",
+    "audioDuration": 115.2,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 52,
+    "imagePath": "/assets/hafs/052.webp",
+    "jsonPath": "/assets/hafs/052.json",
+    "audioPath": "/assets/mp3/Page052.mp3",
+    "audioDuration": 124.186,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 53,
+    "imagePath": "/assets/hafs/053.webp",
+    "jsonPath": "/assets/hafs/053.json",
+    "audioPath": "/assets/mp3/Page053.mp3",
+    "audioDuration": 121.313,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 54,
+    "imagePath": "/assets/hafs/054.webp",
+    "jsonPath": "/assets/hafs/054.json",
+    "audioPath": "/assets/mp3/Page054.mp3",
+    "audioDuration": 149.29,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 55,
+    "imagePath": "/assets/hafs/055.webp",
+    "jsonPath": "/assets/hafs/055.json",
+    "audioPath": "/assets/mp3/Page055.mp3",
+    "audioDuration": 117.943,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 56,
+    "imagePath": "/assets/hafs/056.webp",
+    "jsonPath": "/assets/hafs/056.json",
+    "audioPath": "/assets/mp3/Page056.mp3",
+    "audioDuration": 112.614,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 57,
+    "imagePath": "/assets/hafs/057.webp",
+    "jsonPath": "/assets/hafs/057.json",
+    "audioPath": "/assets/mp3/Page057.mp3",
+    "audioDuration": 116.297,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 58,
+    "imagePath": "/assets/hafs/058.webp",
+    "jsonPath": "/assets/hafs/058.json",
+    "audioPath": "/assets/mp3/Page058.mp3",
+    "audioDuration": 132.571,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 59,
+    "imagePath": "/assets/hafs/059.webp",
+    "jsonPath": "/assets/hafs/059.json",
+    "audioPath": "/assets/mp3/Page059.mp3",
+    "audioDuration": 134.139,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 60,
+    "imagePath": "/assets/hafs/060.webp",
+    "jsonPath": "/assets/hafs/060.json",
+    "audioPath": "/assets/mp3/Page060.mp3",
+    "audioDuration": 118.7,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 61,
+    "imagePath": "/assets/hafs/061.webp",
+    "jsonPath": "/assets/hafs/061.json",
+    "audioPath": "/assets/mp3/Page061.mp3",
+    "audioDuration": 130.847,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 3
+  },
+  {
+    "page": 62,
+    "imagePath": "/assets/hafs/062.webp",
+    "jsonPath": "/assets/hafs/062.json",
+    "audioPath": "/assets/mp3/Page062.mp3",
+    "audioDuration": 146.991,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 63,
+    "imagePath": "/assets/hafs/063.webp",
+    "jsonPath": "/assets/hafs/063.json",
+    "audioPath": "/assets/mp3/Page063.mp3",
+    "audioDuration": 135.158,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 64,
+    "imagePath": "/assets/hafs/064.webp",
+    "jsonPath": "/assets/hafs/064.json",
+    "audioPath": "/assets/mp3/Page064.mp3",
+    "audioDuration": 122.305,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 65,
+    "imagePath": "/assets/hafs/065.webp",
+    "jsonPath": "/assets/hafs/065.json",
+    "audioPath": "/assets/mp3/Page065.mp3",
+    "audioDuration": 132.153,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 66,
+    "imagePath": "/assets/hafs/066.webp",
+    "jsonPath": "/assets/hafs/066.json",
+    "audioPath": "/assets/mp3/Page066.mp3",
+    "audioDuration": 133.068,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 67,
+    "imagePath": "/assets/hafs/067.webp",
+    "jsonPath": "/assets/hafs/067.json",
+    "audioPath": "/assets/mp3/Page067.mp3",
+    "audioDuration": 117.159,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 68,
+    "imagePath": "/assets/hafs/068.webp",
+    "jsonPath": "/assets/hafs/068.json",
+    "audioPath": "/assets/mp3/Page068.mp3",
+    "audioDuration": 128.522,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 69,
+    "imagePath": "/assets/hafs/069.webp",
+    "jsonPath": "/assets/hafs/069.json",
+    "audioPath": "/assets/mp3/Page069.mp3",
+    "audioDuration": 103.993,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 70,
+    "imagePath": "/assets/hafs/070.webp",
+    "jsonPath": "/assets/hafs/070.json",
+    "audioPath": "/assets/mp3/Page070.mp3",
+    "audioDuration": 121.339,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 71,
+    "imagePath": "/assets/hafs/071.webp",
+    "jsonPath": "/assets/hafs/071.json",
+    "audioPath": "/assets/mp3/Page071.mp3",
+    "audioDuration": 122.802,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 72,
+    "imagePath": "/assets/hafs/072.webp",
+    "jsonPath": "/assets/hafs/072.json",
+    "audioPath": "/assets/mp3/Page072.mp3",
+    "audioDuration": 120.033,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 73,
+    "imagePath": "/assets/hafs/073.webp",
+    "jsonPath": "/assets/hafs/073.json",
+    "audioPath": "/assets/mp3/Page073.mp3",
+    "audioDuration": 119.406,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 74,
+    "imagePath": "/assets/hafs/074.webp",
+    "jsonPath": "/assets/hafs/074.json",
+    "audioPath": "/assets/mp3/Page074.mp3",
+    "audioDuration": 130.821,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 75,
+    "imagePath": "/assets/hafs/075.webp",
+    "jsonPath": "/assets/hafs/075.json",
+    "audioPath": "/assets/mp3/Page075.mp3",
+    "audioDuration": 129.515,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 76,
+    "imagePath": "/assets/hafs/076.webp",
+    "jsonPath": "/assets/hafs/076.json",
+    "audioPath": "/assets/mp3/Page076.mp3",
+    "audioDuration": 124.317,
+    "surah": {
+      "id": 3,
+      "nameArabic": "آل عمران",
+      "nameSimple": "Ali 'Imran"
+    },
+    "juz": 4
+  },
+  {
+    "page": 77,
+    "imagePath": "/assets/hafs/077.webp",
+    "jsonPath": "/assets/hafs/077.json",
+    "audioPath": "/assets/mp3/Page077.mp3",
+    "audioDuration": 132.153,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 4
+  },
+  {
+    "page": 78,
+    "imagePath": "/assets/hafs/078.webp",
+    "jsonPath": "/assets/hafs/078.json",
+    "audioPath": "/assets/mp3/Page078.mp3",
+    "audioDuration": 123.063,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 4
+  },
+  {
+    "page": 79,
+    "imagePath": "/assets/hafs/079.webp",
+    "jsonPath": "/assets/hafs/079.json",
+    "audioPath": "/assets/mp3/Page079.mp3",
+    "audioDuration": 97.959,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 4
+  },
+  {
+    "page": 80,
+    "imagePath": "/assets/hafs/080.webp",
+    "jsonPath": "/assets/hafs/080.json",
+    "audioPath": "/assets/mp3/Page080.mp3",
+    "audioDuration": 131.004,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 4
+  },
+  {
+    "page": 81,
+    "imagePath": "/assets/hafs/081.webp",
+    "jsonPath": "/assets/hafs/081.json",
+    "audioPath": "/assets/mp3/Page081.mp3",
+    "audioDuration": 99.239,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 4
+  },
+  {
+    "page": 82,
+    "imagePath": "/assets/hafs/082.webp",
+    "jsonPath": "/assets/hafs/082.json",
+    "audioPath": "/assets/mp3/Page082.mp3",
+    "audioDuration": 103.21,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 83,
+    "imagePath": "/assets/hafs/083.webp",
+    "jsonPath": "/assets/hafs/083.json",
+    "audioPath": "/assets/mp3/Page083.mp3",
+    "audioDuration": 125.153,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 84,
+    "imagePath": "/assets/hafs/084.webp",
+    "jsonPath": "/assets/hafs/084.json",
+    "audioPath": "/assets/mp3/Page084.mp3",
+    "audioDuration": 108.722,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 85,
+    "imagePath": "/assets/hafs/085.webp",
+    "jsonPath": "/assets/hafs/085.json",
+    "audioPath": "/assets/mp3/Page085.mp3",
+    "audioDuration": 130.194,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 86,
+    "imagePath": "/assets/hafs/086.webp",
+    "jsonPath": "/assets/hafs/086.json",
+    "audioPath": "/assets/mp3/Page086.mp3",
+    "audioDuration": 132.885,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 87,
+    "imagePath": "/assets/hafs/087.webp",
+    "jsonPath": "/assets/hafs/087.json",
+    "audioPath": "/assets/mp3/Page087.mp3",
+    "audioDuration": 143.778,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 88,
+    "imagePath": "/assets/hafs/088.webp",
+    "jsonPath": "/assets/hafs/088.json",
+    "audioPath": "/assets/mp3/Page088.mp3",
+    "audioDuration": 123.063,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 89,
+    "imagePath": "/assets/hafs/089.webp",
+    "jsonPath": "/assets/hafs/089.json",
+    "audioPath": "/assets/mp3/Page089.mp3",
+    "audioDuration": 126.276,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 90,
+    "imagePath": "/assets/hafs/090.webp",
+    "jsonPath": "/assets/hafs/090.json",
+    "audioPath": "/assets/mp3/Page090.mp3",
+    "audioDuration": 145.162,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 91,
+    "imagePath": "/assets/hafs/091.webp",
+    "jsonPath": "/assets/hafs/091.json",
+    "audioPath": "/assets/mp3/Page091.mp3",
+    "audioDuration": 126.485,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 92,
+    "imagePath": "/assets/hafs/092.webp",
+    "jsonPath": "/assets/hafs/092.json",
+    "audioPath": "/assets/mp3/Page092.mp3",
+    "audioDuration": 133.12,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 93,
+    "imagePath": "/assets/hafs/093.webp",
+    "jsonPath": "/assets/hafs/093.json",
+    "audioPath": "/assets/mp3/Page093.mp3",
+    "audioDuration": 115.618,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 94,
+    "imagePath": "/assets/hafs/094.webp",
+    "jsonPath": "/assets/hafs/094.json",
+    "audioPath": "/assets/mp3/Page094.mp3",
+    "audioDuration": 141.375,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 95,
+    "imagePath": "/assets/hafs/095.webp",
+    "jsonPath": "/assets/hafs/095.json",
+    "audioPath": "/assets/mp3/Page095.mp3",
+    "audioDuration": 136.594,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 96,
+    "imagePath": "/assets/hafs/096.webp",
+    "jsonPath": "/assets/hafs/096.json",
+    "audioPath": "/assets/mp3/Page096.mp3",
+    "audioDuration": 130.586,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 97,
+    "imagePath": "/assets/hafs/097.webp",
+    "jsonPath": "/assets/hafs/097.json",
+    "audioPath": "/assets/mp3/Page097.mp3",
+    "audioDuration": 116.663,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 98,
+    "imagePath": "/assets/hafs/098.webp",
+    "jsonPath": "/assets/hafs/098.json",
+    "audioPath": "/assets/mp3/Page098.mp3",
+    "audioDuration": 117.708,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 99,
+    "imagePath": "/assets/hafs/099.webp",
+    "jsonPath": "/assets/hafs/099.json",
+    "audioPath": "/assets/mp3/Page099.mp3",
+    "audioDuration": 121.469,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 100,
+    "imagePath": "/assets/hafs/100.webp",
+    "jsonPath": "/assets/hafs/100.json",
+    "audioPath": "/assets/mp3/Page100.mp3",
+    "audioDuration": 145.894,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 101,
+    "imagePath": "/assets/hafs/101.webp",
+    "jsonPath": "/assets/hafs/101.json",
+    "audioPath": "/assets/mp3/Page101.mp3",
+    "audioDuration": 134.687,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 5
+  },
+  {
+    "page": 102,
+    "imagePath": "/assets/hafs/102.webp",
+    "jsonPath": "/assets/hafs/102.json",
+    "audioPath": "/assets/mp3/Page102.mp3",
+    "audioDuration": 116.323,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 6
+  },
+  {
+    "page": 103,
+    "imagePath": "/assets/hafs/103.webp",
+    "jsonPath": "/assets/hafs/103.json",
+    "audioPath": "/assets/mp3/Page103.mp3",
+    "audioDuration": 132.598,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 6
+  },
+  {
+    "page": 104,
+    "imagePath": "/assets/hafs/104.webp",
+    "jsonPath": "/assets/hafs/104.json",
+    "audioPath": "/assets/mp3/Page104.mp3",
+    "audioDuration": 125.858,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 6
+  },
+  {
+    "page": 105,
+    "imagePath": "/assets/hafs/105.webp",
+    "jsonPath": "/assets/hafs/105.json",
+    "audioPath": "/assets/mp3/Page105.mp3",
+    "audioDuration": 134.139,
+    "surah": {
+      "id": 4,
+      "nameArabic": "النساء",
+      "nameSimple": "An-Nisa"
+    },
+    "juz": 6
+  },
+  {
+    "page": 106,
+    "imagePath": "/assets/hafs/106.webp",
+    "jsonPath": "/assets/hafs/106.json",
+    "audioPath": "/assets/mp3/Page106.mp3",
+    "audioDuration": 110.42,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 107,
+    "imagePath": "/assets/hafs/107.webp",
+    "jsonPath": "/assets/hafs/107.json",
+    "audioPath": "/assets/mp3/Page107.mp3",
+    "audioDuration": 131.004,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 108,
+    "imagePath": "/assets/hafs/108.webp",
+    "jsonPath": "/assets/hafs/108.json",
+    "audioPath": "/assets/mp3/Page108.mp3",
+    "audioDuration": 126.067,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 109,
+    "imagePath": "/assets/hafs/109.webp",
+    "jsonPath": "/assets/hafs/109.json",
+    "audioPath": "/assets/mp3/Page109.mp3",
+    "audioDuration": 105.247,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 110,
+    "imagePath": "/assets/hafs/110.webp",
+    "jsonPath": "/assets/hafs/110.json",
+    "audioPath": "/assets/mp3/Page110.mp3",
+    "audioDuration": 96.078,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 111,
+    "imagePath": "/assets/hafs/111.webp",
+    "jsonPath": "/assets/hafs/111.json",
+    "audioPath": "/assets/mp3/Page111.mp3",
+    "audioDuration": 124.918,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 112,
+    "imagePath": "/assets/hafs/112.webp",
+    "jsonPath": "/assets/hafs/112.json",
+    "audioPath": "/assets/mp3/Page112.mp3",
+    "audioDuration": 126.459,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 113,
+    "imagePath": "/assets/hafs/113.webp",
+    "jsonPath": "/assets/hafs/113.json",
+    "audioPath": "/assets/mp3/Page113.mp3",
+    "audioDuration": 112.771,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 114,
+    "imagePath": "/assets/hafs/114.webp",
+    "jsonPath": "/assets/hafs/114.json",
+    "audioPath": "/assets/mp3/Page114.mp3",
+    "audioDuration": 111.464,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 115,
+    "imagePath": "/assets/hafs/115.webp",
+    "jsonPath": "/assets/hafs/115.json",
+    "audioPath": "/assets/mp3/Page115.mp3",
+    "audioDuration": 127.242,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 116,
+    "imagePath": "/assets/hafs/116.webp",
+    "jsonPath": "/assets/hafs/116.json",
+    "audioPath": "/assets/mp3/Page116.mp3",
+    "audioDuration": 147.984,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 117,
+    "imagePath": "/assets/hafs/117.webp",
+    "jsonPath": "/assets/hafs/117.json",
+    "audioPath": "/assets/mp3/Page117.mp3",
+    "audioDuration": 158.642,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 118,
+    "imagePath": "/assets/hafs/118.webp",
+    "jsonPath": "/assets/hafs/118.json",
+    "audioPath": "/assets/mp3/Page118.mp3",
+    "audioDuration": 150.596,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 119,
+    "imagePath": "/assets/hafs/119.webp",
+    "jsonPath": "/assets/hafs/119.json",
+    "audioPath": "/assets/mp3/Page119.mp3",
+    "audioDuration": 139.233,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 120,
+    "imagePath": "/assets/hafs/120.webp",
+    "jsonPath": "/assets/hafs/120.json",
+    "audioPath": "/assets/mp3/Page120.mp3",
+    "audioDuration": 125.623,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 6
+  },
+  {
+    "page": 121,
+    "imagePath": "/assets/hafs/121.webp",
+    "jsonPath": "/assets/hafs/121.json",
+    "audioPath": "/assets/mp3/Page121.mp3",
+    "audioDuration": 110.864,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 7
+  },
+  {
+    "page": 122,
+    "imagePath": "/assets/hafs/122.webp",
+    "jsonPath": "/assets/hafs/122.json",
+    "audioPath": "/assets/mp3/Page122.mp3",
+    "audioDuration": 138.919,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 7
+  },
+  {
+    "page": 123,
+    "imagePath": "/assets/hafs/123.webp",
+    "jsonPath": "/assets/hafs/123.json",
+    "audioPath": "/assets/mp3/Page123.mp3",
+    "audioDuration": 147.252,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 7
+  },
+  {
+    "page": 124,
+    "imagePath": "/assets/hafs/124.webp",
+    "jsonPath": "/assets/hafs/124.json",
+    "audioPath": "/assets/mp3/Page124.mp3",
+    "audioDuration": 122.619,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 7
+  },
+  {
+    "page": 125,
+    "imagePath": "/assets/hafs/125.webp",
+    "jsonPath": "/assets/hafs/125.json",
+    "audioPath": "/assets/mp3/Page125.mp3",
+    "audioDuration": 144.692,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 7
+  },
+  {
+    "page": 126,
+    "imagePath": "/assets/hafs/126.webp",
+    "jsonPath": "/assets/hafs/126.json",
+    "audioPath": "/assets/mp3/Page126.mp3",
+    "audioDuration": 126.746,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 7
+  },
+  {
+    "page": 127,
+    "imagePath": "/assets/hafs/127.webp",
+    "jsonPath": "/assets/hafs/127.json",
+    "audioPath": "/assets/mp3/Page127.mp3",
+    "audioDuration": 188.839,
+    "surah": {
+      "id": 5,
+      "nameArabic": "المائدة",
+      "nameSimple": "Al-Ma'idah"
+    },
+    "juz": 7
+  },
+  {
+    "page": 128,
+    "imagePath": "/assets/hafs/128.webp",
+    "jsonPath": "/assets/hafs/128.json",
+    "audioPath": "/assets/mp3/Page128.mp3",
+    "audioDuration": 106.58,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 129,
+    "imagePath": "/assets/hafs/129.webp",
+    "jsonPath": "/assets/hafs/129.json",
+    "audioPath": "/assets/mp3/Page129.mp3",
+    "audioDuration": 114.913,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 130,
+    "imagePath": "/assets/hafs/130.webp",
+    "jsonPath": "/assets/hafs/130.json",
+    "audioPath": "/assets/mp3/Page130.mp3",
+    "audioDuration": 143.151,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 131,
+    "imagePath": "/assets/hafs/131.webp",
+    "jsonPath": "/assets/hafs/131.json",
+    "audioPath": "/assets/mp3/Page131.mp3",
+    "audioDuration": 128.104,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 132,
+    "imagePath": "/assets/hafs/132.webp",
+    "jsonPath": "/assets/hafs/132.json",
+    "audioPath": "/assets/mp3/Page132.mp3",
+    "audioDuration": 131.605,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 133,
+    "imagePath": "/assets/hafs/133.webp",
+    "jsonPath": "/assets/hafs/133.json",
+    "audioPath": "/assets/mp3/Page133.mp3",
+    "audioDuration": 111.856,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 134,
+    "imagePath": "/assets/hafs/134.webp",
+    "jsonPath": "/assets/hafs/134.json",
+    "audioPath": "/assets/mp3/Page134.mp3",
+    "audioDuration": 119.432,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 135,
+    "imagePath": "/assets/hafs/135.webp",
+    "jsonPath": "/assets/hafs/135.json",
+    "audioPath": "/assets/mp3/Page135.mp3",
+    "audioDuration": 128.34,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 136,
+    "imagePath": "/assets/hafs/136.webp",
+    "jsonPath": "/assets/hafs/136.json",
+    "audioPath": "/assets/mp3/Page136.mp3",
+    "audioDuration": 115.775,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 137,
+    "imagePath": "/assets/hafs/137.webp",
+    "jsonPath": "/assets/hafs/137.json",
+    "audioPath": "/assets/mp3/Page137.mp3",
+    "audioDuration": 124.891,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 138,
+    "imagePath": "/assets/hafs/138.webp",
+    "jsonPath": "/assets/hafs/138.json",
+    "audioPath": "/assets/mp3/Page138.mp3",
+    "audioDuration": 116.976,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 139,
+    "imagePath": "/assets/hafs/139.webp",
+    "jsonPath": "/assets/hafs/139.json",
+    "audioPath": "/assets/mp3/Page139.mp3",
+    "audioDuration": 128.836,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 140,
+    "imagePath": "/assets/hafs/140.webp",
+    "jsonPath": "/assets/hafs/140.json",
+    "audioPath": "/assets/mp3/Page140.mp3",
+    "audioDuration": 118.491,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 141,
+    "imagePath": "/assets/hafs/141.webp",
+    "jsonPath": "/assets/hafs/141.json",
+    "audioPath": "/assets/mp3/Page141.mp3",
+    "audioDuration": 120.033,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 7
+  },
+  {
+    "page": 142,
+    "imagePath": "/assets/hafs/142.webp",
+    "jsonPath": "/assets/hafs/142.json",
+    "audioPath": "/assets/mp3/Page142.mp3",
+    "audioDuration": 118.988,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 143,
+    "imagePath": "/assets/hafs/143.webp",
+    "jsonPath": "/assets/hafs/143.json",
+    "audioPath": "/assets/mp3/Page143.mp3",
+    "audioDuration": 110.132,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 144,
+    "imagePath": "/assets/hafs/144.webp",
+    "jsonPath": "/assets/hafs/144.json",
+    "audioPath": "/assets/mp3/Page144.mp3",
+    "audioDuration": 124.944,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 145,
+    "imagePath": "/assets/hafs/145.webp",
+    "jsonPath": "/assets/hafs/145.json",
+    "audioPath": "/assets/mp3/Page145.mp3",
+    "audioDuration": 96.993,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 146,
+    "imagePath": "/assets/hafs/146.webp",
+    "jsonPath": "/assets/hafs/146.json",
+    "audioPath": "/assets/mp3/Page146.mp3",
+    "audioDuration": 131.135,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 147,
+    "imagePath": "/assets/hafs/147.webp",
+    "jsonPath": "/assets/hafs/147.json",
+    "audioPath": "/assets/mp3/Page147.mp3",
+    "audioDuration": 115.461,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 148,
+    "imagePath": "/assets/hafs/148.webp",
+    "jsonPath": "/assets/hafs/148.json",
+    "audioPath": "/assets/mp3/Page148.mp3",
+    "audioDuration": 111.464,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 149,
+    "imagePath": "/assets/hafs/149.webp",
+    "jsonPath": "/assets/hafs/149.json",
+    "audioPath": "/assets/mp3/Page149.mp3",
+    "audioDuration": 121.522,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 150,
+    "imagePath": "/assets/hafs/150.webp",
+    "jsonPath": "/assets/hafs/150.json",
+    "audioPath": "/assets/mp3/Page150.mp3",
+    "audioDuration": 151.589,
+    "surah": {
+      "id": 6,
+      "nameArabic": "الأنعام",
+      "nameSimple": "Al-An'am"
+    },
+    "juz": 8
+  },
+  {
+    "page": 151,
+    "imagePath": "/assets/hafs/151.webp",
+    "jsonPath": "/assets/hafs/151.json",
+    "audioPath": "/assets/mp3/Page151.mp3",
+    "audioDuration": 133.721,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 152,
+    "imagePath": "/assets/hafs/152.webp",
+    "jsonPath": "/assets/hafs/152.json",
+    "audioPath": "/assets/mp3/Page152.mp3",
+    "audioDuration": 151.693,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 153,
+    "imagePath": "/assets/hafs/153.webp",
+    "jsonPath": "/assets/hafs/153.json",
+    "audioPath": "/assets/mp3/Page153.mp3",
+    "audioDuration": 139.886,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 154,
+    "imagePath": "/assets/hafs/154.webp",
+    "jsonPath": "/assets/hafs/154.json",
+    "audioPath": "/assets/mp3/Page154.mp3",
+    "audioDuration": 138.867,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 155,
+    "imagePath": "/assets/hafs/155.webp",
+    "jsonPath": "/assets/hafs/155.json",
+    "audioPath": "/assets/mp3/Page155.mp3",
+    "audioDuration": 137.561,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 156,
+    "imagePath": "/assets/hafs/156.webp",
+    "jsonPath": "/assets/hafs/156.json",
+    "audioPath": "/assets/mp3/Page156.mp3",
+    "audioDuration": 150.204,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 157,
+    "imagePath": "/assets/hafs/157.webp",
+    "jsonPath": "/assets/hafs/157.json",
+    "audioPath": "/assets/mp3/Page157.mp3",
+    "audioDuration": 129.384,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 158,
+    "imagePath": "/assets/hafs/158.webp",
+    "jsonPath": "/assets/hafs/158.json",
+    "audioPath": "/assets/mp3/Page158.mp3",
+    "audioDuration": 127.373,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 159,
+    "imagePath": "/assets/hafs/159.webp",
+    "jsonPath": "/assets/hafs/159.json",
+    "audioPath": "/assets/mp3/Page159.mp3",
+    "audioDuration": 139.416,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 160,
+    "imagePath": "/assets/hafs/160.webp",
+    "jsonPath": "/assets/hafs/160.json",
+    "audioPath": "/assets/mp3/Page160.mp3",
+    "audioDuration": 118.831,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 161,
+    "imagePath": "/assets/hafs/161.webp",
+    "jsonPath": "/assets/hafs/161.json",
+    "audioPath": "/assets/mp3/Page161.mp3",
+    "audioDuration": 107.311,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 8
+  },
+  {
+    "page": 162,
+    "imagePath": "/assets/hafs/162.webp",
+    "jsonPath": "/assets/hafs/162.json",
+    "audioPath": "/assets/mp3/Page162.mp3",
+    "audioDuration": 147.801,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 163,
+    "imagePath": "/assets/hafs/163.webp",
+    "jsonPath": "/assets/hafs/163.json",
+    "audioPath": "/assets/mp3/Page163.mp3",
+    "audioDuration": 132.571,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 164,
+    "imagePath": "/assets/hafs/164.webp",
+    "jsonPath": "/assets/hafs/164.json",
+    "audioPath": "/assets/mp3/Page164.mp3",
+    "audioDuration": 130.978,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 165,
+    "imagePath": "/assets/hafs/165.webp",
+    "jsonPath": "/assets/hafs/165.json",
+    "audioPath": "/assets/mp3/Page165.mp3",
+    "audioDuration": 134.792,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 166,
+    "imagePath": "/assets/hafs/166.webp",
+    "jsonPath": "/assets/hafs/166.json",
+    "audioPath": "/assets/mp3/Page166.mp3",
+    "audioDuration": 125.336,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 167,
+    "imagePath": "/assets/hafs/167.webp",
+    "jsonPath": "/assets/hafs/167.json",
+    "audioPath": "/assets/mp3/Page167.mp3",
+    "audioDuration": 137.378,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 168,
+    "imagePath": "/assets/hafs/168.webp",
+    "jsonPath": "/assets/hafs/168.json",
+    "audioPath": "/assets/mp3/Page168.mp3",
+    "audioDuration": 108.826,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 169,
+    "imagePath": "/assets/hafs/169.webp",
+    "jsonPath": "/assets/hafs/169.json",
+    "audioPath": "/assets/mp3/Page169.mp3",
+    "audioDuration": 144.379,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 170,
+    "imagePath": "/assets/hafs/170.webp",
+    "jsonPath": "/assets/hafs/170.json",
+    "audioPath": "/assets/mp3/Page170.mp3",
+    "audioDuration": 129.019,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 171,
+    "imagePath": "/assets/hafs/171.webp",
+    "jsonPath": "/assets/hafs/171.json",
+    "audioPath": "/assets/mp3/Page171.mp3",
+    "audioDuration": 100.598,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 172,
+    "imagePath": "/assets/hafs/172.webp",
+    "jsonPath": "/assets/hafs/172.json",
+    "audioPath": "/assets/mp3/Page172.mp3",
+    "audioDuration": 125.623,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 173,
+    "imagePath": "/assets/hafs/173.webp",
+    "jsonPath": "/assets/hafs/173.json",
+    "audioPath": "/assets/mp3/Page173.mp3",
+    "audioDuration": 137.639,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 174,
+    "imagePath": "/assets/hafs/174.webp",
+    "jsonPath": "/assets/hafs/174.json",
+    "audioPath": "/assets/mp3/Page174.mp3",
+    "audioDuration": 139.964,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 175,
+    "imagePath": "/assets/hafs/175.webp",
+    "jsonPath": "/assets/hafs/175.json",
+    "audioPath": "/assets/mp3/Page175.mp3",
+    "audioDuration": 136.072,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 176,
+    "imagePath": "/assets/hafs/176.webp",
+    "jsonPath": "/assets/hafs/176.json",
+    "audioPath": "/assets/mp3/Page176.mp3",
+    "audioDuration": 126.198,
+    "surah": {
+      "id": 7,
+      "nameArabic": "الأعراف",
+      "nameSimple": "Al-A'raf"
+    },
+    "juz": 9
+  },
+  {
+    "page": 177,
+    "imagePath": "/assets/hafs/177.webp",
+    "jsonPath": "/assets/hafs/177.json",
+    "audioPath": "/assets/mp3/Page177.mp3",
+    "audioDuration": 101.512,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 178,
+    "imagePath": "/assets/hafs/178.webp",
+    "jsonPath": "/assets/hafs/178.json",
+    "audioPath": "/assets/mp3/Page178.mp3",
+    "audioDuration": 131.736,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 179,
+    "imagePath": "/assets/hafs/179.webp",
+    "jsonPath": "/assets/hafs/179.json",
+    "audioPath": "/assets/mp3/Page179.mp3",
+    "audioDuration": 119.432,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 180,
+    "imagePath": "/assets/hafs/180.webp",
+    "jsonPath": "/assets/hafs/180.json",
+    "audioPath": "/assets/mp3/Page180.mp3",
+    "audioDuration": 132.571,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 181,
+    "imagePath": "/assets/hafs/181.webp",
+    "jsonPath": "/assets/hafs/181.json",
+    "audioPath": "/assets/mp3/Page181.mp3",
+    "audioDuration": 139.755,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 182,
+    "imagePath": "/assets/hafs/182.webp",
+    "jsonPath": "/assets/hafs/182.json",
+    "audioPath": "/assets/mp3/Page182.mp3",
+    "audioDuration": 115.122,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 183,
+    "imagePath": "/assets/hafs/183.webp",
+    "jsonPath": "/assets/hafs/183.json",
+    "audioPath": "/assets/mp3/Page183.mp3",
+    "audioDuration": 118.674,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 184,
+    "imagePath": "/assets/hafs/184.webp",
+    "jsonPath": "/assets/hafs/184.json",
+    "audioPath": "/assets/mp3/Page184.mp3",
+    "audioDuration": 157.91,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 185,
+    "imagePath": "/assets/hafs/185.webp",
+    "jsonPath": "/assets/hafs/185.json",
+    "audioPath": "/assets/mp3/Page185.mp3",
+    "audioDuration": 126.981,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 186,
+    "imagePath": "/assets/hafs/186.webp",
+    "jsonPath": "/assets/hafs/186.json",
+    "audioPath": "/assets/mp3/Page186.mp3",
+    "audioDuration": 132.441,
+    "surah": {
+      "id": 8,
+      "nameArabic": "الأنفال",
+      "nameSimple": "Al-Anfal"
+    },
+    "juz": 9
+  },
+  {
+    "page": 187,
+    "imagePath": "/assets/hafs/187.webp",
+    "jsonPath": "/assets/hafs/187.json",
+    "audioPath": "/assets/mp3/Page187.mp3",
+    "audioDuration": 133.355,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 188,
+    "imagePath": "/assets/hafs/188.webp",
+    "jsonPath": "/assets/hafs/188.json",
+    "audioPath": "/assets/mp3/Page188.mp3",
+    "audioDuration": 125.1,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 189,
+    "imagePath": "/assets/hafs/189.webp",
+    "jsonPath": "/assets/hafs/189.json",
+    "audioPath": "/assets/mp3/Page189.mp3",
+    "audioDuration": 135.967,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 190,
+    "imagePath": "/assets/hafs/190.webp",
+    "jsonPath": "/assets/hafs/190.json",
+    "audioPath": "/assets/mp3/Page190.mp3",
+    "audioDuration": 138.971,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 191,
+    "imagePath": "/assets/hafs/191.webp",
+    "jsonPath": "/assets/hafs/191.json",
+    "audioPath": "/assets/mp3/Page191.mp3",
+    "audioDuration": 129.959,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 192,
+    "imagePath": "/assets/hafs/192.webp",
+    "jsonPath": "/assets/hafs/192.json",
+    "audioPath": "/assets/mp3/Page192.mp3",
+    "audioDuration": 136.202,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 193,
+    "imagePath": "/assets/hafs/193.webp",
+    "jsonPath": "/assets/hafs/193.json",
+    "audioPath": "/assets/mp3/Page193.mp3",
+    "audioDuration": 129.698,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 194,
+    "imagePath": "/assets/hafs/194.webp",
+    "jsonPath": "/assets/hafs/194.json",
+    "audioPath": "/assets/mp3/Page194.mp3",
+    "audioDuration": 124.212,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 195,
+    "imagePath": "/assets/hafs/195.webp",
+    "jsonPath": "/assets/hafs/195.json",
+    "audioPath": "/assets/mp3/Page195.mp3",
+    "audioDuration": 129.646,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 196,
+    "imagePath": "/assets/hafs/196.webp",
+    "jsonPath": "/assets/hafs/196.json",
+    "audioPath": "/assets/mp3/Page196.mp3",
+    "audioDuration": 143.464,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 197,
+    "imagePath": "/assets/hafs/197.webp",
+    "jsonPath": "/assets/hafs/197.json",
+    "audioPath": "/assets/mp3/Page197.mp3",
+    "audioDuration": 140.278,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 198,
+    "imagePath": "/assets/hafs/198.webp",
+    "jsonPath": "/assets/hafs/198.json",
+    "audioPath": "/assets/mp3/Page198.mp3",
+    "audioDuration": 132.284,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 199,
+    "imagePath": "/assets/hafs/199.webp",
+    "jsonPath": "/assets/hafs/199.json",
+    "audioPath": "/assets/mp3/Page199.mp3",
+    "audioDuration": 122.096,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 200,
+    "imagePath": "/assets/hafs/200.webp",
+    "jsonPath": "/assets/hafs/200.json",
+    "audioPath": "/assets/mp3/Page200.mp3",
+    "audioDuration": 134.034,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 201,
+    "imagePath": "/assets/hafs/201.webp",
+    "jsonPath": "/assets/hafs/201.json",
+    "audioPath": "/assets/mp3/Page201.mp3",
+    "audioDuration": 122.514,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 202,
+    "imagePath": "/assets/hafs/202.webp",
+    "jsonPath": "/assets/hafs/202.json",
+    "audioPath": "/assets/mp3/Page202.mp3",
+    "audioDuration": 153.574,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 203,
+    "imagePath": "/assets/hafs/203.webp",
+    "jsonPath": "/assets/hafs/203.json",
+    "audioPath": "/assets/mp3/Page203.mp3",
+    "audioDuration": 125.1,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 204,
+    "imagePath": "/assets/hafs/204.webp",
+    "jsonPath": "/assets/hafs/204.json",
+    "audioPath": "/assets/mp3/Page204.mp3",
+    "audioDuration": 130.769,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 205,
+    "imagePath": "/assets/hafs/205.webp",
+    "jsonPath": "/assets/hafs/205.json",
+    "audioPath": "/assets/mp3/Page205.mp3",
+    "audioDuration": 123.611,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 206,
+    "imagePath": "/assets/hafs/206.webp",
+    "jsonPath": "/assets/hafs/206.json",
+    "audioPath": "/assets/mp3/Page206.mp3",
+    "audioDuration": 134.374,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 207,
+    "imagePath": "/assets/hafs/207.webp",
+    "jsonPath": "/assets/hafs/207.json",
+    "audioPath": "/assets/mp3/Page207.mp3",
+    "audioDuration": 128.366,
+    "surah": {
+      "id": 9,
+      "nameArabic": "التوبة",
+      "nameSimple": "At-Tawbah"
+    },
+    "juz": 10
+  },
+  {
+    "page": 208,
+    "imagePath": "/assets/hafs/208.webp",
+    "jsonPath": "/assets/hafs/208.json",
+    "audioPath": "/assets/mp3/Page208.mp3",
+    "audioDuration": 130.612,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 209,
+    "imagePath": "/assets/hafs/209.webp",
+    "jsonPath": "/assets/hafs/209.json",
+    "audioPath": "/assets/mp3/Page209.mp3",
+    "audioDuration": 130.612,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 210,
+    "imagePath": "/assets/hafs/210.webp",
+    "jsonPath": "/assets/hafs/210.json",
+    "audioPath": "/assets/mp3/Page210.mp3",
+    "audioDuration": 142.498,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 211,
+    "imagePath": "/assets/hafs/211.webp",
+    "jsonPath": "/assets/hafs/211.json",
+    "audioPath": "/assets/mp3/Page211.mp3",
+    "audioDuration": 179.226,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 212,
+    "imagePath": "/assets/hafs/212.webp",
+    "jsonPath": "/assets/hafs/212.json",
+    "audioPath": "/assets/mp3/Page212.mp3",
+    "audioDuration": 137.639,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 213,
+    "imagePath": "/assets/hafs/213.webp",
+    "jsonPath": "/assets/hafs/213.json",
+    "audioPath": "/assets/mp3/Page213.mp3",
+    "audioDuration": 151.902,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 214,
+    "imagePath": "/assets/hafs/214.webp",
+    "jsonPath": "/assets/hafs/214.json",
+    "audioPath": "/assets/mp3/Page214.mp3",
+    "audioDuration": 151.798,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 215,
+    "imagePath": "/assets/hafs/215.webp",
+    "jsonPath": "/assets/hafs/215.json",
+    "audioPath": "/assets/mp3/Page215.mp3",
+    "audioDuration": 128.914,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 216,
+    "imagePath": "/assets/hafs/216.webp",
+    "jsonPath": "/assets/hafs/216.json",
+    "audioPath": "/assets/mp3/Page216.mp3",
+    "audioDuration": 119.824,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 217,
+    "imagePath": "/assets/hafs/217.webp",
+    "jsonPath": "/assets/hafs/217.json",
+    "audioPath": "/assets/mp3/Page217.mp3",
+    "audioDuration": 149.133,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 218,
+    "imagePath": "/assets/hafs/218.webp",
+    "jsonPath": "/assets/hafs/218.json",
+    "audioPath": "/assets/mp3/Page218.mp3",
+    "audioDuration": 142.785,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 219,
+    "imagePath": "/assets/hafs/219.webp",
+    "jsonPath": "/assets/hafs/219.json",
+    "audioPath": "/assets/mp3/Page219.mp3",
+    "audioDuration": 145.789,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 220,
+    "imagePath": "/assets/hafs/220.webp",
+    "jsonPath": "/assets/hafs/220.json",
+    "audioPath": "/assets/mp3/Page220.mp3",
+    "audioDuration": 139.311,
+    "surah": {
+      "id": 10,
+      "nameArabic": "يونس",
+      "nameSimple": "Yunus"
+    },
+    "juz": 11
+  },
+  {
+    "page": 221,
+    "imagePath": "/assets/hafs/221.webp",
+    "jsonPath": "/assets/hafs/221.json",
+    "audioPath": "/assets/mp3/Page221.mp3",
+    "audioDuration": 149.185,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 222,
+    "imagePath": "/assets/hafs/222.webp",
+    "jsonPath": "/assets/hafs/222.json",
+    "audioPath": "/assets/mp3/Page222.mp3",
+    "audioDuration": 147.696,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 223,
+    "imagePath": "/assets/hafs/223.webp",
+    "jsonPath": "/assets/hafs/223.json",
+    "audioPath": "/assets/mp3/Page223.mp3",
+    "audioDuration": 136.908,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 224,
+    "imagePath": "/assets/hafs/224.webp",
+    "jsonPath": "/assets/hafs/224.json",
+    "audioPath": "/assets/mp3/Page224.mp3",
+    "audioDuration": 122.854,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 225,
+    "imagePath": "/assets/hafs/225.webp",
+    "jsonPath": "/assets/hafs/225.json",
+    "audioPath": "/assets/mp3/Page225.mp3",
+    "audioDuration": 158.041,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 226,
+    "imagePath": "/assets/hafs/226.webp",
+    "jsonPath": "/assets/hafs/226.json",
+    "audioPath": "/assets/mp3/Page226.mp3",
+    "audioDuration": 129.358,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 227,
+    "imagePath": "/assets/hafs/227.webp",
+    "jsonPath": "/assets/hafs/227.json",
+    "audioPath": "/assets/mp3/Page227.mp3",
+    "audioDuration": 153.025,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 228,
+    "imagePath": "/assets/hafs/228.webp",
+    "jsonPath": "/assets/hafs/228.json",
+    "audioPath": "/assets/mp3/Page228.mp3",
+    "audioDuration": 156.395,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 11
+  },
+  {
+    "page": 229,
+    "imagePath": "/assets/hafs/229.webp",
+    "jsonPath": "/assets/hafs/229.json",
+    "audioPath": "/assets/mp3/Page229.mp3",
+    "audioDuration": 133.851,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 12
+  },
+  {
+    "page": 230,
+    "imagePath": "/assets/hafs/230.webp",
+    "jsonPath": "/assets/hafs/230.json",
+    "audioPath": "/assets/mp3/Page230.mp3",
+    "audioDuration": 147.566,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 12
+  },
+  {
+    "page": 231,
+    "imagePath": "/assets/hafs/231.webp",
+    "jsonPath": "/assets/hafs/231.json",
+    "audioPath": "/assets/mp3/Page231.mp3",
+    "audioDuration": 121.966,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 12
+  },
+  {
+    "page": 232,
+    "imagePath": "/assets/hafs/232.webp",
+    "jsonPath": "/assets/hafs/232.json",
+    "audioPath": "/assets/mp3/Page232.mp3",
+    "audioDuration": 126.25,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 12
+  },
+  {
+    "page": 233,
+    "imagePath": "/assets/hafs/233.webp",
+    "jsonPath": "/assets/hafs/233.json",
+    "audioPath": "/assets/mp3/Page233.mp3",
+    "audioDuration": 140.147,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 12
+  },
+  {
+    "page": 234,
+    "imagePath": "/assets/hafs/234.webp",
+    "jsonPath": "/assets/hafs/234.json",
+    "audioPath": "/assets/mp3/Page234.mp3",
+    "audioDuration": 117.864,
+    "surah": {
+      "id": 11,
+      "nameArabic": "هود",
+      "nameSimple": "Hud"
+    },
+    "juz": 12
+  },
+  {
+    "page": 235,
+    "imagePath": "/assets/hafs/235.webp",
+    "jsonPath": "/assets/hafs/235.json",
+    "audioPath": "/assets/mp3/Page235.mp3",
+    "audioDuration": 122.07,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 236,
+    "imagePath": "/assets/hafs/236.webp",
+    "jsonPath": "/assets/hafs/236.json",
+    "audioPath": "/assets/mp3/Page236.mp3",
+    "audioDuration": 143.569,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 237,
+    "imagePath": "/assets/hafs/237.webp",
+    "jsonPath": "/assets/hafs/237.json",
+    "audioPath": "/assets/mp3/Page237.mp3",
+    "audioDuration": 139.964,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 238,
+    "imagePath": "/assets/hafs/238.webp",
+    "jsonPath": "/assets/hafs/238.json",
+    "audioPath": "/assets/mp3/Page238.mp3",
+    "audioDuration": 133.198,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 239,
+    "imagePath": "/assets/hafs/239.webp",
+    "jsonPath": "/assets/hafs/239.json",
+    "audioPath": "/assets/mp3/Page239.mp3",
+    "audioDuration": 147.722,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 240,
+    "imagePath": "/assets/hafs/240.webp",
+    "jsonPath": "/assets/hafs/240.json",
+    "audioPath": "/assets/mp3/Page240.mp3",
+    "audioDuration": 130.377,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 241,
+    "imagePath": "/assets/hafs/241.webp",
+    "jsonPath": "/assets/hafs/241.json",
+    "audioPath": "/assets/mp3/Page241.mp3",
+    "audioDuration": 145.737,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 242,
+    "imagePath": "/assets/hafs/242.webp",
+    "jsonPath": "/assets/hafs/242.json",
+    "audioPath": "/assets/mp3/Page242.mp3",
+    "audioDuration": 143.7,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 243,
+    "imagePath": "/assets/hafs/243.webp",
+    "jsonPath": "/assets/hafs/243.json",
+    "audioPath": "/assets/mp3/Page243.mp3",
+    "audioDuration": 141.923,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 244,
+    "imagePath": "/assets/hafs/244.webp",
+    "jsonPath": "/assets/hafs/244.json",
+    "audioPath": "/assets/mp3/Page244.mp3",
+    "audioDuration": 137.091,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 245,
+    "imagePath": "/assets/hafs/245.webp",
+    "jsonPath": "/assets/hafs/245.json",
+    "audioPath": "/assets/mp3/Page245.mp3",
+    "audioDuration": 130.56,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 246,
+    "imagePath": "/assets/hafs/246.webp",
+    "jsonPath": "/assets/hafs/246.json",
+    "audioPath": "/assets/mp3/Page246.mp3",
+    "audioDuration": 130.038,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 247,
+    "imagePath": "/assets/hafs/247.webp",
+    "jsonPath": "/assets/hafs/247.json",
+    "audioPath": "/assets/mp3/Page247.mp3",
+    "audioDuration": 143.935,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 248,
+    "imagePath": "/assets/hafs/248.webp",
+    "jsonPath": "/assets/hafs/248.json",
+    "audioPath": "/assets/mp3/Page248.mp3",
+    "audioDuration": 141.976,
+    "surah": {
+      "id": 12,
+      "nameArabic": "يوسف",
+      "nameSimple": "Yusuf"
+    },
+    "juz": 12
+  },
+  {
+    "page": 249,
+    "imagePath": "/assets/hafs/249.webp",
+    "jsonPath": "/assets/hafs/249.json",
+    "audioPath": "/assets/mp3/Page249.mp3",
+    "audioDuration": 125.597,
+    "surah": {
+      "id": 13,
+      "nameArabic": "الرعد",
+      "nameSimple": "Ar-Ra'd"
+    },
+    "juz": 13
+  },
+  {
+    "page": 250,
+    "imagePath": "/assets/hafs/250.webp",
+    "jsonPath": "/assets/hafs/250.json",
+    "audioPath": "/assets/mp3/Page250.mp3",
+    "audioDuration": 125.753,
+    "surah": {
+      "id": 13,
+      "nameArabic": "الرعد",
+      "nameSimple": "Ar-Ra'd"
+    },
+    "juz": 13
+  },
+  {
+    "page": 251,
+    "imagePath": "/assets/hafs/251.webp",
+    "jsonPath": "/assets/hafs/251.json",
+    "audioPath": "/assets/mp3/Page251.mp3",
+    "audioDuration": 163.5,
+    "surah": {
+      "id": 13,
+      "nameArabic": "الرعد",
+      "nameSimple": "Ar-Ra'd"
+    },
+    "juz": 13
+  },
+  {
+    "page": 252,
+    "imagePath": "/assets/hafs/252.webp",
+    "jsonPath": "/assets/hafs/252.json",
+    "audioPath": "/assets/mp3/Page252.mp3",
+    "audioDuration": 165.172,
+    "surah": {
+      "id": 13,
+      "nameArabic": "الرعد",
+      "nameSimple": "Ar-Ra'd"
+    },
+    "juz": 13
+  },
+  {
+    "page": 253,
+    "imagePath": "/assets/hafs/253.webp",
+    "jsonPath": "/assets/hafs/253.json",
+    "audioPath": "/assets/mp3/Page253.mp3",
+    "audioDuration": 140.069,
+    "surah": {
+      "id": 13,
+      "nameArabic": "الرعد",
+      "nameSimple": "Ar-Ra'd"
+    },
+    "juz": 13
+  },
+  {
+    "page": 254,
+    "imagePath": "/assets/hafs/254.webp",
+    "jsonPath": "/assets/hafs/254.json",
+    "audioPath": "/assets/mp3/Page254.mp3",
+    "audioDuration": 131.291,
+    "surah": {
+      "id": 13,
+      "nameArabic": "الرعد",
+      "nameSimple": "Ar-Ra'd"
+    },
+    "juz": 13
+  },
+  {
+    "page": 255,
+    "imagePath": "/assets/hafs/255.webp",
+    "jsonPath": "/assets/hafs/255.json",
+    "audioPath": "/assets/mp3/Page255.mp3",
+    "audioDuration": 105.874,
+    "surah": {
+      "id": 14,
+      "nameArabic": "ابراهيم",
+      "nameSimple": "Ibrahim"
+    },
+    "juz": 13
+  },
+  {
+    "page": 256,
+    "imagePath": "/assets/hafs/256.webp",
+    "jsonPath": "/assets/hafs/256.json",
+    "audioPath": "/assets/mp3/Page256.mp3",
+    "audioDuration": 150.413,
+    "surah": {
+      "id": 14,
+      "nameArabic": "ابراهيم",
+      "nameSimple": "Ibrahim"
+    },
+    "juz": 13
+  },
+  {
+    "page": 257,
+    "imagePath": "/assets/hafs/257.webp",
+    "jsonPath": "/assets/hafs/257.json",
+    "audioPath": "/assets/mp3/Page257.mp3",
+    "audioDuration": 109.401,
+    "surah": {
+      "id": 14,
+      "nameArabic": "ابراهيم",
+      "nameSimple": "Ibrahim"
+    },
+    "juz": 13
+  },
+  {
+    "page": 258,
+    "imagePath": "/assets/hafs/258.webp",
+    "jsonPath": "/assets/hafs/258.json",
+    "audioPath": "/assets/mp3/Page258.mp3",
+    "audioDuration": 127.425,
+    "surah": {
+      "id": 14,
+      "nameArabic": "ابراهيم",
+      "nameSimple": "Ibrahim"
+    },
+    "juz": 13
+  },
+  {
+    "page": 259,
+    "imagePath": "/assets/hafs/259.webp",
+    "jsonPath": "/assets/hafs/259.json",
+    "audioPath": "/assets/mp3/Page259.mp3",
+    "audioDuration": 107.311,
+    "surah": {
+      "id": 14,
+      "nameArabic": "ابراهيم",
+      "nameSimple": "Ibrahim"
+    },
+    "juz": 13
+  },
+  {
+    "page": 260,
+    "imagePath": "/assets/hafs/260.webp",
+    "jsonPath": "/assets/hafs/260.json",
+    "audioPath": "/assets/mp3/Page260.mp3",
+    "audioDuration": 124.97,
+    "surah": {
+      "id": 14,
+      "nameArabic": "ابراهيم",
+      "nameSimple": "Ibrahim"
+    },
+    "juz": 13
+  },
+  {
+    "page": 261,
+    "imagePath": "/assets/hafs/261.webp",
+    "jsonPath": "/assets/hafs/261.json",
+    "audioPath": "/assets/mp3/Page261.mp3",
+    "audioDuration": 122.567,
+    "surah": {
+      "id": 14,
+      "nameArabic": "ابراهيم",
+      "nameSimple": "Ibrahim"
+    },
+    "juz": 13
+  },
+  {
+    "page": 262,
+    "imagePath": "/assets/hafs/262.webp",
+    "jsonPath": "/assets/hafs/262.json",
+    "audioPath": "/assets/mp3/Page262.mp3",
+    "audioDuration": 98.717,
+    "surah": {
+      "id": 15,
+      "nameArabic": "الحجر",
+      "nameSimple": "Al-Hijr"
+    },
+    "juz": 13
+  },
+  {
+    "page": 263,
+    "imagePath": "/assets/hafs/263.webp",
+    "jsonPath": "/assets/hafs/263.json",
+    "audioPath": "/assets/mp3/Page263.mp3",
+    "audioDuration": 126.824,
+    "surah": {
+      "id": 15,
+      "nameArabic": "الحجر",
+      "nameSimple": "Al-Hijr"
+    },
+    "juz": 13
+  },
+  {
+    "page": 264,
+    "imagePath": "/assets/hafs/264.webp",
+    "jsonPath": "/assets/hafs/264.json",
+    "audioPath": "/assets/mp3/Page264.mp3",
+    "audioDuration": 129.097,
+    "surah": {
+      "id": 15,
+      "nameArabic": "الحجر",
+      "nameSimple": "Al-Hijr"
+    },
+    "juz": 13
+  },
+  {
+    "page": 265,
+    "imagePath": "/assets/hafs/265.webp",
+    "jsonPath": "/assets/hafs/265.json",
+    "audioPath": "/assets/mp3/Page265.mp3",
+    "audioDuration": 120.346,
+    "surah": {
+      "id": 15,
+      "nameArabic": "الحجر",
+      "nameSimple": "Al-Hijr"
+    },
+    "juz": 13
+  },
+  {
+    "page": 266,
+    "imagePath": "/assets/hafs/266.webp",
+    "jsonPath": "/assets/hafs/266.json",
+    "audioPath": "/assets/mp3/Page266.mp3",
+    "audioDuration": 120.216,
+    "surah": {
+      "id": 15,
+      "nameArabic": "الحجر",
+      "nameSimple": "Al-Hijr"
+    },
+    "juz": 13
+  },
+  {
+    "page": 267,
+    "imagePath": "/assets/hafs/267.webp",
+    "jsonPath": "/assets/hafs/267.json",
+    "audioPath": "/assets/mp3/Page267.mp3",
+    "audioDuration": 131.004,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 13
+  },
+  {
+    "page": 268,
+    "imagePath": "/assets/hafs/268.webp",
+    "jsonPath": "/assets/hafs/268.json",
+    "audioPath": "/assets/mp3/Page268.mp3",
+    "audioDuration": 105.326,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 13
+  },
+  {
+    "page": 269,
+    "imagePath": "/assets/hafs/269.webp",
+    "jsonPath": "/assets/hafs/269.json",
+    "audioPath": "/assets/mp3/Page269.mp3",
+    "audioDuration": 129.411,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 270,
+    "imagePath": "/assets/hafs/270.webp",
+    "jsonPath": "/assets/hafs/270.json",
+    "audioPath": "/assets/mp3/Page270.mp3",
+    "audioDuration": 134.74,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 271,
+    "imagePath": "/assets/hafs/271.webp",
+    "jsonPath": "/assets/hafs/271.json",
+    "audioPath": "/assets/mp3/Page271.mp3",
+    "audioDuration": 119.928,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 272,
+    "imagePath": "/assets/hafs/272.webp",
+    "jsonPath": "/assets/hafs/272.json",
+    "audioPath": "/assets/mp3/Page272.mp3",
+    "audioDuration": 139.207,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 273,
+    "imagePath": "/assets/hafs/273.webp",
+    "jsonPath": "/assets/hafs/273.json",
+    "audioPath": "/assets/mp3/Page273.mp3",
+    "audioDuration": 142.315,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 274,
+    "imagePath": "/assets/hafs/274.webp",
+    "jsonPath": "/assets/hafs/274.json",
+    "audioPath": "/assets/mp3/Page274.mp3",
+    "audioDuration": 156.056,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 275,
+    "imagePath": "/assets/hafs/275.webp",
+    "jsonPath": "/assets/hafs/275.json",
+    "audioPath": "/assets/mp3/Page275.mp3",
+    "audioDuration": 116.219,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 276,
+    "imagePath": "/assets/hafs/276.webp",
+    "jsonPath": "/assets/hafs/276.json",
+    "audioPath": "/assets/mp3/Page276.mp3",
+    "audioDuration": 147.226,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 277,
+    "imagePath": "/assets/hafs/277.webp",
+    "jsonPath": "/assets/hafs/277.json",
+    "audioPath": "/assets/mp3/Page277.mp3",
+    "audioDuration": 119.771,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 278,
+    "imagePath": "/assets/hafs/278.webp",
+    "jsonPath": "/assets/hafs/278.json",
+    "audioPath": "/assets/mp3/Page278.mp3",
+    "audioDuration": 119.51,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 279,
+    "imagePath": "/assets/hafs/279.webp",
+    "jsonPath": "/assets/hafs/279.json",
+    "audioPath": "/assets/mp3/Page279.mp3",
+    "audioDuration": 105.195,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 280,
+    "imagePath": "/assets/hafs/280.webp",
+    "jsonPath": "/assets/hafs/280.json",
+    "audioPath": "/assets/mp3/Page280.mp3",
+    "audioDuration": 113.894,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 281,
+    "imagePath": "/assets/hafs/281.webp",
+    "jsonPath": "/assets/hafs/281.json",
+    "audioPath": "/assets/mp3/Page281.mp3",
+    "audioDuration": 116.741,
+    "surah": {
+      "id": 16,
+      "nameArabic": "النحل",
+      "nameSimple": "An-Nahl"
+    },
+    "juz": 14
+  },
+  {
+    "page": 282,
+    "imagePath": "/assets/hafs/282.webp",
+    "jsonPath": "/assets/hafs/282.json",
+    "audioPath": "/assets/mp3/Page282.mp3",
+    "audioDuration": 106.136,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 283,
+    "imagePath": "/assets/hafs/283.webp",
+    "jsonPath": "/assets/hafs/283.json",
+    "audioPath": "/assets/mp3/Page283.mp3",
+    "audioDuration": 134.191,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 284,
+    "imagePath": "/assets/hafs/284.webp",
+    "jsonPath": "/assets/hafs/284.json",
+    "audioPath": "/assets/mp3/Page284.mp3",
+    "audioDuration": 120.686,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 285,
+    "imagePath": "/assets/hafs/285.webp",
+    "jsonPath": "/assets/hafs/285.json",
+    "audioPath": "/assets/mp3/Page285.mp3",
+    "audioDuration": 125.388,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 286,
+    "imagePath": "/assets/hafs/286.webp",
+    "jsonPath": "/assets/hafs/286.json",
+    "audioPath": "/assets/mp3/Page286.mp3",
+    "audioDuration": 135.34,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 287,
+    "imagePath": "/assets/hafs/287.webp",
+    "jsonPath": "/assets/hafs/287.json",
+    "audioPath": "/assets/mp3/Page287.mp3",
+    "audioDuration": 110.602,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 288,
+    "imagePath": "/assets/hafs/288.webp",
+    "jsonPath": "/assets/hafs/288.json",
+    "audioPath": "/assets/mp3/Page288.mp3",
+    "audioDuration": 125.127,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 289,
+    "imagePath": "/assets/hafs/289.webp",
+    "jsonPath": "/assets/hafs/289.json",
+    "audioPath": "/assets/mp3/Page289.mp3",
+    "audioDuration": 142.211,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 14
+  },
+  {
+    "page": 290,
+    "imagePath": "/assets/hafs/290.webp",
+    "jsonPath": "/assets/hafs/290.json",
+    "audioPath": "/assets/mp3/Page290.mp3",
+    "audioDuration": 110.524,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 15
+  },
+  {
+    "page": 291,
+    "imagePath": "/assets/hafs/291.webp",
+    "jsonPath": "/assets/hafs/291.json",
+    "audioPath": "/assets/mp3/Page291.mp3",
+    "audioDuration": 123.141,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 15
+  },
+  {
+    "page": 292,
+    "imagePath": "/assets/hafs/292.webp",
+    "jsonPath": "/assets/hafs/292.json",
+    "audioPath": "/assets/mp3/Page292.mp3",
+    "audioDuration": 138.684,
+    "surah": {
+      "id": 17,
+      "nameArabic": "الإسراء",
+      "nameSimple": "Al-Isra"
+    },
+    "juz": 15
+  },
+  {
+    "page": 293,
+    "imagePath": "/assets/hafs/293.webp",
+    "jsonPath": "/assets/hafs/293.json",
+    "audioPath": "/assets/mp3/Page293.mp3",
+    "audioDuration": 117.812,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 294,
+    "imagePath": "/assets/hafs/294.webp",
+    "jsonPath": "/assets/hafs/294.json",
+    "audioPath": "/assets/mp3/Page294.mp3",
+    "audioDuration": 123.324,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 295,
+    "imagePath": "/assets/hafs/295.webp",
+    "jsonPath": "/assets/hafs/295.json",
+    "audioPath": "/assets/mp3/Page295.mp3",
+    "audioDuration": 118.831,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 296,
+    "imagePath": "/assets/hafs/296.webp",
+    "jsonPath": "/assets/hafs/296.json",
+    "audioPath": "/assets/mp3/Page296.mp3",
+    "audioDuration": 121.469,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 297,
+    "imagePath": "/assets/hafs/297.webp",
+    "jsonPath": "/assets/hafs/297.json",
+    "audioPath": "/assets/mp3/Page297.mp3",
+    "audioDuration": 126.929,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 298,
+    "imagePath": "/assets/hafs/298.webp",
+    "jsonPath": "/assets/hafs/298.json",
+    "audioPath": "/assets/mp3/Page298.mp3",
+    "audioDuration": 141.009,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 299,
+    "imagePath": "/assets/hafs/299.webp",
+    "jsonPath": "/assets/hafs/299.json",
+    "audioPath": "/assets/mp3/Page299.mp3",
+    "audioDuration": 135.001,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 300,
+    "imagePath": "/assets/hafs/300.webp",
+    "jsonPath": "/assets/hafs/300.json",
+    "audioPath": "/assets/mp3/Page300.mp3",
+    "audioDuration": 114.39,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 301,
+    "imagePath": "/assets/hafs/301.webp",
+    "jsonPath": "/assets/hafs/301.json",
+    "audioPath": "/assets/mp3/Page301.mp3",
+    "audioDuration": 120.32,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 302,
+    "imagePath": "/assets/hafs/302.webp",
+    "jsonPath": "/assets/hafs/302.json",
+    "audioPath": "/assets/mp3/Page302.mp3",
+    "audioDuration": 125.544,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 303,
+    "imagePath": "/assets/hafs/303.webp",
+    "jsonPath": "/assets/hafs/303.json",
+    "audioPath": "/assets/mp3/Page303.mp3",
+    "audioDuration": 135.915,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 304,
+    "imagePath": "/assets/hafs/304.webp",
+    "jsonPath": "/assets/hafs/304.json",
+    "audioPath": "/assets/mp3/Page304.mp3",
+    "audioDuration": 158.668,
+    "surah": {
+      "id": 18,
+      "nameArabic": "الكهف",
+      "nameSimple": "Al-Kahf"
+    },
+    "juz": 15
+  },
+  {
+    "page": 305,
+    "imagePath": "/assets/hafs/305.webp",
+    "jsonPath": "/assets/hafs/305.json",
+    "audioPath": "/assets/mp3/Page305.mp3",
+    "audioDuration": 97.802,
+    "surah": {
+      "id": 19,
+      "nameArabic": "مريم",
+      "nameSimple": "Maryam"
+    },
+    "juz": 15
+  },
+  {
+    "page": 306,
+    "imagePath": "/assets/hafs/306.webp",
+    "jsonPath": "/assets/hafs/306.json",
+    "audioPath": "/assets/mp3/Page306.mp3",
+    "audioDuration": 127.687,
+    "surah": {
+      "id": 19,
+      "nameArabic": "مريم",
+      "nameSimple": "Maryam"
+    },
+    "juz": 15
+  },
+  {
+    "page": 307,
+    "imagePath": "/assets/hafs/307.webp",
+    "jsonPath": "/assets/hafs/307.json",
+    "audioPath": "/assets/mp3/Page307.mp3",
+    "audioDuration": 135.784,
+    "surah": {
+      "id": 19,
+      "nameArabic": "مريم",
+      "nameSimple": "Maryam"
+    },
+    "juz": 15
+  },
+  {
+    "page": 308,
+    "imagePath": "/assets/hafs/308.webp",
+    "jsonPath": "/assets/hafs/308.json",
+    "audioPath": "/assets/mp3/Page308.mp3",
+    "audioDuration": 139.076,
+    "surah": {
+      "id": 19,
+      "nameArabic": "مريم",
+      "nameSimple": "Maryam"
+    },
+    "juz": 15
+  },
+  {
+    "page": 309,
+    "imagePath": "/assets/hafs/309.webp",
+    "jsonPath": "/assets/hafs/309.json",
+    "audioPath": "/assets/mp3/Page309.mp3",
+    "audioDuration": 141.322,
+    "surah": {
+      "id": 19,
+      "nameArabic": "مريم",
+      "nameSimple": "Maryam"
+    },
+    "juz": 15
+  },
+  {
+    "page": 310,
+    "imagePath": "/assets/hafs/310.webp",
+    "jsonPath": "/assets/hafs/310.json",
+    "audioPath": "/assets/mp3/Page310.mp3",
+    "audioDuration": 129.437,
+    "surah": {
+      "id": 19,
+      "nameArabic": "مريم",
+      "nameSimple": "Maryam"
+    },
+    "juz": 15
+  },
+  {
+    "page": 311,
+    "imagePath": "/assets/hafs/311.webp",
+    "jsonPath": "/assets/hafs/311.json",
+    "audioPath": "/assets/mp3/Page311.mp3",
+    "audioDuration": 108.878,
+    "surah": {
+      "id": 19,
+      "nameArabic": "مريم",
+      "nameSimple": "Maryam"
+    },
+    "juz": 15
+  },
+  {
+    "page": 312,
+    "imagePath": "/assets/hafs/312.webp",
+    "jsonPath": "/assets/hafs/312.json",
+    "audioPath": "/assets/mp3/Page312.mp3",
+    "audioDuration": 108.904,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 313,
+    "imagePath": "/assets/hafs/313.webp",
+    "jsonPath": "/assets/hafs/313.json",
+    "audioPath": "/assets/mp3/Page313.mp3",
+    "audioDuration": 114.939,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 314,
+    "imagePath": "/assets/hafs/314.webp",
+    "jsonPath": "/assets/hafs/314.json",
+    "audioPath": "/assets/mp3/Page314.mp3",
+    "audioDuration": 133.564,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 315,
+    "imagePath": "/assets/hafs/315.webp",
+    "jsonPath": "/assets/hafs/315.json",
+    "audioPath": "/assets/mp3/Page315.mp3",
+    "audioDuration": 129.306,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 316,
+    "imagePath": "/assets/hafs/316.webp",
+    "jsonPath": "/assets/hafs/316.json",
+    "audioPath": "/assets/mp3/Page316.mp3",
+    "audioDuration": 153.156,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 317,
+    "imagePath": "/assets/hafs/317.webp",
+    "jsonPath": "/assets/hafs/317.json",
+    "audioPath": "/assets/mp3/Page317.mp3",
+    "audioDuration": 129.515,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 318,
+    "imagePath": "/assets/hafs/318.webp",
+    "jsonPath": "/assets/hafs/318.json",
+    "audioPath": "/assets/mp3/Page318.mp3",
+    "audioDuration": 124.918,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 319,
+    "imagePath": "/assets/hafs/319.webp",
+    "jsonPath": "/assets/hafs/319.json",
+    "audioPath": "/assets/mp3/Page319.mp3",
+    "audioDuration": 125.44,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 15
+  },
+  {
+    "page": 320,
+    "imagePath": "/assets/hafs/320.webp",
+    "jsonPath": "/assets/hafs/320.json",
+    "audioPath": "/assets/mp3/Page320.mp3",
+    "audioDuration": 120.973,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 16
+  },
+  {
+    "page": 321,
+    "imagePath": "/assets/hafs/321.webp",
+    "jsonPath": "/assets/hafs/321.json",
+    "audioPath": "/assets/mp3/Page321.mp3",
+    "audioDuration": 124.682,
+    "surah": {
+      "id": 20,
+      "nameArabic": "طه",
+      "nameSimple": "Taha"
+    },
+    "juz": 16
+  },
+  {
+    "page": 322,
+    "imagePath": "/assets/hafs/322.webp",
+    "jsonPath": "/assets/hafs/322.json",
+    "audioPath": "/assets/mp3/Page322.mp3",
+    "audioDuration": 84.637,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 323,
+    "imagePath": "/assets/hafs/323.webp",
+    "jsonPath": "/assets/hafs/323.json",
+    "audioPath": "/assets/mp3/Page323.mp3",
+    "audioDuration": 118.805,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 324,
+    "imagePath": "/assets/hafs/324.webp",
+    "jsonPath": "/assets/hafs/324.json",
+    "audioPath": "/assets/mp3/Page324.mp3",
+    "audioDuration": 112.797,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 325,
+    "imagePath": "/assets/hafs/325.webp",
+    "jsonPath": "/assets/hafs/325.json",
+    "audioPath": "/assets/mp3/Page325.mp3",
+    "audioDuration": 99.344,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 326,
+    "imagePath": "/assets/hafs/326.webp",
+    "jsonPath": "/assets/hafs/326.json",
+    "audioPath": "/assets/mp3/Page326.mp3",
+    "audioDuration": 111.491,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 327,
+    "imagePath": "/assets/hafs/327.webp",
+    "jsonPath": "/assets/hafs/327.json",
+    "audioPath": "/assets/mp3/Page327.mp3",
+    "audioDuration": 115.879,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 328,
+    "imagePath": "/assets/hafs/328.webp",
+    "jsonPath": "/assets/hafs/328.json",
+    "audioPath": "/assets/mp3/Page328.mp3",
+    "audioDuration": 97.646,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 329,
+    "imagePath": "/assets/hafs/329.webp",
+    "jsonPath": "/assets/hafs/329.json",
+    "audioPath": "/assets/mp3/Page329.mp3",
+    "audioDuration": 97.489,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 330,
+    "imagePath": "/assets/hafs/330.webp",
+    "jsonPath": "/assets/hafs/330.json",
+    "audioPath": "/assets/mp3/Page330.mp3",
+    "audioDuration": 102.217,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 331,
+    "imagePath": "/assets/hafs/331.webp",
+    "jsonPath": "/assets/hafs/331.json",
+    "audioPath": "/assets/mp3/Page331.mp3",
+    "audioDuration": 96.157,
+    "surah": {
+      "id": 21,
+      "nameArabic": "الأنبياء",
+      "nameSimple": "Al-Anbya"
+    },
+    "juz": 16
+  },
+  {
+    "page": 332,
+    "imagePath": "/assets/hafs/332.webp",
+    "jsonPath": "/assets/hafs/332.json",
+    "audioPath": "/assets/mp3/Page332.mp3",
+    "audioDuration": 135.236,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 333,
+    "imagePath": "/assets/hafs/333.webp",
+    "jsonPath": "/assets/hafs/333.json",
+    "audioPath": "/assets/mp3/Page333.mp3",
+    "audioDuration": 129.332,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 334,
+    "imagePath": "/assets/hafs/334.webp",
+    "jsonPath": "/assets/hafs/334.json",
+    "audioPath": "/assets/mp3/Page334.mp3",
+    "audioDuration": 124.735,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 335,
+    "imagePath": "/assets/hafs/335.webp",
+    "jsonPath": "/assets/hafs/335.json",
+    "audioPath": "/assets/mp3/Page335.mp3",
+    "audioDuration": 111.491,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 336,
+    "imagePath": "/assets/hafs/336.webp",
+    "jsonPath": "/assets/hafs/336.json",
+    "audioPath": "/assets/mp3/Page336.mp3",
+    "audioDuration": 142.55,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 337,
+    "imagePath": "/assets/hafs/337.webp",
+    "jsonPath": "/assets/hafs/337.json",
+    "audioPath": "/assets/mp3/Page337.mp3",
+    "audioDuration": 148.611,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 338,
+    "imagePath": "/assets/hafs/338.webp",
+    "jsonPath": "/assets/hafs/338.json",
+    "audioPath": "/assets/mp3/Page338.mp3",
+    "audioDuration": 128.418,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 339,
+    "imagePath": "/assets/hafs/339.webp",
+    "jsonPath": "/assets/hafs/339.json",
+    "audioPath": "/assets/mp3/Page339.mp3",
+    "audioDuration": 122.854,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 340,
+    "imagePath": "/assets/hafs/340.webp",
+    "jsonPath": "/assets/hafs/340.json",
+    "audioPath": "/assets/mp3/Page340.mp3",
+    "audioDuration": 119.667,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 16
+  },
+  {
+    "page": 341,
+    "imagePath": "/assets/hafs/341.webp",
+    "jsonPath": "/assets/hafs/341.json",
+    "audioPath": "/assets/mp3/Page341.mp3",
+    "audioDuration": 99.187,
+    "surah": {
+      "id": 22,
+      "nameArabic": "الحج",
+      "nameSimple": "Al-Hajj"
+    },
+    "juz": 17
+  },
+  {
+    "page": 342,
+    "imagePath": "/assets/hafs/342.webp",
+    "jsonPath": "/assets/hafs/342.json",
+    "audioPath": "/assets/mp3/Page342.mp3",
+    "audioDuration": 110.576,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 343,
+    "imagePath": "/assets/hafs/343.webp",
+    "jsonPath": "/assets/hafs/343.json",
+    "audioPath": "/assets/mp3/Page343.mp3",
+    "audioDuration": 130.142,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 344,
+    "imagePath": "/assets/hafs/344.webp",
+    "jsonPath": "/assets/hafs/344.json",
+    "audioPath": "/assets/mp3/Page344.mp3",
+    "audioDuration": 138.606,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 345,
+    "imagePath": "/assets/hafs/345.webp",
+    "jsonPath": "/assets/hafs/345.json",
+    "audioPath": "/assets/mp3/Page345.mp3",
+    "audioDuration": 137.038,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 346,
+    "imagePath": "/assets/hafs/346.webp",
+    "jsonPath": "/assets/hafs/346.json",
+    "audioPath": "/assets/mp3/Page346.mp3",
+    "audioDuration": 130.847,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 347,
+    "imagePath": "/assets/hafs/347.webp",
+    "jsonPath": "/assets/hafs/347.json",
+    "audioPath": "/assets/mp3/Page347.mp3",
+    "audioDuration": 133.094,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 348,
+    "imagePath": "/assets/hafs/348.webp",
+    "jsonPath": "/assets/hafs/348.json",
+    "audioPath": "/assets/mp3/Page348.mp3",
+    "audioDuration": 129.358,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 349,
+    "imagePath": "/assets/hafs/349.webp",
+    "jsonPath": "/assets/hafs/349.json",
+    "audioPath": "/assets/mp3/Page349.mp3",
+    "audioDuration": 135.497,
+    "surah": {
+      "id": 23,
+      "nameArabic": "المؤمنون",
+      "nameSimple": "Al-Mu'minun"
+    },
+    "juz": 17
+  },
+  {
+    "page": 350,
+    "imagePath": "/assets/hafs/350.webp",
+    "jsonPath": "/assets/hafs/350.json",
+    "audioPath": "/assets/mp3/Page350.mp3",
+    "audioDuration": 165.094,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 351,
+    "imagePath": "/assets/hafs/351.webp",
+    "jsonPath": "/assets/hafs/351.json",
+    "audioPath": "/assets/mp3/Page351.mp3",
+    "audioDuration": 153.417,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 352,
+    "imagePath": "/assets/hafs/352.webp",
+    "jsonPath": "/assets/hafs/352.json",
+    "audioPath": "/assets/mp3/Page352.mp3",
+    "audioDuration": 149.891,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 353,
+    "imagePath": "/assets/hafs/353.webp",
+    "jsonPath": "/assets/hafs/353.json",
+    "audioPath": "/assets/mp3/Page353.mp3",
+    "audioDuration": 152.451,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 354,
+    "imagePath": "/assets/hafs/354.webp",
+    "jsonPath": "/assets/hafs/354.json",
+    "audioPath": "/assets/mp3/Page354.mp3",
+    "audioDuration": 207.7,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 355,
+    "imagePath": "/assets/hafs/355.webp",
+    "jsonPath": "/assets/hafs/355.json",
+    "audioPath": "/assets/mp3/Page355.mp3",
+    "audioDuration": 164.78,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 356,
+    "imagePath": "/assets/hafs/356.webp",
+    "jsonPath": "/assets/hafs/356.json",
+    "audioPath": "/assets/mp3/Page356.mp3",
+    "audioDuration": 173.636,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 357,
+    "imagePath": "/assets/hafs/357.webp",
+    "jsonPath": "/assets/hafs/357.json",
+    "audioPath": "/assets/mp3/Page357.mp3",
+    "audioDuration": 151.275,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 358,
+    "imagePath": "/assets/hafs/358.webp",
+    "jsonPath": "/assets/hafs/358.json",
+    "audioPath": "/assets/mp3/Page358.mp3",
+    "audioDuration": 128.209,
+    "surah": {
+      "id": 24,
+      "nameArabic": "النور",
+      "nameSimple": "An-Nur"
+    },
+    "juz": 17
+  },
+  {
+    "page": 359,
+    "imagePath": "/assets/hafs/359.webp",
+    "jsonPath": "/assets/hafs/359.json",
+    "audioPath": "/assets/mp3/Page359.mp3",
+    "audioDuration": 135.706,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 17
+  },
+  {
+    "page": 360,
+    "imagePath": "/assets/hafs/360.webp",
+    "jsonPath": "/assets/hafs/360.json",
+    "audioPath": "/assets/mp3/Page360.mp3",
+    "audioDuration": 125.388,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 17
+  },
+  {
+    "page": 361,
+    "imagePath": "/assets/hafs/361.webp",
+    "jsonPath": "/assets/hafs/361.json",
+    "audioPath": "/assets/mp3/Page361.mp3",
+    "audioDuration": 121.6,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 18
+  },
+  {
+    "page": 362,
+    "imagePath": "/assets/hafs/362.webp",
+    "jsonPath": "/assets/hafs/362.json",
+    "audioPath": "/assets/mp3/Page362.mp3",
+    "audioDuration": 124.108,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 18
+  },
+  {
+    "page": 363,
+    "imagePath": "/assets/hafs/363.webp",
+    "jsonPath": "/assets/hafs/363.json",
+    "audioPath": "/assets/mp3/Page363.mp3",
+    "audioDuration": 106.162,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 18
+  },
+  {
+    "page": 364,
+    "imagePath": "/assets/hafs/364.webp",
+    "jsonPath": "/assets/hafs/364.json",
+    "audioPath": "/assets/mp3/Page364.mp3",
+    "audioDuration": 126.015,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 18
+  },
+  {
+    "page": 365,
+    "imagePath": "/assets/hafs/365.webp",
+    "jsonPath": "/assets/hafs/365.json",
+    "audioPath": "/assets/mp3/Page365.mp3",
+    "audioDuration": 111.856,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 18
+  },
+  {
+    "page": 366,
+    "imagePath": "/assets/hafs/366.webp",
+    "jsonPath": "/assets/hafs/366.json",
+    "audioPath": "/assets/mp3/Page366.mp3",
+    "audioDuration": 115.2,
+    "surah": {
+      "id": 25,
+      "nameArabic": "الفرقان",
+      "nameSimple": "Al-Furqan"
+    },
+    "juz": 18
+  },
+  {
+    "page": 367,
+    "imagePath": "/assets/hafs/367.webp",
+    "jsonPath": "/assets/hafs/367.json",
+    "audioPath": "/assets/mp3/Page367.mp3",
+    "audioDuration": 110.733,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 368,
+    "imagePath": "/assets/hafs/368.webp",
+    "jsonPath": "/assets/hafs/368.json",
+    "audioPath": "/assets/mp3/Page368.mp3",
+    "audioDuration": 122.175,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 369,
+    "imagePath": "/assets/hafs/369.webp",
+    "jsonPath": "/assets/hafs/369.json",
+    "audioPath": "/assets/mp3/Page369.mp3",
+    "audioDuration": 145.424,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 370,
+    "imagePath": "/assets/hafs/370.webp",
+    "jsonPath": "/assets/hafs/370.json",
+    "audioPath": "/assets/mp3/Page370.mp3",
+    "audioDuration": 127.843,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 371,
+    "imagePath": "/assets/hafs/371.webp",
+    "jsonPath": "/assets/hafs/371.json",
+    "audioPath": "/assets/mp3/Page371.mp3",
+    "audioDuration": 134.452,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 372,
+    "imagePath": "/assets/hafs/372.webp",
+    "jsonPath": "/assets/hafs/372.json",
+    "audioPath": "/assets/mp3/Page372.mp3",
+    "audioDuration": 130.847,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 373,
+    "imagePath": "/assets/hafs/373.webp",
+    "jsonPath": "/assets/hafs/373.json",
+    "audioPath": "/assets/mp3/Page373.mp3",
+    "audioDuration": 130.847,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 374,
+    "imagePath": "/assets/hafs/374.webp",
+    "jsonPath": "/assets/hafs/374.json",
+    "audioPath": "/assets/mp3/Page374.mp3",
+    "audioDuration": 126.25,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 375,
+    "imagePath": "/assets/hafs/375.webp",
+    "jsonPath": "/assets/hafs/375.json",
+    "audioPath": "/assets/mp3/Page375.mp3",
+    "audioDuration": 128.627,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 376,
+    "imagePath": "/assets/hafs/376.webp",
+    "jsonPath": "/assets/hafs/376.json",
+    "audioPath": "/assets/mp3/Page376.mp3",
+    "audioDuration": 110.55,
+    "surah": {
+      "id": 26,
+      "nameArabic": "الشعراء",
+      "nameSimple": "Ash-Shu'ara"
+    },
+    "juz": 18
+  },
+  {
+    "page": 377,
+    "imagePath": "/assets/hafs/377.webp",
+    "jsonPath": "/assets/hafs/377.json",
+    "audioPath": "/assets/mp3/Page377.mp3",
+    "audioDuration": 132.807,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 18
+  },
+  {
+    "page": 378,
+    "imagePath": "/assets/hafs/378.webp",
+    "jsonPath": "/assets/hafs/378.json",
+    "audioPath": "/assets/mp3/Page378.mp3",
+    "audioDuration": 120.607,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 18
+  },
+  {
+    "page": 379,
+    "imagePath": "/assets/hafs/379.webp",
+    "jsonPath": "/assets/hafs/379.json",
+    "audioPath": "/assets/mp3/Page379.mp3",
+    "audioDuration": 122.488,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 18
+  },
+  {
+    "page": 380,
+    "imagePath": "/assets/hafs/380.webp",
+    "jsonPath": "/assets/hafs/380.json",
+    "audioPath": "/assets/mp3/Page380.mp3",
+    "audioDuration": 142.367,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 18
+  },
+  {
+    "page": 381,
+    "imagePath": "/assets/hafs/381.webp",
+    "jsonPath": "/assets/hafs/381.json",
+    "audioPath": "/assets/mp3/Page381.mp3",
+    "audioDuration": 97.28,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 19
+  },
+  {
+    "page": 382,
+    "imagePath": "/assets/hafs/382.webp",
+    "jsonPath": "/assets/hafs/382.json",
+    "audioPath": "/assets/mp3/Page382.mp3",
+    "audioDuration": 128.418,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 19
+  },
+  {
+    "page": 383,
+    "imagePath": "/assets/hafs/383.webp",
+    "jsonPath": "/assets/hafs/383.json",
+    "audioPath": "/assets/mp3/Page383.mp3",
+    "audioDuration": 120.346,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 19
+  },
+  {
+    "page": 384,
+    "imagePath": "/assets/hafs/384.webp",
+    "jsonPath": "/assets/hafs/384.json",
+    "audioPath": "/assets/mp3/Page384.mp3",
+    "audioDuration": 126.668,
+    "surah": {
+      "id": 27,
+      "nameArabic": "النمل",
+      "nameSimple": "An-Naml"
+    },
+    "juz": 19
+  },
+  {
+    "page": 385,
+    "imagePath": "/assets/hafs/385.webp",
+    "jsonPath": "/assets/hafs/385.json",
+    "audioPath": "/assets/mp3/Page385.mp3",
+    "audioDuration": 116.01,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 386,
+    "imagePath": "/assets/hafs/386.webp",
+    "jsonPath": "/assets/hafs/386.json",
+    "audioPath": "/assets/mp3/Page386.mp3",
+    "audioDuration": 128.444,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 387,
+    "imagePath": "/assets/hafs/387.webp",
+    "jsonPath": "/assets/hafs/387.json",
+    "audioPath": "/assets/mp3/Page387.mp3",
+    "audioDuration": 126.694,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 388,
+    "imagePath": "/assets/hafs/388.webp",
+    "jsonPath": "/assets/hafs/388.json",
+    "audioPath": "/assets/mp3/Page388.mp3",
+    "audioDuration": 119.693,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 389,
+    "imagePath": "/assets/hafs/389.webp",
+    "jsonPath": "/assets/hafs/389.json",
+    "audioPath": "/assets/mp3/Page389.mp3",
+    "audioDuration": 120.869,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 390,
+    "imagePath": "/assets/hafs/390.webp",
+    "jsonPath": "/assets/hafs/390.json",
+    "audioPath": "/assets/mp3/Page390.mp3",
+    "audioDuration": 111.778,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 391,
+    "imagePath": "/assets/hafs/391.webp",
+    "jsonPath": "/assets/hafs/391.json",
+    "audioPath": "/assets/mp3/Page391.mp3",
+    "audioDuration": 120.607,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 392,
+    "imagePath": "/assets/hafs/392.webp",
+    "jsonPath": "/assets/hafs/392.json",
+    "audioPath": "/assets/mp3/Page392.mp3",
+    "audioDuration": 131.03,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 393,
+    "imagePath": "/assets/hafs/393.webp",
+    "jsonPath": "/assets/hafs/393.json",
+    "audioPath": "/assets/mp3/Page393.mp3",
+    "audioDuration": 130.351,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 394,
+    "imagePath": "/assets/hafs/394.webp",
+    "jsonPath": "/assets/hafs/394.json",
+    "audioPath": "/assets/mp3/Page394.mp3",
+    "audioDuration": 123.402,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 395,
+    "imagePath": "/assets/hafs/395.webp",
+    "jsonPath": "/assets/hafs/395.json",
+    "audioPath": "/assets/mp3/Page395.mp3",
+    "audioDuration": 132.493,
+    "surah": {
+      "id": 28,
+      "nameArabic": "القصص",
+      "nameSimple": "Al-Qasas"
+    },
+    "juz": 19
+  },
+  {
+    "page": 396,
+    "imagePath": "/assets/hafs/396.webp",
+    "jsonPath": "/assets/hafs/396.json",
+    "audioPath": "/assets/mp3/Page396.mp3",
+    "audioDuration": 121.234,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 19
+  },
+  {
+    "page": 397,
+    "imagePath": "/assets/hafs/397.webp",
+    "jsonPath": "/assets/hafs/397.json",
+    "audioPath": "/assets/mp3/Page397.mp3",
+    "audioDuration": 113.267,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 19
+  },
+  {
+    "page": 398,
+    "imagePath": "/assets/hafs/398.webp",
+    "jsonPath": "/assets/hafs/398.json",
+    "audioPath": "/assets/mp3/Page398.mp3",
+    "audioDuration": 115.879,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 19
+  },
+  {
+    "page": 399,
+    "imagePath": "/assets/hafs/399.webp",
+    "jsonPath": "/assets/hafs/399.json",
+    "audioPath": "/assets/mp3/Page399.mp3",
+    "audioDuration": 120.346,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 19
+  },
+  {
+    "page": 400,
+    "imagePath": "/assets/hafs/400.webp",
+    "jsonPath": "/assets/hafs/400.json",
+    "audioPath": "/assets/mp3/Page400.mp3",
+    "audioDuration": 118.309,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 19
+  },
+  {
+    "page": 401,
+    "imagePath": "/assets/hafs/401.webp",
+    "jsonPath": "/assets/hafs/401.json",
+    "audioPath": "/assets/mp3/Page401.mp3",
+    "audioDuration": 105.561,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 20
+  },
+  {
+    "page": 402,
+    "imagePath": "/assets/hafs/402.webp",
+    "jsonPath": "/assets/hafs/402.json",
+    "audioPath": "/assets/mp3/Page402.mp3",
+    "audioDuration": 112.536,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 20
+  },
+  {
+    "page": 403,
+    "imagePath": "/assets/hafs/403.webp",
+    "jsonPath": "/assets/hafs/403.json",
+    "audioPath": "/assets/mp3/Page403.mp3",
+    "audioDuration": 155.272,
+    "surah": {
+      "id": 29,
+      "nameArabic": "العنكبوت",
+      "nameSimple": "Al-'Ankabut"
+    },
+    "juz": 20
+  },
+  {
+    "page": 404,
+    "imagePath": "/assets/hafs/404.webp",
+    "jsonPath": "/assets/hafs/404.json",
+    "audioPath": "/assets/mp3/Page404.mp3",
+    "audioDuration": 115.304,
+    "surah": {
+      "id": 30,
+      "nameArabic": "الروم",
+      "nameSimple": "Ar-Rum"
+    },
+    "juz": 20
+  },
+  {
+    "page": 405,
+    "imagePath": "/assets/hafs/405.webp",
+    "jsonPath": "/assets/hafs/405.json",
+    "audioPath": "/assets/mp3/Page405.mp3",
+    "audioDuration": 119.38,
+    "surah": {
+      "id": 30,
+      "nameArabic": "الروم",
+      "nameSimple": "Ar-Rum"
+    },
+    "juz": 20
+  },
+  {
+    "page": 406,
+    "imagePath": "/assets/hafs/406.webp",
+    "jsonPath": "/assets/hafs/406.json",
+    "audioPath": "/assets/mp3/Page406.mp3",
+    "audioDuration": 115.278,
+    "surah": {
+      "id": 30,
+      "nameArabic": "الروم",
+      "nameSimple": "Ar-Rum"
+    },
+    "juz": 20
+  },
+  {
+    "page": 407,
+    "imagePath": "/assets/hafs/407.webp",
+    "jsonPath": "/assets/hafs/407.json",
+    "audioPath": "/assets/mp3/Page407.mp3",
+    "audioDuration": 121.469,
+    "surah": {
+      "id": 30,
+      "nameArabic": "الروم",
+      "nameSimple": "Ar-Rum"
+    },
+    "juz": 20
+  },
+  {
+    "page": 408,
+    "imagePath": "/assets/hafs/408.webp",
+    "jsonPath": "/assets/hafs/408.json",
+    "audioPath": "/assets/mp3/Page408.mp3",
+    "audioDuration": 140.199,
+    "surah": {
+      "id": 30,
+      "nameArabic": "الروم",
+      "nameSimple": "Ar-Rum"
+    },
+    "juz": 20
+  },
+  {
+    "page": 409,
+    "imagePath": "/assets/hafs/409.webp",
+    "jsonPath": "/assets/hafs/409.json",
+    "audioPath": "/assets/mp3/Page409.mp3",
+    "audioDuration": 135.367,
+    "surah": {
+      "id": 30,
+      "nameArabic": "الروم",
+      "nameSimple": "Ar-Rum"
+    },
+    "juz": 20
+  },
+  {
+    "page": 410,
+    "imagePath": "/assets/hafs/410.webp",
+    "jsonPath": "/assets/hafs/410.json",
+    "audioPath": "/assets/mp3/Page410.mp3",
+    "audioDuration": 120.816,
+    "surah": {
+      "id": 30,
+      "nameArabic": "الروم",
+      "nameSimple": "Ar-Rum"
+    },
+    "juz": 20
+  },
+  {
+    "page": 411,
+    "imagePath": "/assets/hafs/411.webp",
+    "jsonPath": "/assets/hafs/411.json",
+    "audioPath": "/assets/mp3/Page411.mp3",
+    "audioDuration": 122.384,
+    "surah": {
+      "id": 31,
+      "nameArabic": "لقمان",
+      "nameSimple": "Luqman"
+    },
+    "juz": 20
+  },
+  {
+    "page": 412,
+    "imagePath": "/assets/hafs/412.webp",
+    "jsonPath": "/assets/hafs/412.json",
+    "audioPath": "/assets/mp3/Page412.mp3",
+    "audioDuration": 120.999,
+    "surah": {
+      "id": 31,
+      "nameArabic": "لقمان",
+      "nameSimple": "Luqman"
+    },
+    "juz": 20
+  },
+  {
+    "page": 413,
+    "imagePath": "/assets/hafs/413.webp",
+    "jsonPath": "/assets/hafs/413.json",
+    "audioPath": "/assets/mp3/Page413.mp3",
+    "audioDuration": 125.753,
+    "surah": {
+      "id": 31,
+      "nameArabic": "لقمان",
+      "nameSimple": "Luqman"
+    },
+    "juz": 20
+  },
+  {
+    "page": 414,
+    "imagePath": "/assets/hafs/414.webp",
+    "jsonPath": "/assets/hafs/414.json",
+    "audioPath": "/assets/mp3/Page414.mp3",
+    "audioDuration": 123.22,
+    "surah": {
+      "id": 31,
+      "nameArabic": "لقمان",
+      "nameSimple": "Luqman"
+    },
+    "juz": 20
+  },
+  {
+    "page": 415,
+    "imagePath": "/assets/hafs/415.webp",
+    "jsonPath": "/assets/hafs/415.json",
+    "audioPath": "/assets/mp3/Page415.mp3",
+    "audioDuration": 122.984,
+    "surah": {
+      "id": 32,
+      "nameArabic": "السجدة",
+      "nameSimple": "As-Sajdah"
+    },
+    "juz": 20
+  },
+  {
+    "page": 416,
+    "imagePath": "/assets/hafs/416.webp",
+    "jsonPath": "/assets/hafs/416.json",
+    "audioPath": "/assets/mp3/Page416.mp3",
+    "audioDuration": 147.174,
+    "surah": {
+      "id": 32,
+      "nameArabic": "السجدة",
+      "nameSimple": "As-Sajdah"
+    },
+    "juz": 20
+  },
+  {
+    "page": 417,
+    "imagePath": "/assets/hafs/417.webp",
+    "jsonPath": "/assets/hafs/417.json",
+    "audioPath": "/assets/mp3/Page417.mp3",
+    "audioDuration": 121.26,
+    "surah": {
+      "id": 32,
+      "nameArabic": "السجدة",
+      "nameSimple": "As-Sajdah"
+    },
+    "juz": 20
+  },
+  {
+    "page": 418,
+    "imagePath": "/assets/hafs/418.webp",
+    "jsonPath": "/assets/hafs/418.json",
+    "audioPath": "/assets/mp3/Page418.mp3",
+    "audioDuration": 106.867,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 20
+  },
+  {
+    "page": 419,
+    "imagePath": "/assets/hafs/419.webp",
+    "jsonPath": "/assets/hafs/419.json",
+    "audioPath": "/assets/mp3/Page419.mp3",
+    "audioDuration": 110.002,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 20
+  },
+  {
+    "page": 420,
+    "imagePath": "/assets/hafs/420.webp",
+    "jsonPath": "/assets/hafs/420.json",
+    "audioPath": "/assets/mp3/Page420.mp3",
+    "audioDuration": 119.484,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 20
+  },
+  {
+    "page": 421,
+    "imagePath": "/assets/hafs/421.webp",
+    "jsonPath": "/assets/hafs/421.json",
+    "audioPath": "/assets/mp3/Page421.mp3",
+    "audioDuration": 113.763,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 21
+  },
+  {
+    "page": 422,
+    "imagePath": "/assets/hafs/422.webp",
+    "jsonPath": "/assets/hafs/422.json",
+    "audioPath": "/assets/mp3/Page422.mp3",
+    "audioDuration": 110.263,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 21
+  },
+  {
+    "page": 423,
+    "imagePath": "/assets/hafs/423.webp",
+    "jsonPath": "/assets/hafs/423.json",
+    "audioPath": "/assets/mp3/Page423.mp3",
+    "audioDuration": 114.024,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 21
+  },
+  {
+    "page": 424,
+    "imagePath": "/assets/hafs/424.webp",
+    "jsonPath": "/assets/hafs/424.json",
+    "audioPath": "/assets/mp3/Page424.mp3",
+    "audioDuration": 122.279,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 21
+  },
+  {
+    "page": 425,
+    "imagePath": "/assets/hafs/425.webp",
+    "jsonPath": "/assets/hafs/425.json",
+    "audioPath": "/assets/mp3/Page425.mp3",
+    "audioDuration": 121.443,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 21
+  },
+  {
+    "page": 426,
+    "imagePath": "/assets/hafs/426.webp",
+    "jsonPath": "/assets/hafs/426.json",
+    "audioPath": "/assets/mp3/Page426.mp3",
+    "audioDuration": 127.974,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 21
+  },
+  {
+    "page": 427,
+    "imagePath": "/assets/hafs/427.webp",
+    "jsonPath": "/assets/hafs/427.json",
+    "audioPath": "/assets/mp3/Page427.mp3",
+    "audioDuration": 124.003,
+    "surah": {
+      "id": 33,
+      "nameArabic": "الأحزاب",
+      "nameSimple": "Al-Ahzab"
+    },
+    "juz": 21
+  },
+  {
+    "page": 428,
+    "imagePath": "/assets/hafs/428.webp",
+    "jsonPath": "/assets/hafs/428.json",
+    "audioPath": "/assets/mp3/Page428.mp3",
+    "audioDuration": 126.746,
+    "surah": {
+      "id": 34,
+      "nameArabic": "سبإ",
+      "nameSimple": "Saba"
+    },
+    "juz": 21
+  },
+  {
+    "page": 429,
+    "imagePath": "/assets/hafs/429.webp",
+    "jsonPath": "/assets/hafs/429.json",
+    "audioPath": "/assets/mp3/Page429.mp3",
+    "audioDuration": 123.011,
+    "surah": {
+      "id": 34,
+      "nameArabic": "سبإ",
+      "nameSimple": "Saba"
+    },
+    "juz": 21
+  },
+  {
+    "page": 430,
+    "imagePath": "/assets/hafs/430.webp",
+    "jsonPath": "/assets/hafs/430.json",
+    "audioPath": "/assets/mp3/Page430.mp3",
+    "audioDuration": 125.675,
+    "surah": {
+      "id": 34,
+      "nameArabic": "سبإ",
+      "nameSimple": "Saba"
+    },
+    "juz": 21
+  },
+  {
+    "page": 431,
+    "imagePath": "/assets/hafs/431.webp",
+    "jsonPath": "/assets/hafs/431.json",
+    "audioPath": "/assets/mp3/Page431.mp3",
+    "audioDuration": 122.462,
+    "surah": {
+      "id": 34,
+      "nameArabic": "سبإ",
+      "nameSimple": "Saba"
+    },
+    "juz": 21
+  },
+  {
+    "page": 432,
+    "imagePath": "/assets/hafs/432.webp",
+    "jsonPath": "/assets/hafs/432.json",
+    "audioPath": "/assets/mp3/Page432.mp3",
+    "audioDuration": 150.465,
+    "surah": {
+      "id": 34,
+      "nameArabic": "سبإ",
+      "nameSimple": "Saba"
+    },
+    "juz": 21
+  },
+  {
+    "page": 433,
+    "imagePath": "/assets/hafs/433.webp",
+    "jsonPath": "/assets/hafs/433.json",
+    "audioPath": "/assets/mp3/Page433.mp3",
+    "audioDuration": 144.039,
+    "surah": {
+      "id": 34,
+      "nameArabic": "سبإ",
+      "nameSimple": "Saba"
+    },
+    "juz": 21
+  },
+  {
+    "page": 434,
+    "imagePath": "/assets/hafs/434.webp",
+    "jsonPath": "/assets/hafs/434.json",
+    "audioPath": "/assets/mp3/Page434.mp3",
+    "audioDuration": 137.091,
+    "surah": {
+      "id": 35,
+      "nameArabic": "فاطر",
+      "nameSimple": "Fatir"
+    },
+    "juz": 21
+  },
+  {
+    "page": 435,
+    "imagePath": "/assets/hafs/435.webp",
+    "jsonPath": "/assets/hafs/435.json",
+    "audioPath": "/assets/mp3/Page435.mp3",
+    "audioDuration": 167.784,
+    "surah": {
+      "id": 35,
+      "nameArabic": "فاطر",
+      "nameSimple": "Fatir"
+    },
+    "juz": 21
+  },
+  {
+    "page": 436,
+    "imagePath": "/assets/hafs/436.webp",
+    "jsonPath": "/assets/hafs/436.json",
+    "audioPath": "/assets/mp3/Page436.mp3",
+    "audioDuration": 138.266,
+    "surah": {
+      "id": 35,
+      "nameArabic": "فاطر",
+      "nameSimple": "Fatir"
+    },
+    "juz": 21
+  },
+  {
+    "page": 437,
+    "imagePath": "/assets/hafs/437.webp",
+    "jsonPath": "/assets/hafs/437.json",
+    "audioPath": "/assets/mp3/Page437.mp3",
+    "audioDuration": 147.069,
+    "surah": {
+      "id": 35,
+      "nameArabic": "فاطر",
+      "nameSimple": "Fatir"
+    },
+    "juz": 21
+  },
+  {
+    "page": 438,
+    "imagePath": "/assets/hafs/438.webp",
+    "jsonPath": "/assets/hafs/438.json",
+    "audioPath": "/assets/mp3/Page438.mp3",
+    "audioDuration": 145.659,
+    "surah": {
+      "id": 35,
+      "nameArabic": "فاطر",
+      "nameSimple": "Fatir"
+    },
+    "juz": 21
+  },
+  {
+    "page": 439,
+    "imagePath": "/assets/hafs/439.webp",
+    "jsonPath": "/assets/hafs/439.json",
+    "audioPath": "/assets/mp3/Page439.mp3",
+    "audioDuration": 134.243,
+    "surah": {
+      "id": 35,
+      "nameArabic": "فاطر",
+      "nameSimple": "Fatir"
+    },
+    "juz": 21
+  },
+  {
+    "page": 440,
+    "imagePath": "/assets/hafs/440.webp",
+    "jsonPath": "/assets/hafs/440.json",
+    "audioPath": "/assets/mp3/Page440.mp3",
+    "audioDuration": 122.567,
+    "surah": {
+      "id": 36,
+      "nameArabic": "يس",
+      "nameSimple": "Ya-Sin"
+    },
+    "juz": 21
+  },
+  {
+    "page": 441,
+    "imagePath": "/assets/hafs/441.webp",
+    "jsonPath": "/assets/hafs/441.json",
+    "audioPath": "/assets/mp3/Page441.mp3",
+    "audioDuration": 134.609,
+    "surah": {
+      "id": 36,
+      "nameArabic": "يس",
+      "nameSimple": "Ya-Sin"
+    },
+    "juz": 22
+  },
+  {
+    "page": 442,
+    "imagePath": "/assets/hafs/442.webp",
+    "jsonPath": "/assets/hafs/442.json",
+    "audioPath": "/assets/mp3/Page442.mp3",
+    "audioDuration": 120.007,
+    "surah": {
+      "id": 36,
+      "nameArabic": "يس",
+      "nameSimple": "Ya-Sin"
+    },
+    "juz": 22
+  },
+  {
+    "page": 443,
+    "imagePath": "/assets/hafs/443.webp",
+    "jsonPath": "/assets/hafs/443.json",
+    "audioPath": "/assets/mp3/Page443.mp3",
+    "audioDuration": 113.946,
+    "surah": {
+      "id": 36,
+      "nameArabic": "يس",
+      "nameSimple": "Ya-Sin"
+    },
+    "juz": 22
+  },
+  {
+    "page": 444,
+    "imagePath": "/assets/hafs/444.webp",
+    "jsonPath": "/assets/hafs/444.json",
+    "audioPath": "/assets/mp3/Page444.mp3",
+    "audioDuration": 110.655,
+    "surah": {
+      "id": 36,
+      "nameArabic": "يس",
+      "nameSimple": "Ya-Sin"
+    },
+    "juz": 22
+  },
+  {
+    "page": 445,
+    "imagePath": "/assets/hafs/445.webp",
+    "jsonPath": "/assets/hafs/445.json",
+    "audioPath": "/assets/mp3/Page445.mp3",
+    "audioDuration": 106.162,
+    "surah": {
+      "id": 36,
+      "nameArabic": "يس",
+      "nameSimple": "Ya-Sin"
+    },
+    "juz": 22
+  },
+  {
+    "page": 446,
+    "imagePath": "/assets/hafs/446.webp",
+    "jsonPath": "/assets/hafs/446.json",
+    "audioPath": "/assets/mp3/Page446.mp3",
+    "audioDuration": 129.149,
+    "surah": {
+      "id": 37,
+      "nameArabic": "الصافات",
+      "nameSimple": "As-Saffat"
+    },
+    "juz": 22
+  },
+  {
+    "page": 447,
+    "imagePath": "/assets/hafs/447.webp",
+    "jsonPath": "/assets/hafs/447.json",
+    "audioPath": "/assets/mp3/Page447.mp3",
+    "audioDuration": 151.014,
+    "surah": {
+      "id": 37,
+      "nameArabic": "الصافات",
+      "nameSimple": "As-Saffat"
+    },
+    "juz": 22
+  },
+  {
+    "page": 448,
+    "imagePath": "/assets/hafs/448.webp",
+    "jsonPath": "/assets/hafs/448.json",
+    "audioPath": "/assets/mp3/Page448.mp3",
+    "audioDuration": 126.694,
+    "surah": {
+      "id": 37,
+      "nameArabic": "الصافات",
+      "nameSimple": "As-Saffat"
+    },
+    "juz": 22
+  },
+  {
+    "page": 449,
+    "imagePath": "/assets/hafs/449.webp",
+    "jsonPath": "/assets/hafs/449.json",
+    "audioPath": "/assets/mp3/Page449.mp3",
+    "audioDuration": 140.408,
+    "surah": {
+      "id": 37,
+      "nameArabic": "الصافات",
+      "nameSimple": "As-Saffat"
+    },
+    "juz": 22
+  },
+  {
+    "page": 450,
+    "imagePath": "/assets/hafs/450.webp",
+    "jsonPath": "/assets/hafs/450.json",
+    "audioPath": "/assets/mp3/Page450.mp3",
+    "audioDuration": 119.98,
+    "surah": {
+      "id": 37,
+      "nameArabic": "الصافات",
+      "nameSimple": "As-Saffat"
+    },
+    "juz": 22
+  },
+  {
+    "page": 451,
+    "imagePath": "/assets/hafs/451.webp",
+    "jsonPath": "/assets/hafs/451.json",
+    "audioPath": "/assets/mp3/Page451.mp3",
+    "audioDuration": 125.1,
+    "surah": {
+      "id": 37,
+      "nameArabic": "الصافات",
+      "nameSimple": "As-Saffat"
+    },
+    "juz": 22
+  },
+  {
+    "page": 452,
+    "imagePath": "/assets/hafs/452.webp",
+    "jsonPath": "/assets/hafs/452.json",
+    "audioPath": "/assets/mp3/Page452.mp3",
+    "audioDuration": 129.411,
+    "surah": {
+      "id": 37,
+      "nameArabic": "الصافات",
+      "nameSimple": "As-Saffat"
+    },
+    "juz": 22
+  },
+  {
+    "page": 453,
+    "imagePath": "/assets/hafs/453.webp",
+    "jsonPath": "/assets/hafs/453.json",
+    "audioPath": "/assets/mp3/Page453.mp3",
+    "audioDuration": 111.543,
+    "surah": {
+      "id": 38,
+      "nameArabic": "ص",
+      "nameSimple": "Sad"
+    },
+    "juz": 22
+  },
+  {
+    "page": 454,
+    "imagePath": "/assets/hafs/454.webp",
+    "jsonPath": "/assets/hafs/454.json",
+    "audioPath": "/assets/mp3/Page454.mp3",
+    "audioDuration": 129.123,
+    "surah": {
+      "id": 38,
+      "nameArabic": "ص",
+      "nameSimple": "Sad"
+    },
+    "juz": 22
+  },
+  {
+    "page": 455,
+    "imagePath": "/assets/hafs/455.webp",
+    "jsonPath": "/assets/hafs/455.json",
+    "audioPath": "/assets/mp3/Page455.mp3",
+    "audioDuration": 127.086,
+    "surah": {
+      "id": 38,
+      "nameArabic": "ص",
+      "nameSimple": "Sad"
+    },
+    "juz": 22
+  },
+  {
+    "page": 456,
+    "imagePath": "/assets/hafs/456.webp",
+    "jsonPath": "/assets/hafs/456.json",
+    "audioPath": "/assets/mp3/Page456.mp3",
+    "audioDuration": 131.422,
+    "surah": {
+      "id": 38,
+      "nameArabic": "ص",
+      "nameSimple": "Sad"
+    },
+    "juz": 22
+  },
+  {
+    "page": 457,
+    "imagePath": "/assets/hafs/457.webp",
+    "jsonPath": "/assets/hafs/457.json",
+    "audioPath": "/assets/mp3/Page457.mp3",
+    "audioDuration": 124.317,
+    "surah": {
+      "id": 38,
+      "nameArabic": "ص",
+      "nameSimple": "Sad"
+    },
+    "juz": 22
+  },
+  {
+    "page": 458,
+    "imagePath": "/assets/hafs/458.webp",
+    "jsonPath": "/assets/hafs/458.json",
+    "audioPath": "/assets/mp3/Page458.mp3",
+    "audioDuration": 107.677,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 22
+  },
+  {
+    "page": 459,
+    "imagePath": "/assets/hafs/459.webp",
+    "jsonPath": "/assets/hafs/459.json",
+    "audioPath": "/assets/mp3/Page459.mp3",
+    "audioDuration": 136.438,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 22
+  },
+  {
+    "page": 460,
+    "imagePath": "/assets/hafs/460.webp",
+    "jsonPath": "/assets/hafs/460.json",
+    "audioPath": "/assets/mp3/Page460.mp3",
+    "audioDuration": 136.96,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 22
+  },
+  {
+    "page": 461,
+    "imagePath": "/assets/hafs/461.webp",
+    "jsonPath": "/assets/hafs/461.json",
+    "audioPath": "/assets/mp3/Page461.mp3",
+    "audioDuration": 113.972,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 23
+  },
+  {
+    "page": 462,
+    "imagePath": "/assets/hafs/462.webp",
+    "jsonPath": "/assets/hafs/462.json",
+    "audioPath": "/assets/mp3/Page462.mp3",
+    "audioDuration": 109.584,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 23
+  },
+  {
+    "page": 463,
+    "imagePath": "/assets/hafs/463.webp",
+    "jsonPath": "/assets/hafs/463.json",
+    "audioPath": "/assets/mp3/Page463.mp3",
+    "audioDuration": 99.631,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 23
+  },
+  {
+    "page": 464,
+    "imagePath": "/assets/hafs/464.webp",
+    "jsonPath": "/assets/hafs/464.json",
+    "audioPath": "/assets/mp3/Page464.mp3",
+    "audioDuration": 120.059,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 23
+  },
+  {
+    "page": 465,
+    "imagePath": "/assets/hafs/465.webp",
+    "jsonPath": "/assets/hafs/465.json",
+    "audioPath": "/assets/mp3/Page465.mp3",
+    "audioDuration": 113.267,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 23
+  },
+  {
+    "page": 466,
+    "imagePath": "/assets/hafs/466.webp",
+    "jsonPath": "/assets/hafs/466.json",
+    "audioPath": "/assets/mp3/Page466.mp3",
+    "audioDuration": 132.624,
+    "surah": {
+      "id": 39,
+      "nameArabic": "الزمر",
+      "nameSimple": "Az-Zumar"
+    },
+    "juz": 23
+  },
+  {
+    "page": 467,
+    "imagePath": "/assets/hafs/467.webp",
+    "jsonPath": "/assets/hafs/467.json",
+    "audioPath": "/assets/mp3/Page467.mp3",
+    "audioDuration": 106.553,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 468,
+    "imagePath": "/assets/hafs/468.webp",
+    "jsonPath": "/assets/hafs/468.json",
+    "audioPath": "/assets/mp3/Page468.mp3",
+    "audioDuration": 113.371,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 469,
+    "imagePath": "/assets/hafs/469.webp",
+    "jsonPath": "/assets/hafs/469.json",
+    "audioPath": "/assets/mp3/Page469.mp3",
+    "audioDuration": 110.707,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 470,
+    "imagePath": "/assets/hafs/470.webp",
+    "jsonPath": "/assets/hafs/470.json",
+    "audioPath": "/assets/mp3/Page470.mp3",
+    "audioDuration": 117.734,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 471,
+    "imagePath": "/assets/hafs/471.webp",
+    "jsonPath": "/assets/hafs/471.json",
+    "audioPath": "/assets/mp3/Page471.mp3",
+    "audioDuration": 120.294,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 472,
+    "imagePath": "/assets/hafs/472.webp",
+    "jsonPath": "/assets/hafs/472.json",
+    "audioPath": "/assets/mp3/Page472.mp3",
+    "audioDuration": 116.584,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 473,
+    "imagePath": "/assets/hafs/473.webp",
+    "jsonPath": "/assets/hafs/473.json",
+    "audioPath": "/assets/mp3/Page473.mp3",
+    "audioDuration": 99.239,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 474,
+    "imagePath": "/assets/hafs/474.webp",
+    "jsonPath": "/assets/hafs/474.json",
+    "audioPath": "/assets/mp3/Page474.mp3",
+    "audioDuration": 110.498,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 475,
+    "imagePath": "/assets/hafs/475.webp",
+    "jsonPath": "/assets/hafs/475.json",
+    "audioPath": "/assets/mp3/Page475.mp3",
+    "audioDuration": 127.634,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 476,
+    "imagePath": "/assets/hafs/476.webp",
+    "jsonPath": "/assets/hafs/476.json",
+    "audioPath": "/assets/mp3/Page476.mp3",
+    "audioDuration": 116.611,
+    "surah": {
+      "id": 40,
+      "nameArabic": "غافر",
+      "nameSimple": "Ghafir"
+    },
+    "juz": 23
+  },
+  {
+    "page": 477,
+    "imagePath": "/assets/hafs/477.webp",
+    "jsonPath": "/assets/hafs/477.json",
+    "audioPath": "/assets/mp3/Page477.mp3",
+    "audioDuration": 132.441,
+    "surah": {
+      "id": 41,
+      "nameArabic": "فصلت",
+      "nameSimple": "Fussilat"
+    },
+    "juz": 23
+  },
+  {
+    "page": 478,
+    "imagePath": "/assets/hafs/478.webp",
+    "jsonPath": "/assets/hafs/478.json",
+    "audioPath": "/assets/mp3/Page478.mp3",
+    "audioDuration": 146.756,
+    "surah": {
+      "id": 41,
+      "nameArabic": "فصلت",
+      "nameSimple": "Fussilat"
+    },
+    "juz": 23
+  },
+  {
+    "page": 479,
+    "imagePath": "/assets/hafs/479.webp",
+    "jsonPath": "/assets/hafs/479.json",
+    "audioPath": "/assets/mp3/Page479.mp3",
+    "audioDuration": 166.896,
+    "surah": {
+      "id": 41,
+      "nameArabic": "فصلت",
+      "nameSimple": "Fussilat"
+    },
+    "juz": 23
+  },
+  {
+    "page": 480,
+    "imagePath": "/assets/hafs/480.webp",
+    "jsonPath": "/assets/hafs/480.json",
+    "audioPath": "/assets/mp3/Page480.mp3",
+    "audioDuration": 119.745,
+    "surah": {
+      "id": 41,
+      "nameArabic": "فصلت",
+      "nameSimple": "Fussilat"
+    },
+    "juz": 23
+  },
+  {
+    "page": 481,
+    "imagePath": "/assets/hafs/481.webp",
+    "jsonPath": "/assets/hafs/481.json",
+    "audioPath": "/assets/mp3/Page481.mp3",
+    "audioDuration": 138.318,
+    "surah": {
+      "id": 41,
+      "nameArabic": "فصلت",
+      "nameSimple": "Fussilat"
+    },
+    "juz": 24
+  },
+  {
+    "page": 482,
+    "imagePath": "/assets/hafs/482.webp",
+    "jsonPath": "/assets/hafs/482.json",
+    "audioPath": "/assets/mp3/Page482.mp3",
+    "audioDuration": 148.036,
+    "surah": {
+      "id": 41,
+      "nameArabic": "فصلت",
+      "nameSimple": "Fussilat"
+    },
+    "juz": 24
+  },
+  {
+    "page": 483,
+    "imagePath": "/assets/hafs/483.webp",
+    "jsonPath": "/assets/hafs/483.json",
+    "audioPath": "/assets/mp3/Page483.mp3",
+    "audioDuration": 132.258,
+    "surah": {
+      "id": 42,
+      "nameArabic": "الشورى",
+      "nameSimple": "Ash-Shuraa"
+    },
+    "juz": 24
+  },
+  {
+    "page": 484,
+    "imagePath": "/assets/hafs/484.webp",
+    "jsonPath": "/assets/hafs/484.json",
+    "audioPath": "/assets/mp3/Page484.mp3",
+    "audioDuration": 129.384,
+    "surah": {
+      "id": 42,
+      "nameArabic": "الشورى",
+      "nameSimple": "Ash-Shuraa"
+    },
+    "juz": 24
+  },
+  {
+    "page": 485,
+    "imagePath": "/assets/hafs/485.webp",
+    "jsonPath": "/assets/hafs/485.json",
+    "audioPath": "/assets/mp3/Page485.mp3",
+    "audioDuration": 125.518,
+    "surah": {
+      "id": 42,
+      "nameArabic": "الشورى",
+      "nameSimple": "Ash-Shuraa"
+    },
+    "juz": 24
+  },
+  {
+    "page": 486,
+    "imagePath": "/assets/hafs/486.webp",
+    "jsonPath": "/assets/hafs/486.json",
+    "audioPath": "/assets/mp3/Page486.mp3",
+    "audioDuration": 141.871,
+    "surah": {
+      "id": 42,
+      "nameArabic": "الشورى",
+      "nameSimple": "Ash-Shuraa"
+    },
+    "juz": 24
+  },
+  {
+    "page": 487,
+    "imagePath": "/assets/hafs/487.webp",
+    "jsonPath": "/assets/hafs/487.json",
+    "audioPath": "/assets/mp3/Page487.mp3",
+    "audioDuration": 149.969,
+    "surah": {
+      "id": 42,
+      "nameArabic": "الشورى",
+      "nameSimple": "Ash-Shuraa"
+    },
+    "juz": 24
+  },
+  {
+    "page": 488,
+    "imagePath": "/assets/hafs/488.webp",
+    "jsonPath": "/assets/hafs/488.json",
+    "audioPath": "/assets/mp3/Page488.mp3",
+    "audioDuration": 159.948,
+    "surah": {
+      "id": 42,
+      "nameArabic": "الشورى",
+      "nameSimple": "Ash-Shuraa"
+    },
+    "juz": 24
+  },
+  {
+    "page": 489,
+    "imagePath": "/assets/hafs/489.webp",
+    "jsonPath": "/assets/hafs/489.json",
+    "audioPath": "/assets/mp3/Page489.mp3",
+    "audioDuration": 109.087,
+    "surah": {
+      "id": 43,
+      "nameArabic": "الزخرف",
+      "nameSimple": "Az-Zukhruf"
+    },
+    "juz": 24
+  },
+  {
+    "page": 490,
+    "imagePath": "/assets/hafs/490.webp",
+    "jsonPath": "/assets/hafs/490.json",
+    "audioPath": "/assets/mp3/Page490.mp3",
+    "audioDuration": 125.179,
+    "surah": {
+      "id": 43,
+      "nameArabic": "الزخرف",
+      "nameSimple": "Az-Zukhruf"
+    },
+    "juz": 24
+  },
+  {
+    "page": 491,
+    "imagePath": "/assets/hafs/491.webp",
+    "jsonPath": "/assets/hafs/491.json",
+    "audioPath": "/assets/mp3/Page491.mp3",
+    "audioDuration": 139.572,
+    "surah": {
+      "id": 43,
+      "nameArabic": "الزخرف",
+      "nameSimple": "Az-Zukhruf"
+    },
+    "juz": 24
+  },
+  {
+    "page": 492,
+    "imagePath": "/assets/hafs/492.webp",
+    "jsonPath": "/assets/hafs/492.json",
+    "audioPath": "/assets/mp3/Page492.mp3",
+    "audioDuration": 116.924,
+    "surah": {
+      "id": 43,
+      "nameArabic": "الزخرف",
+      "nameSimple": "Az-Zukhruf"
+    },
+    "juz": 24
+  },
+  {
+    "page": 493,
+    "imagePath": "/assets/hafs/493.webp",
+    "jsonPath": "/assets/hafs/493.json",
+    "audioPath": "/assets/mp3/Page493.mp3",
+    "audioDuration": 120.294,
+    "surah": {
+      "id": 43,
+      "nameArabic": "الزخرف",
+      "nameSimple": "Az-Zukhruf"
+    },
+    "juz": 24
+  },
+  {
+    "page": 494,
+    "imagePath": "/assets/hafs/494.webp",
+    "jsonPath": "/assets/hafs/494.json",
+    "audioPath": "/assets/mp3/Page494.mp3",
+    "audioDuration": 126.511,
+    "surah": {
+      "id": 43,
+      "nameArabic": "الزخرف",
+      "nameSimple": "Az-Zukhruf"
+    },
+    "juz": 24
+  },
+  {
+    "page": 495,
+    "imagePath": "/assets/hafs/495.webp",
+    "jsonPath": "/assets/hafs/495.json",
+    "audioPath": "/assets/mp3/Page495.mp3",
+    "audioDuration": 144.457,
+    "surah": {
+      "id": 43,
+      "nameArabic": "الزخرف",
+      "nameSimple": "Az-Zukhruf"
+    },
+    "juz": 24
+  },
+  {
+    "page": 496,
+    "imagePath": "/assets/hafs/496.webp",
+    "jsonPath": "/assets/hafs/496.json",
+    "audioPath": "/assets/mp3/Page496.mp3",
+    "audioDuration": 108.748,
+    "surah": {
+      "id": 44,
+      "nameArabic": "الدخان",
+      "nameSimple": "Ad-Dukhan"
+    },
+    "juz": 24
+  },
+  {
+    "page": 497,
+    "imagePath": "/assets/hafs/497.webp",
+    "jsonPath": "/assets/hafs/497.json",
+    "audioPath": "/assets/mp3/Page497.mp3",
+    "audioDuration": 136.725,
+    "surah": {
+      "id": 44,
+      "nameArabic": "الدخان",
+      "nameSimple": "Ad-Dukhan"
+    },
+    "juz": 24
+  },
+  {
+    "page": 498,
+    "imagePath": "/assets/hafs/498.webp",
+    "jsonPath": "/assets/hafs/498.json",
+    "audioPath": "/assets/mp3/Page498.mp3",
+    "audioDuration": 104.908,
+    "surah": {
+      "id": 44,
+      "nameArabic": "الدخان",
+      "nameSimple": "Ad-Dukhan"
+    },
+    "juz": 24
+  },
+  {
+    "page": 499,
+    "imagePath": "/assets/hafs/499.webp",
+    "jsonPath": "/assets/hafs/499.json",
+    "audioPath": "/assets/mp3/Page499.mp3",
+    "audioDuration": 136.255,
+    "surah": {
+      "id": 45,
+      "nameArabic": "الجاثية",
+      "nameSimple": "Al-Jathiyah"
+    },
+    "juz": 24
+  },
+  {
+    "page": 500,
+    "imagePath": "/assets/hafs/500.webp",
+    "jsonPath": "/assets/hafs/500.json",
+    "audioPath": "/assets/mp3/Page500.mp3",
+    "audioDuration": 128.993,
+    "surah": {
+      "id": 45,
+      "nameArabic": "الجاثية",
+      "nameSimple": "Al-Jathiyah"
+    },
+    "juz": 24
+  },
+  {
+    "page": 501,
+    "imagePath": "/assets/hafs/501.webp",
+    "jsonPath": "/assets/hafs/501.json",
+    "audioPath": "/assets/mp3/Page501.mp3",
+    "audioDuration": 161.802,
+    "surah": {
+      "id": 45,
+      "nameArabic": "الجاثية",
+      "nameSimple": "Al-Jathiyah"
+    },
+    "juz": 25
+  },
+  {
+    "page": 502,
+    "imagePath": "/assets/hafs/502.webp",
+    "jsonPath": "/assets/hafs/502.json",
+    "audioPath": "/assets/mp3/Page502.mp3",
+    "audioDuration": 123.585,
+    "surah": {
+      "id": 46,
+      "nameArabic": "الأحقاف",
+      "nameSimple": "Al-Ahqaf"
+    },
+    "juz": 25
+  },
+  {
+    "page": 503,
+    "imagePath": "/assets/hafs/503.webp",
+    "jsonPath": "/assets/hafs/503.json",
+    "audioPath": "/assets/mp3/Page503.mp3",
+    "audioDuration": 135.288,
+    "surah": {
+      "id": 46,
+      "nameArabic": "الأحقاف",
+      "nameSimple": "Al-Ahqaf"
+    },
+    "juz": 25
+  },
+  {
+    "page": 504,
+    "imagePath": "/assets/hafs/504.webp",
+    "jsonPath": "/assets/hafs/504.json",
+    "audioPath": "/assets/mp3/Page504.mp3",
+    "audioDuration": 136.385,
+    "surah": {
+      "id": 46,
+      "nameArabic": "الأحقاف",
+      "nameSimple": "Al-Ahqaf"
+    },
+    "juz": 25
+  },
+  {
+    "page": 505,
+    "imagePath": "/assets/hafs/505.webp",
+    "jsonPath": "/assets/hafs/505.json",
+    "audioPath": "/assets/mp3/Page505.mp3",
+    "audioDuration": 119.458,
+    "surah": {
+      "id": 46,
+      "nameArabic": "الأحقاف",
+      "nameSimple": "Al-Ahqaf"
+    },
+    "juz": 25
+  },
+  {
+    "page": 506,
+    "imagePath": "/assets/hafs/506.webp",
+    "jsonPath": "/assets/hafs/506.json",
+    "audioPath": "/assets/mp3/Page506.mp3",
+    "audioDuration": 109.584,
+    "surah": {
+      "id": 46,
+      "nameArabic": "الأحقاف",
+      "nameSimple": "Al-Ahqaf"
+    },
+    "juz": 25
+  },
+  {
+    "page": 507,
+    "imagePath": "/assets/hafs/507.webp",
+    "jsonPath": "/assets/hafs/507.json",
+    "audioPath": "/assets/mp3/Page507.mp3",
+    "audioDuration": 124.735,
+    "surah": {
+      "id": 47,
+      "nameArabic": "محمد",
+      "nameSimple": "Muhammad"
+    },
+    "juz": 25
+  },
+  {
+    "page": 508,
+    "imagePath": "/assets/hafs/508.webp",
+    "jsonPath": "/assets/hafs/508.json",
+    "audioPath": "/assets/mp3/Page508.mp3",
+    "audioDuration": 153.13,
+    "surah": {
+      "id": 47,
+      "nameArabic": "محمد",
+      "nameSimple": "Muhammad"
+    },
+    "juz": 25
+  },
+  {
+    "page": 509,
+    "imagePath": "/assets/hafs/509.webp",
+    "jsonPath": "/assets/hafs/509.json",
+    "audioPath": "/assets/mp3/Page509.mp3",
+    "audioDuration": 108.225,
+    "surah": {
+      "id": 47,
+      "nameArabic": "محمد",
+      "nameSimple": "Muhammad"
+    },
+    "juz": 25
+  },
+  {
+    "page": 510,
+    "imagePath": "/assets/hafs/510.webp",
+    "jsonPath": "/assets/hafs/510.json",
+    "audioPath": "/assets/mp3/Page510.mp3",
+    "audioDuration": 134.818,
+    "surah": {
+      "id": 47,
+      "nameArabic": "محمد",
+      "nameSimple": "Muhammad"
+    },
+    "juz": 25
+  },
+  {
+    "page": 511,
+    "imagePath": "/assets/hafs/511.webp",
+    "jsonPath": "/assets/hafs/511.json",
+    "audioPath": "/assets/mp3/Page511.mp3",
+    "audioDuration": 115.174,
+    "surah": {
+      "id": 48,
+      "nameArabic": "الفتح",
+      "nameSimple": "Al-Fath"
+    },
+    "juz": 25
+  },
+  {
+    "page": 512,
+    "imagePath": "/assets/hafs/512.webp",
+    "jsonPath": "/assets/hafs/512.json",
+    "audioPath": "/assets/mp3/Page512.mp3",
+    "audioDuration": 116.637,
+    "surah": {
+      "id": 48,
+      "nameArabic": "الفتح",
+      "nameSimple": "Al-Fath"
+    },
+    "juz": 25
+  },
+  {
+    "page": 513,
+    "imagePath": "/assets/hafs/513.webp",
+    "jsonPath": "/assets/hafs/513.json",
+    "audioPath": "/assets/mp3/Page513.mp3",
+    "audioDuration": 120.059,
+    "surah": {
+      "id": 48,
+      "nameArabic": "الفتح",
+      "nameSimple": "Al-Fath"
+    },
+    "juz": 25
+  },
+  {
+    "page": 514,
+    "imagePath": "/assets/hafs/514.webp",
+    "jsonPath": "/assets/hafs/514.json",
+    "audioPath": "/assets/mp3/Page514.mp3",
+    "audioDuration": 116.741,
+    "surah": {
+      "id": 48,
+      "nameArabic": "الفتح",
+      "nameSimple": "Al-Fath"
+    },
+    "juz": 25
+  },
+  {
+    "page": 515,
+    "imagePath": "/assets/hafs/515.webp",
+    "jsonPath": "/assets/hafs/515.json",
+    "audioPath": "/assets/mp3/Page515.mp3",
+    "audioDuration": 128.888,
+    "surah": {
+      "id": 49,
+      "nameArabic": "الحجرات",
+      "nameSimple": "Al-Hujurat"
+    },
+    "juz": 25
+  },
+  {
+    "page": 516,
+    "imagePath": "/assets/hafs/516.webp",
+    "jsonPath": "/assets/hafs/516.json",
+    "audioPath": "/assets/mp3/Page516.mp3",
+    "audioDuration": 146.678,
+    "surah": {
+      "id": 49,
+      "nameArabic": "الحجرات",
+      "nameSimple": "Al-Hujurat"
+    },
+    "juz": 25
+  },
+  {
+    "page": 517,
+    "imagePath": "/assets/hafs/517.webp",
+    "jsonPath": "/assets/hafs/517.json",
+    "audioPath": "/assets/mp3/Page517.mp3",
+    "audioDuration": 131.004,
+    "surah": {
+      "id": 49,
+      "nameArabic": "الحجرات",
+      "nameSimple": "Al-Hujurat"
+    },
+    "juz": 25
+  },
+  {
+    "page": 518,
+    "imagePath": "/assets/hafs/518.webp",
+    "jsonPath": "/assets/hafs/518.json",
+    "audioPath": "/assets/mp3/Page518.mp3",
+    "audioDuration": 119.589,
+    "surah": {
+      "id": 50,
+      "nameArabic": "ق",
+      "nameSimple": "Qaf"
+    },
+    "juz": 25
+  },
+  {
+    "page": 519,
+    "imagePath": "/assets/hafs/519.webp",
+    "jsonPath": "/assets/hafs/519.json",
+    "audioPath": "/assets/mp3/Page519.mp3",
+    "audioDuration": 145.267,
+    "surah": {
+      "id": 50,
+      "nameArabic": "ق",
+      "nameSimple": "Qaf"
+    },
+    "juz": 25
+  },
+  {
+    "page": 520,
+    "imagePath": "/assets/hafs/520.webp",
+    "jsonPath": "/assets/hafs/520.json",
+    "audioPath": "/assets/mp3/Page520.mp3",
+    "audioDuration": 107.468,
+    "surah": {
+      "id": 51,
+      "nameArabic": "الذاريات",
+      "nameSimple": "Adh-Dhariyat"
+    },
+    "juz": 25
+  },
+  {
+    "page": 521,
+    "imagePath": "/assets/hafs/521.webp",
+    "jsonPath": "/assets/hafs/521.json",
+    "audioPath": "/assets/mp3/Page521.mp3",
+    "audioDuration": 137.117,
+    "surah": {
+      "id": 51,
+      "nameArabic": "الذاريات",
+      "nameSimple": "Adh-Dhariyat"
+    },
+    "juz": 26
+  },
+  {
+    "page": 522,
+    "imagePath": "/assets/hafs/522.webp",
+    "jsonPath": "/assets/hafs/522.json",
+    "audioPath": "/assets/mp3/Page522.mp3",
+    "audioDuration": 132.362,
+    "surah": {
+      "id": 51,
+      "nameArabic": "الذاريات",
+      "nameSimple": "Adh-Dhariyat"
+    },
+    "juz": 26
+  },
+  {
+    "page": 523,
+    "imagePath": "/assets/hafs/523.webp",
+    "jsonPath": "/assets/hafs/523.json",
+    "audioPath": "/assets/mp3/Page523.mp3",
+    "audioDuration": 112.118,
+    "surah": {
+      "id": 52,
+      "nameArabic": "الطور",
+      "nameSimple": "At-Tur"
+    },
+    "juz": 26
+  },
+  {
+    "page": 524,
+    "imagePath": "/assets/hafs/524.webp",
+    "jsonPath": "/assets/hafs/524.json",
+    "audioPath": "/assets/mp3/Page524.mp3",
+    "audioDuration": 128.888,
+    "surah": {
+      "id": 52,
+      "nameArabic": "الطور",
+      "nameSimple": "At-Tur"
+    },
+    "juz": 26
+  },
+  {
+    "page": 525,
+    "imagePath": "/assets/hafs/525.webp",
+    "jsonPath": "/assets/hafs/525.json",
+    "audioPath": "/assets/mp3/Page525.mp3",
+    "audioDuration": 120.163,
+    "surah": {
+      "id": 52,
+      "nameArabic": "الطور",
+      "nameSimple": "At-Tur"
+    },
+    "juz": 26
+  },
+  {
+    "page": 526,
+    "imagePath": "/assets/hafs/526.webp",
+    "jsonPath": "/assets/hafs/526.json",
+    "audioPath": "/assets/mp3/Page526.mp3",
+    "audioDuration": 133.721,
+    "surah": {
+      "id": 53,
+      "nameArabic": "النجم",
+      "nameSimple": "An-Najm"
+    },
+    "juz": 26
+  },
+  {
+    "page": 527,
+    "imagePath": "/assets/hafs/527.webp",
+    "jsonPath": "/assets/hafs/527.json",
+    "audioPath": "/assets/mp3/Page527.mp3",
+    "audioDuration": 130.194,
+    "surah": {
+      "id": 53,
+      "nameArabic": "النجم",
+      "nameSimple": "An-Najm"
+    },
+    "juz": 26
+  },
+  {
+    "page": 528,
+    "imagePath": "/assets/hafs/528.webp",
+    "jsonPath": "/assets/hafs/528.json",
+    "audioPath": "/assets/mp3/Page528.mp3",
+    "audioDuration": 115.618,
+    "surah": {
+      "id": 54,
+      "nameArabic": "القمر",
+      "nameSimple": "Al-Qamar"
+    },
+    "juz": 26
+  },
+  {
+    "page": 529,
+    "imagePath": "/assets/hafs/529.webp",
+    "jsonPath": "/assets/hafs/529.json",
+    "audioPath": "/assets/mp3/Page529.mp3",
+    "audioDuration": 134.818,
+    "surah": {
+      "id": 54,
+      "nameArabic": "القمر",
+      "nameSimple": "Al-Qamar"
+    },
+    "juz": 26
+  },
+  {
+    "page": 530,
+    "imagePath": "/assets/hafs/530.webp",
+    "jsonPath": "/assets/hafs/530.json",
+    "audioPath": "/assets/mp3/Page530.mp3",
+    "audioDuration": 127.53,
+    "surah": {
+      "id": 54,
+      "nameArabic": "القمر",
+      "nameSimple": "Al-Qamar"
+    },
+    "juz": 26
+  },
+  {
+    "page": 531,
+    "imagePath": "/assets/hafs/531.webp",
+    "jsonPath": "/assets/hafs/531.json",
+    "audioPath": "/assets/mp3/Page531.mp3",
+    "audioDuration": 102.87,
+    "surah": {
+      "id": 55,
+      "nameArabic": "الرحمن",
+      "nameSimple": "Ar-Rahman"
+    },
+    "juz": 26
+  },
+  {
+    "page": 532,
+    "imagePath": "/assets/hafs/532.webp",
+    "jsonPath": "/assets/hafs/532.json",
+    "audioPath": "/assets/mp3/Page532.mp3",
+    "audioDuration": 150.596,
+    "surah": {
+      "id": 55,
+      "nameArabic": "الرحمن",
+      "nameSimple": "Ar-Rahman"
+    },
+    "juz": 26
+  },
+  {
+    "page": 533,
+    "imagePath": "/assets/hafs/533.webp",
+    "jsonPath": "/assets/hafs/533.json",
+    "audioPath": "/assets/mp3/Page533.mp3",
+    "audioDuration": 143.935,
+    "surah": {
+      "id": 55,
+      "nameArabic": "الرحمن",
+      "nameSimple": "Ar-Rahman"
+    },
+    "juz": 26
+  },
+  {
+    "page": 534,
+    "imagePath": "/assets/hafs/534.webp",
+    "jsonPath": "/assets/hafs/534.json",
+    "audioPath": "/assets/mp3/Page534.mp3",
+    "audioDuration": 124.97,
+    "surah": {
+      "id": 56,
+      "nameArabic": "الواقعة",
+      "nameSimple": "Al-Waqi'ah"
+    },
+    "juz": 26
+  },
+  {
+    "page": 535,
+    "imagePath": "/assets/hafs/535.webp",
+    "jsonPath": "/assets/hafs/535.json",
+    "audioPath": "/assets/mp3/Page535.mp3",
+    "audioDuration": 140.356,
+    "surah": {
+      "id": 56,
+      "nameArabic": "الواقعة",
+      "nameSimple": "Al-Waqi'ah"
+    },
+    "juz": 26
+  },
+  {
+    "page": 536,
+    "imagePath": "/assets/hafs/536.webp",
+    "jsonPath": "/assets/hafs/536.json",
+    "audioPath": "/assets/mp3/Page536.mp3",
+    "audioDuration": 140.095,
+    "surah": {
+      "id": 56,
+      "nameArabic": "الواقعة",
+      "nameSimple": "Al-Waqi'ah"
+    },
+    "juz": 26
+  },
+  {
+    "page": 537,
+    "imagePath": "/assets/hafs/537.webp",
+    "jsonPath": "/assets/hafs/537.json",
+    "audioPath": "/assets/mp3/Page537.mp3",
+    "audioDuration": 129.515,
+    "surah": {
+      "id": 57,
+      "nameArabic": "الحديد",
+      "nameSimple": "Al-Hadid"
+    },
+    "juz": 26
+  },
+  {
+    "page": 538,
+    "imagePath": "/assets/hafs/538.webp",
+    "jsonPath": "/assets/hafs/538.json",
+    "audioPath": "/assets/mp3/Page538.mp3",
+    "audioDuration": 138.24,
+    "surah": {
+      "id": 57,
+      "nameArabic": "الحديد",
+      "nameSimple": "Al-Hadid"
+    },
+    "juz": 26
+  },
+  {
+    "page": 539,
+    "imagePath": "/assets/hafs/539.webp",
+    "jsonPath": "/assets/hafs/539.json",
+    "audioPath": "/assets/mp3/Page539.mp3",
+    "audioDuration": 141.767,
+    "surah": {
+      "id": 57,
+      "nameArabic": "الحديد",
+      "nameSimple": "Al-Hadid"
+    },
+    "juz": 26
+  },
+  {
+    "page": 540,
+    "imagePath": "/assets/hafs/540.webp",
+    "jsonPath": "/assets/hafs/540.json",
+    "audioPath": "/assets/mp3/Page540.mp3",
+    "audioDuration": 141.192,
+    "surah": {
+      "id": 57,
+      "nameArabic": "الحديد",
+      "nameSimple": "Al-Hadid"
+    },
+    "juz": 26
+  },
+  {
+    "page": 541,
+    "imagePath": "/assets/hafs/541.webp",
+    "jsonPath": "/assets/hafs/541.json",
+    "audioPath": "/assets/mp3/Page541.mp3",
+    "audioDuration": 130.011,
+    "surah": {
+      "id": 57,
+      "nameArabic": "الحديد",
+      "nameSimple": "Al-Hadid"
+    },
+    "juz": 27
+  },
+  {
+    "page": 542,
+    "imagePath": "/assets/hafs/542.webp",
+    "jsonPath": "/assets/hafs/542.json",
+    "audioPath": "/assets/mp3/Page542.mp3",
+    "audioDuration": 131.5,
+    "surah": {
+      "id": 58,
+      "nameArabic": "المجادلة",
+      "nameSimple": "Al-Mujadila"
+    },
+    "juz": 27
+  },
+  {
+    "page": 543,
+    "imagePath": "/assets/hafs/543.webp",
+    "jsonPath": "/assets/hafs/543.json",
+    "audioPath": "/assets/mp3/Page543.mp3",
+    "audioDuration": 138.005,
+    "surah": {
+      "id": 58,
+      "nameArabic": "المجادلة",
+      "nameSimple": "Al-Mujadila"
+    },
+    "juz": 27
+  },
+  {
+    "page": 544,
+    "imagePath": "/assets/hafs/544.webp",
+    "jsonPath": "/assets/hafs/544.json",
+    "audioPath": "/assets/mp3/Page544.mp3",
+    "audioDuration": 146.678,
+    "surah": {
+      "id": 58,
+      "nameArabic": "المجادلة",
+      "nameSimple": "Al-Mujadila"
+    },
+    "juz": 27
+  },
+  {
+    "page": 545,
+    "imagePath": "/assets/hafs/545.webp",
+    "jsonPath": "/assets/hafs/545.json",
+    "audioPath": "/assets/mp3/Page545.mp3",
+    "audioDuration": 117.473,
+    "surah": {
+      "id": 59,
+      "nameArabic": "الحشر",
+      "nameSimple": "Al-Hashr"
+    },
+    "juz": 27
+  },
+  {
+    "page": 546,
+    "imagePath": "/assets/hafs/546.webp",
+    "jsonPath": "/assets/hafs/546.json",
+    "audioPath": "/assets/mp3/Page546.mp3",
+    "audioDuration": 135.21,
+    "surah": {
+      "id": 59,
+      "nameArabic": "الحشر",
+      "nameSimple": "Al-Hashr"
+    },
+    "juz": 27
+  },
+  {
+    "page": 547,
+    "imagePath": "/assets/hafs/547.webp",
+    "jsonPath": "/assets/hafs/547.json",
+    "audioPath": "/assets/mp3/Page547.mp3",
+    "audioDuration": 134.4,
+    "surah": {
+      "id": 59,
+      "nameArabic": "الحشر",
+      "nameSimple": "Al-Hashr"
+    },
+    "juz": 27
+  },
+  {
+    "page": 548,
+    "imagePath": "/assets/hafs/548.webp",
+    "jsonPath": "/assets/hafs/548.json",
+    "audioPath": "/assets/mp3/Page548.mp3",
+    "audioDuration": 107.389,
+    "surah": {
+      "id": 59,
+      "nameArabic": "الحشر",
+      "nameSimple": "Al-Hashr"
+    },
+    "juz": 27
+  },
+  {
+    "page": 549,
+    "imagePath": "/assets/hafs/549.webp",
+    "jsonPath": "/assets/hafs/549.json",
+    "audioPath": "/assets/mp3/Page549.mp3",
+    "audioDuration": 138.762,
+    "surah": {
+      "id": 60,
+      "nameArabic": "الممتحنة",
+      "nameSimple": "Al-Mumtahanah"
+    },
+    "juz": 27
+  },
+  {
+    "page": 550,
+    "imagePath": "/assets/hafs/550.webp",
+    "jsonPath": "/assets/hafs/550.json",
+    "audioPath": "/assets/mp3/Page550.mp3",
+    "audioDuration": 135.053,
+    "surah": {
+      "id": 60,
+      "nameArabic": "الممتحنة",
+      "nameSimple": "Al-Mumtahanah"
+    },
+    "juz": 27
+  },
+  {
+    "page": 551,
+    "imagePath": "/assets/hafs/551.webp",
+    "jsonPath": "/assets/hafs/551.json",
+    "audioPath": "/assets/mp3/Page551.mp3",
+    "audioDuration": 110.315,
+    "surah": {
+      "id": 61,
+      "nameArabic": "الصف",
+      "nameSimple": "As-Saf"
+    },
+    "juz": 27
+  },
+  {
+    "page": 552,
+    "imagePath": "/assets/hafs/552.webp",
+    "jsonPath": "/assets/hafs/552.json",
+    "audioPath": "/assets/mp3/Page552.mp3",
+    "audioDuration": 160.444,
+    "surah": {
+      "id": 61,
+      "nameArabic": "الصف",
+      "nameSimple": "As-Saf"
+    },
+    "juz": 27
+  },
+  {
+    "page": 553,
+    "imagePath": "/assets/hafs/553.webp",
+    "jsonPath": "/assets/hafs/553.json",
+    "audioPath": "/assets/mp3/Page553.mp3",
+    "audioDuration": 107.442,
+    "surah": {
+      "id": 62,
+      "nameArabic": "الجمعة",
+      "nameSimple": "Al-Jumu'ah"
+    },
+    "juz": 27
+  },
+  {
+    "page": 554,
+    "imagePath": "/assets/hafs/554.webp",
+    "jsonPath": "/assets/hafs/554.json",
+    "audioPath": "/assets/mp3/Page554.mp3",
+    "audioDuration": 106.266,
+    "surah": {
+      "id": 63,
+      "nameArabic": "المنافقون",
+      "nameSimple": "Al-Munafiqun"
+    },
+    "juz": 27
+  },
+  {
+    "page": 555,
+    "imagePath": "/assets/hafs/555.webp",
+    "jsonPath": "/assets/hafs/555.json",
+    "audioPath": "/assets/mp3/Page555.mp3",
+    "audioDuration": 122.906,
+    "surah": {
+      "id": 63,
+      "nameArabic": "المنافقون",
+      "nameSimple": "Al-Munafiqun"
+    },
+    "juz": 27
+  },
+  {
+    "page": 556,
+    "imagePath": "/assets/hafs/556.webp",
+    "jsonPath": "/assets/hafs/556.json",
+    "audioPath": "/assets/mp3/Page556.mp3",
+    "audioDuration": 128.705,
+    "surah": {
+      "id": 64,
+      "nameArabic": "التغابن",
+      "nameSimple": "At-Taghabun"
+    },
+    "juz": 27
+  },
+  {
+    "page": 557,
+    "imagePath": "/assets/hafs/557.webp",
+    "jsonPath": "/assets/hafs/557.json",
+    "audioPath": "/assets/mp3/Page557.mp3",
+    "audioDuration": 108.904,
+    "surah": {
+      "id": 64,
+      "nameArabic": "التغابن",
+      "nameSimple": "At-Taghabun"
+    },
+    "juz": 27
+  },
+  {
+    "page": 558,
+    "imagePath": "/assets/hafs/558.webp",
+    "jsonPath": "/assets/hafs/558.json",
+    "audioPath": "/assets/mp3/Page558.mp3",
+    "audioDuration": 106.109,
+    "surah": {
+      "id": 65,
+      "nameArabic": "الطلاق",
+      "nameSimple": "At-Talaq"
+    },
+    "juz": 27
+  },
+  {
+    "page": 559,
+    "imagePath": "/assets/hafs/559.webp",
+    "jsonPath": "/assets/hafs/559.json",
+    "audioPath": "/assets/mp3/Page559.mp3",
+    "audioDuration": 142.028,
+    "surah": {
+      "id": 65,
+      "nameArabic": "الطلاق",
+      "nameSimple": "At-Talaq"
+    },
+    "juz": 27
+  },
+  {
+    "page": 560,
+    "imagePath": "/assets/hafs/560.webp",
+    "jsonPath": "/assets/hafs/560.json",
+    "audioPath": "/assets/mp3/Page560.mp3",
+    "audioDuration": 119.536,
+    "surah": {
+      "id": 66,
+      "nameArabic": "التحريم",
+      "nameSimple": "At-Tahrim"
+    },
+    "juz": 27
+  },
+  {
+    "page": 561,
+    "imagePath": "/assets/hafs/561.webp",
+    "jsonPath": "/assets/hafs/561.json",
+    "audioPath": "/assets/mp3/Page561.mp3",
+    "audioDuration": 121.469,
+    "surah": {
+      "id": 66,
+      "nameArabic": "التحريم",
+      "nameSimple": "At-Tahrim"
+    },
+    "juz": 27
+  },
+  {
+    "page": 562,
+    "imagePath": "/assets/hafs/562.webp",
+    "jsonPath": "/assets/hafs/562.json",
+    "audioPath": "/assets/mp3/Page562.mp3",
+    "audioDuration": 108.852,
+    "surah": {
+      "id": 67,
+      "nameArabic": "الملك",
+      "nameSimple": "Al-Mulk"
+    },
+    "juz": 28
+  },
+  {
+    "page": 563,
+    "imagePath": "/assets/hafs/563.webp",
+    "jsonPath": "/assets/hafs/563.json",
+    "audioPath": "/assets/mp3/Page563.mp3",
+    "audioDuration": 127.478,
+    "surah": {
+      "id": 67,
+      "nameArabic": "الملك",
+      "nameSimple": "Al-Mulk"
+    },
+    "juz": 28
+  },
+  {
+    "page": 564,
+    "imagePath": "/assets/hafs/564.webp",
+    "jsonPath": "/assets/hafs/564.json",
+    "audioPath": "/assets/mp3/Page564.mp3",
+    "audioDuration": 111.7,
+    "surah": {
+      "id": 68,
+      "nameArabic": "القلم",
+      "nameSimple": "Al-Qalam"
+    },
+    "juz": 28
+  },
+  {
+    "page": 565,
+    "imagePath": "/assets/hafs/565.webp",
+    "jsonPath": "/assets/hafs/565.json",
+    "audioPath": "/assets/mp3/Page565.mp3",
+    "audioDuration": 147.931,
+    "surah": {
+      "id": 68,
+      "nameArabic": "القلم",
+      "nameSimple": "Al-Qalam"
+    },
+    "juz": 28
+  },
+  {
+    "page": 566,
+    "imagePath": "/assets/hafs/566.webp",
+    "jsonPath": "/assets/hafs/566.json",
+    "audioPath": "/assets/mp3/Page566.mp3",
+    "audioDuration": 125.78,
+    "surah": {
+      "id": 69,
+      "nameArabic": "الحاقة",
+      "nameSimple": "Al-Haqqah"
+    },
+    "juz": 28
+  },
+  {
+    "page": 567,
+    "imagePath": "/assets/hafs/567.webp",
+    "jsonPath": "/assets/hafs/567.json",
+    "audioPath": "/assets/mp3/Page567.mp3",
+    "audioDuration": 141.218,
+    "surah": {
+      "id": 69,
+      "nameArabic": "الحاقة",
+      "nameSimple": "Al-Haqqah"
+    },
+    "juz": 28
+  },
+  {
+    "page": 568,
+    "imagePath": "/assets/hafs/568.webp",
+    "jsonPath": "/assets/hafs/568.json",
+    "audioPath": "/assets/mp3/Page568.mp3",
+    "audioDuration": 118.7,
+    "surah": {
+      "id": 70,
+      "nameArabic": "المعارج",
+      "nameSimple": "Al-Ma'arij"
+    },
+    "juz": 28
+  },
+  {
+    "page": 569,
+    "imagePath": "/assets/hafs/569.webp",
+    "jsonPath": "/assets/hafs/569.json",
+    "audioPath": "/assets/mp3/Page569.mp3",
+    "audioDuration": 133.642,
+    "surah": {
+      "id": 70,
+      "nameArabic": "المعارج",
+      "nameSimple": "Al-Ma'arij"
+    },
+    "juz": 28
+  },
+  {
+    "page": 570,
+    "imagePath": "/assets/hafs/570.webp",
+    "jsonPath": "/assets/hafs/570.json",
+    "audioPath": "/assets/mp3/Page570.mp3",
+    "audioDuration": 125.048,
+    "surah": {
+      "id": 71,
+      "nameArabic": "نوح",
+      "nameSimple": "Nuh"
+    },
+    "juz": 28
+  },
+  {
+    "page": 571,
+    "imagePath": "/assets/hafs/571.webp",
+    "jsonPath": "/assets/hafs/571.json",
+    "audioPath": "/assets/mp3/Page571.mp3",
+    "audioDuration": 133.198,
+    "surah": {
+      "id": 71,
+      "nameArabic": "نوح",
+      "nameSimple": "Nuh"
+    },
+    "juz": 28
+  },
+  {
+    "page": 572,
+    "imagePath": "/assets/hafs/572.webp",
+    "jsonPath": "/assets/hafs/572.json",
+    "audioPath": "/assets/mp3/Page572.mp3",
+    "audioDuration": 106.632,
+    "surah": {
+      "id": 72,
+      "nameArabic": "الجن",
+      "nameSimple": "Al-Jinn"
+    },
+    "juz": 28
+  },
+  {
+    "page": 573,
+    "imagePath": "/assets/hafs/573.webp",
+    "jsonPath": "/assets/hafs/573.json",
+    "audioPath": "/assets/mp3/Page573.mp3",
+    "audioDuration": 117.708,
+    "surah": {
+      "id": 72,
+      "nameArabic": "الجن",
+      "nameSimple": "Al-Jinn"
+    },
+    "juz": 28
+  },
+  {
+    "page": 574,
+    "imagePath": "/assets/hafs/574.webp",
+    "jsonPath": "/assets/hafs/574.json",
+    "audioPath": "/assets/mp3/Page574.mp3",
+    "audioDuration": 104.072,
+    "surah": {
+      "id": 73,
+      "nameArabic": "المزمل",
+      "nameSimple": "Al-Muzzammil"
+    },
+    "juz": 28
+  },
+  {
+    "page": 575,
+    "imagePath": "/assets/hafs/575.webp",
+    "jsonPath": "/assets/hafs/575.json",
+    "audioPath": "/assets/mp3/Page575.mp3",
+    "audioDuration": 112.744,
+    "surah": {
+      "id": 74,
+      "nameArabic": "المدثر",
+      "nameSimple": "Al-Muddaththir"
+    },
+    "juz": 28
+  },
+  {
+    "page": 576,
+    "imagePath": "/assets/hafs/576.webp",
+    "jsonPath": "/assets/hafs/576.json",
+    "audioPath": "/assets/mp3/Page576.mp3",
+    "audioDuration": 129.881,
+    "surah": {
+      "id": 74,
+      "nameArabic": "المدثر",
+      "nameSimple": "Al-Muddaththir"
+    },
+    "juz": 28
+  },
+  {
+    "page": 577,
+    "imagePath": "/assets/hafs/577.webp",
+    "jsonPath": "/assets/hafs/577.json",
+    "audioPath": "/assets/mp3/Page577.mp3",
+    "audioDuration": 103.915,
+    "surah": {
+      "id": 75,
+      "nameArabic": "القيامة",
+      "nameSimple": "Al-Qiyamah"
+    },
+    "juz": 28
+  },
+  {
+    "page": 578,
+    "imagePath": "/assets/hafs/578.webp",
+    "jsonPath": "/assets/hafs/578.json",
+    "audioPath": "/assets/mp3/Page578.mp3",
+    "audioDuration": 113.554,
+    "surah": {
+      "id": 76,
+      "nameArabic": "الانسان",
+      "nameSimple": "Al-Insan"
+    },
+    "juz": 28
+  },
+  {
+    "page": 579,
+    "imagePath": "/assets/hafs/579.webp",
+    "jsonPath": "/assets/hafs/579.json",
+    "audioPath": "/assets/mp3/Page579.mp3",
+    "audioDuration": 133.825,
+    "surah": {
+      "id": 76,
+      "nameArabic": "الانسان",
+      "nameSimple": "Al-Insan"
+    },
+    "juz": 28
+  },
+  {
+    "page": 580,
+    "imagePath": "/assets/hafs/580.webp",
+    "jsonPath": "/assets/hafs/580.json",
+    "audioPath": "/assets/mp3/Page580.mp3",
+    "audioDuration": 108.251,
+    "surah": {
+      "id": 77,
+      "nameArabic": "المرسلات",
+      "nameSimple": "Al-Mursalat"
+    },
+    "juz": 28
+  },
+  {
+    "page": 581,
+    "imagePath": "/assets/hafs/581.webp",
+    "jsonPath": "/assets/hafs/581.json",
+    "audioPath": "/assets/mp3/Page581.mp3",
+    "audioDuration": 125.414,
+    "surah": {
+      "id": 77,
+      "nameArabic": "المرسلات",
+      "nameSimple": "Al-Mursalat"
+    },
+    "juz": 28
+  },
+  {
+    "page": 582,
+    "imagePath": "/assets/hafs/582.webp",
+    "jsonPath": "/assets/hafs/582.json",
+    "audioPath": "/assets/mp3/Page582.mp3",
+    "audioDuration": 120.111,
+    "surah": {
+      "id": 78,
+      "nameArabic": "النبإ",
+      "nameSimple": "An-Naba"
+    },
+    "juz": 29
+  },
+  {
+    "page": 583,
+    "imagePath": "/assets/hafs/583.webp",
+    "jsonPath": "/assets/hafs/583.json",
+    "audioPath": "/assets/mp3/Page583.mp3",
+    "audioDuration": 136.229,
+    "surah": {
+      "id": 79,
+      "nameArabic": "النازعات",
+      "nameSimple": "An-Nazi'at"
+    },
+    "juz": 29
+  },
+  {
+    "page": 584,
+    "imagePath": "/assets/hafs/584.webp",
+    "jsonPath": "/assets/hafs/584.json",
+    "audioPath": "/assets/mp3/Page584.mp3",
+    "audioDuration": 140.199,
+    "surah": {
+      "id": 79,
+      "nameArabic": "النازعات",
+      "nameSimple": "An-Nazi'at"
+    },
+    "juz": 29
+  },
+  {
+    "page": 585,
+    "imagePath": "/assets/hafs/585.webp",
+    "jsonPath": "/assets/hafs/585.json",
+    "audioPath": "/assets/mp3/Page585.mp3",
+    "audioDuration": 145.032,
+    "surah": {
+      "id": 80,
+      "nameArabic": "عبس",
+      "nameSimple": "'Abasa"
+    },
+    "juz": 29
+  },
+  {
+    "page": 586,
+    "imagePath": "/assets/hafs/586.webp",
+    "jsonPath": "/assets/hafs/586.json",
+    "audioPath": "/assets/mp3/Page586.mp3",
+    "audioDuration": 104.699,
+    "surah": {
+      "id": 81,
+      "nameArabic": "التكوير",
+      "nameSimple": "At-Takwir"
+    },
+    "juz": 29
+  },
+  {
+    "page": 587,
+    "imagePath": "/assets/hafs/587.webp",
+    "jsonPath": "/assets/hafs/587.json",
+    "audioPath": "/assets/mp3/Page587.mp3",
+    "audioDuration": 115.801,
+    "surah": {
+      "id": 83,
+      "nameArabic": "المطففين",
+      "nameSimple": "Al-Mutaffifin"
+    },
+    "juz": 29
+  },
+  {
+    "page": 588,
+    "imagePath": "/assets/hafs/588.webp",
+    "jsonPath": "/assets/hafs/588.json",
+    "audioPath": "/assets/mp3/Page588.mp3",
+    "audioDuration": 149.838,
+    "surah": {
+      "id": 83,
+      "nameArabic": "المطففين",
+      "nameSimple": "Al-Mutaffifin"
+    },
+    "juz": 29
+  },
+  {
+    "page": 589,
+    "imagePath": "/assets/hafs/589.webp",
+    "jsonPath": "/assets/hafs/589.json",
+    "audioPath": "/assets/mp3/Page589.mp3",
+    "audioDuration": 125.832,
+    "surah": {
+      "id": 84,
+      "nameArabic": "الإنشقاق",
+      "nameSimple": "Al-Inshiqaq"
+    },
+    "juz": 29
+  },
+  {
+    "page": 590,
+    "imagePath": "/assets/hafs/590.webp",
+    "jsonPath": "/assets/hafs/590.json",
+    "audioPath": "/assets/mp3/Page590.mp3",
+    "audioDuration": 109.453,
+    "surah": {
+      "id": 85,
+      "nameArabic": "البروج",
+      "nameSimple": "Al-Buruj"
+    },
+    "juz": 29
+  },
+  {
+    "page": 591,
+    "imagePath": "/assets/hafs/591.webp",
+    "jsonPath": "/assets/hafs/591.json",
+    "audioPath": "/assets/mp3/Page591.mp3",
+    "audioDuration": 120.189,
+    "surah": {
+      "id": 87,
+      "nameArabic": "الأعلى",
+      "nameSimple": "Al-A'la"
+    },
+    "juz": 30
+  },
+  {
+    "page": 592,
+    "imagePath": "/assets/hafs/592.webp",
+    "jsonPath": "/assets/hafs/592.json",
+    "audioPath": "/assets/mp3/Page592.mp3",
+    "audioDuration": 111.621,
+    "surah": {
+      "id": 88,
+      "nameArabic": "الغاشية",
+      "nameSimple": "Al-Ghashiyah"
+    },
+    "juz": 30
+  },
+  {
+    "page": 593,
+    "imagePath": "/assets/hafs/593.webp",
+    "jsonPath": "/assets/hafs/593.json",
+    "audioPath": "/assets/mp3/Page593.mp3",
+    "audioDuration": 113.006,
+    "surah": {
+      "id": 89,
+      "nameArabic": "الفجر",
+      "nameSimple": "Al-Fajr"
+    },
+    "juz": 30
+  },
+  {
+    "page": 594,
+    "imagePath": "/assets/hafs/594.webp",
+    "jsonPath": "/assets/hafs/594.json",
+    "audioPath": "/assets/mp3/Page594.mp3",
+    "audioDuration": 112.327,
+    "surah": {
+      "id": 90,
+      "nameArabic": "البلد",
+      "nameSimple": "Al-Balad"
+    },
+    "juz": 30
+  },
+  {
+    "page": 595,
+    "imagePath": "/assets/hafs/595.webp",
+    "jsonPath": "/assets/hafs/595.json",
+    "audioPath": "/assets/mp3/Page595.mp3",
+    "audioDuration": 100.598,
+    "surah": {
+      "id": 92,
+      "nameArabic": "الليل",
+      "nameSimple": "Al-Layl"
+    },
+    "juz": 30
+  },
+  {
+    "page": 596,
+    "imagePath": "/assets/hafs/596.webp",
+    "jsonPath": "/assets/hafs/596.json",
+    "audioPath": "/assets/mp3/Page596.mp3",
+    "audioDuration": 97.855,
+    "surah": {
+      "id": 94,
+      "nameArabic": "الشرح",
+      "nameSimple": "Ash-Sharh"
+    },
+    "juz": 30
+  },
+  {
+    "page": 597,
+    "imagePath": "/assets/hafs/597.webp",
+    "jsonPath": "/assets/hafs/597.json",
+    "audioPath": "/assets/mp3/Page597.mp3",
+    "audioDuration": 97.593,
+    "surah": {
+      "id": 96,
+      "nameArabic": "العلق",
+      "nameSimple": "Al-'Alaq"
+    },
+    "juz": 30
+  },
+  {
+    "page": 598,
+    "imagePath": "/assets/hafs/598.webp",
+    "jsonPath": "/assets/hafs/598.json",
+    "audioPath": "/assets/mp3/Page598.mp3",
+    "audioDuration": 91.69,
+    "surah": {
+      "id": 98,
+      "nameArabic": "البينة",
+      "nameSimple": "Al-Bayyinah"
+    },
+    "juz": 30
+  },
+  {
+    "page": 599,
+    "imagePath": "/assets/hafs/599.webp",
+    "jsonPath": "/assets/hafs/599.json",
+    "audioPath": "/assets/mp3/Page599.mp3",
+    "audioDuration": 92.944,
+    "surah": {
+      "id": 100,
+      "nameArabic": "العاديات",
+      "nameSimple": "Al-'Adiyat"
+    },
+    "juz": 30
+  },
+  {
+    "page": 600,
+    "imagePath": "/assets/hafs/600.webp",
+    "jsonPath": "/assets/hafs/600.json",
+    "audioPath": "/assets/mp3/Page600.mp3",
+    "audioDuration": 78.681,
+    "surah": {
+      "id": 102,
+      "nameArabic": "التكاثر",
+      "nameSimple": "At-Takathur"
+    },
+    "juz": 30
+  },
+  {
+    "page": 601,
+    "imagePath": "/assets/hafs/601.webp",
+    "jsonPath": "/assets/hafs/601.json",
+    "audioPath": "/assets/mp3/Page601.mp3",
+    "audioDuration": 79.099,
+    "surah": {
+      "id": 105,
+      "nameArabic": "الفيل",
+      "nameSimple": "Al-Fil"
+    },
+    "juz": 30
+  },
+  {
+    "page": 602,
+    "imagePath": "/assets/hafs/602.webp",
+    "jsonPath": "/assets/hafs/602.json",
+    "audioPath": "/assets/mp3/Page602.mp3",
+    "audioDuration": 59.611,
+    "surah": {
+      "id": 108,
+      "nameArabic": "الكوثر",
+      "nameSimple": "Al-Kawthar"
+    },
+    "juz": 30
+  },
+  {
+    "page": 603,
+    "imagePath": "/assets/hafs/603.webp",
+    "jsonPath": "/assets/hafs/603.json",
+    "audioPath": "/assets/mp3/Page603.mp3",
+    "audioDuration": 68.963,
+    "surah": {
+      "id": 111,
+      "nameArabic": "المسد",
+      "nameSimple": "Al-Masad"
+    },
+    "juz": 30
+  },
+  {
+    "page": 604,
+    "imagePath": "/assets/hafs/604.webp",
+    "jsonPath": "/assets/hafs/604.json",
+    "audioPath": "/assets/mp3/Page604.mp3",
+    "audioDuration": 54.518,
+    "surah": {
+      "id": 114,
+      "nameArabic": "الناس",
+      "nameSimple": "An-Nas"
+    },
+    "juz": 30
+  }
+]

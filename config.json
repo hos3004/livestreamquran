@@ -1,0 +1,21 @@
+{
+  "reciterName": "ماهر المعيقلي",
+  "startPage": 1,
+  "loopMode": true,
+  "slideshowInterval": 8000,
+  "slideshowTransitionDuration": 1500,
+  "scrollZoomFactor": 0.5,
+  "pageTransitionDuration": 800,
+  "enableGoldSweep": false,
+  "enableParallax": true,
+  "enableTopDust": true,
+  "goldSweepDuration": 15000,
+  "goldSweepOpacity": 0.15,
+  "parallaxStrength": 0,
+  "parallaxDuration": 18000,
+  "topDustDensity": 333,
+  "topDustOpacity": 0.45,
+  "hafsDir": "D:/2025 apps/quran/hafs",
+  "mp3Dir": "D:/2025 apps/quran/mp3",
+  "slideDir": "D:/2025 apps/quran/slide"
+}

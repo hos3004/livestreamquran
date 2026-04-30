@@ -1,0 +1,26 @@
+{
+  "name": "quran-broadcast",
+  "version": "1.0.0",
+  "description": "Real-time Quran broadcast web app for OBS Browser Source",
+  "type": "module",
+  "scripts": {
+    "ingest": "node scripts/ingest.mjs",
+    "server": "node server/index.mjs",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "render": "node scripts/render.mjs"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "fluent-ffmpeg": "^2.1.3",
+    "music-metadata": "^10.5.0",
+    "puppeteer": "^24.39.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
