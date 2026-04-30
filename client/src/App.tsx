@@ -12,6 +12,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
 import { ControlsPanel }  from './components/ControlsPanel';
+import { ControlPage }    from './components/ControlPage';
 import { useManifest }    from './hooks/useManifest';
 import { useAudio }       from './hooks/useAudio';
 
@@ -25,8 +26,11 @@ export default function App() {
   const [debugMode,   setDebugMode]   = useState(false);
   const [showControls, setShowControls] = useState(true);
   const [renderMode, setRenderMode]   = useState(false);
+  const [isObsMode, setIsObsMode]     = useState(false);
+  const [isControlMode, setIsControlMode] = useState(false);
   const [pageAdvanceMode, setPageAdvanceMode] = useState<PageAdvanceMode>('reset');
   const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const loadingSinceRef = useRef<number | null>(null);
 
 
   // ─── Initialize startPage when config loads ─────────────────────────────
@@ -36,23 +40,43 @@ export default function App() {
       initializedRef.current = true;
       const urlParams = new URLSearchParams(window.location.search);
       const isRender = urlParams.get('renderMode') === 'true';
+      const obs = urlParams.get('mode') === 'obs' || urlParams.get('obs') === 'true';
+      const control = window.location.pathname === '/control';
       setRenderMode(isRender);
+      setIsObsMode(obs);
+      setIsControlMode(control);
       
       const targetJuz = urlParams.get('juz');
+      const targetPage = urlParams.get('page');
       
       let start = Math.max(1, Math.min(config.startPage, manifest.length || 1));
+      if (targetPage) {
+        start = Math.max(1, Math.min(parseInt(targetPage, 10) || start, manifest.length || 604));
+      }
       
       if (isRender && targetJuz && manifest.length) {
          // Auto-find first page of this Juz
          const juzStartPage = manifest.find(m => m.juz === parseInt(targetJuz, 10))?.page;
          if (juzStartPage) start = juzStartPage;
          document.body.classList.add('render-mode');
-         setShowControls(false); // Hide UI in render mode
+      }
+      
+      if (isRender || obs || control) {
+         setShowControls(false); // Hide UI
+         setDebugMode(false);
       }
 
       setCurrentPage(start);
+      if (!control && urlParams.get('autoplay') === 'true') {
+        setIsPlaying(true);
+      }
     }
   }, [config, manifest]);
+
+  useEffect(() => {
+    if (!manifest.length) return;
+    setCurrentPage(page => Math.max(1, Math.min(page, manifest.length)));
+  }, [manifest.length]);
 
   const clearAutoAdvanceTimer = useCallback(() => {
     if (autoAdvanceTimerRef.current) {
@@ -87,6 +111,13 @@ export default function App() {
     onEnded: handleAudioEnded,
   });
 
+  const handleStop = useCallback(() => {
+    clearAutoAdvanceTimer();
+    setPageAdvanceMode('reset');
+    setIsPlaying(false);
+    stop();
+  }, [clearAutoAdvanceTimer, stop]);
+
   // ─── Load audio when page changes ───────────────────────────────────────
   useEffect(() => {
     if (!manifest.length) return;
@@ -105,7 +136,7 @@ export default function App() {
       const t = setTimeout(() => handleAudioEnded(), 2000);
       return () => clearTimeout(t);
     }
-  }, [currentPage, manifest, load, handleAudioEnded]);
+  }, [currentPage, manifest, load, handleAudioEnded, renderMode]);
 
   // ─── Auto-play when audio is ready ──────────────────────────────────────
   useEffect(() => {
@@ -113,6 +144,53 @@ export default function App() {
       play();
     }
   }, [audioState.playState, isPlaying, play]);
+
+  useEffect(() => {
+    if (isControlMode || renderMode || !manifest.length) return;
+    fetch('/api/playback/report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        currentPage,
+        playState: isPlaying ? audioState.playState : 'paused',
+      }),
+    }).catch(() => {});
+  }, [isControlMode, renderMode, manifest.length, currentPage, isPlaying, audioState.playState]);
+
+  // ─── Watchdog to rescue stuck audio ─────────────────────────────────────
+  useEffect(() => {
+    if (!isPlaying || renderMode) return;
+    const id = window.setInterval(() => {
+      const ps = audioState.playState;
+      if (ps === 'paused' || ps === 'idle') {
+        console.warn('[Watchdog] Audio stuck, retrying play', {
+          currentPage,
+          playState: ps,
+        });
+        play();
+      } else if (ps === 'loading') {
+        const now = Date.now();
+        if (loadingSinceRef.current === null) {
+          loadingSinceRef.current = now;
+          return;
+        }
+        if (now - loadingSinceRef.current >= 10000) {
+          console.warn('[Watchdog] Audio loading too long, retrying play', {
+            currentPage,
+            playState: ps,
+          });
+          play();
+          loadingSinceRef.current = now;
+        }
+      } else {
+        loadingSinceRef.current = null;
+      }
+    }, 5000);
+    return () => {
+      loadingSinceRef.current = null;
+      window.clearInterval(id);
+    };
+  }, [isPlaying, renderMode, audioState.playState, currentPage, play]);
 
   // (Audio currentTime is read directly via audioRef in QuranWindow's own RAF loop)
 
@@ -178,13 +256,13 @@ export default function App() {
   // ─── Controls ────────────────────────────────────────────────────────────
   const handlePlay = useCallback(() => {
     setIsPlaying(true);
-    play();
-  }, [play]);
+  }, []);
 
   const handlePause = useCallback(() => {
+    clearAutoAdvanceTimer();
     setIsPlaying(false);
     pause();
-  }, [pause]);
+  }, [clearAutoAdvanceTimer, pause]);
 
   const handleNext = useCallback(() => {
     clearAutoAdvanceTimer();
@@ -206,9 +284,66 @@ export default function App() {
     clearAutoAdvanceTimer();
     setPageAdvanceMode('reset');
     stop();
-    setCurrentPage(page);
+    setCurrentPage(Math.max(1, Math.min(page, manifest.length || 604)));
     setIsPlaying(true);
-  }, [clearAutoAdvanceTimer, stop]);
+  }, [clearAutoAdvanceTimer, stop, manifest.length]);
+
+  const handleStartJuz = useCallback((juz: number) => {
+    const entry = manifest.find(item => item.juz === juz);
+    if (!entry) {
+      console.warn(`[App] Juz ${juz} not found in manifest`);
+      return;
+    }
+    handleJumpToPage(entry.page);
+  }, [manifest, handleJumpToPage]);
+
+  useEffect(() => {
+    if (isControlMode || renderMode) return;
+
+    const events = new EventSource('/api/playback/events');
+    events.onmessage = (event) => {
+      const payload = JSON.parse(event.data);
+      const state = payload.state || {};
+      switch (payload.command) {
+        case 'play':
+          handlePlay();
+          break;
+        case 'pause':
+          handlePause();
+          break;
+        case 'stop':
+          handleStop();
+          break;
+        case 'next':
+          handleNext();
+          break;
+        case 'prev':
+          handlePrev();
+          break;
+        case 'jumpToPage':
+          handleJumpToPage(Number(state.currentPage));
+          break;
+        case 'startJuz':
+          handleStartJuz(Number(payload.juz));
+          break;
+      }
+    };
+    events.onerror = () => {
+      console.warn('[App] Playback command stream disconnected.');
+    };
+
+    return () => events.close();
+  }, [
+    isControlMode,
+    renderMode,
+    handlePlay,
+    handlePause,
+    handleStop,
+    handleNext,
+    handlePrev,
+    handleJumpToPage,
+    handleStartJuz,
+  ]);
 
   // ─── Keyboard shortcuts ──────────────────────────────────────────────────
   useEffect(() => {
@@ -230,17 +365,19 @@ export default function App() {
           break;
         case 'c':
         case 'C':
+          if (isObsMode) break;
           setShowControls(v => !v);
           break;
         case 'd':
         case 'D':
+          if (isObsMode) break;
           setDebugMode(v => !v);
           break;
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [isPlaying, handlePlay, handlePause, handleNext, handlePrev]);
+  }, [isPlaying, isObsMode, handlePlay, handlePause, handleNext, handlePrev]);
 
   // ─── Render ──────────────────────────────────────────────────────────────
   if (loading) {
@@ -262,6 +399,10 @@ export default function App() {
     );
   }
 
+  if (isControlMode) {
+    return <ControlPage manifest={manifest} />;
+  }
+
   return (
     <div className="app-root">
       {/* Full-scene SVG broadcast view */}
@@ -279,7 +420,7 @@ export default function App() {
       </div>
 
       {/* Floating controls panel */}
-      {showControls && (
+      {showControls && !isObsMode && (
         <div className="controls-wrapper">
           <ControlsPanel
             config={config!}
@@ -299,7 +440,8 @@ export default function App() {
       )}
 
       {/* Top right actions */}
-      <div className="top-right-actions" style={{ position: 'fixed', top: 12, right: 16, zIndex: 9999, display: 'flex', gap: 8 }}>
+      {!isObsMode && (
+        <div className="top-right-actions" style={{ position: 'fixed', top: 12, right: 16, zIndex: 9999, display: 'flex', gap: 8 }}>
         <div 
           className="controls-hint" 
           onClick={() => {
@@ -320,7 +462,8 @@ export default function App() {
         <div className="controls-hint" onClick={() => setShowControls(v => !v)}>
           {showControls ? '✕ إخفاء الإعدادات' : '☰ الإعدادات'}
         </div>
-      </div>
+        </div>
+      )}
     </div>
   );
 }

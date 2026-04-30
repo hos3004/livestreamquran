@@ -8,13 +8,11 @@
 import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
-import { readFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { createRequire } from 'module';
 
-const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename);
 const ROOT       = resolve(__dirname, '..');
@@ -60,11 +58,54 @@ function loadConfig() {
 }
 
 let appConfig = loadConfig();
+let playbackState = {
+  currentPage: Math.max(1, Number(appConfig.startPage) || 1),
+  playState: 'idle',
+  updatedAt: new Date().toISOString(),
+};
+const playbackClients = new Set();
+
+function resolveAssetDir(dir) {
+  return resolve(dir);
+}
+
+function clampPage(page) {
+  const parsed = Number.parseInt(page, 10);
+  if (!Number.isFinite(parsed)) return playbackState.currentPage;
+  return Math.max(1, Math.min(parsed, 604));
+}
+
+function updatePlaybackState(patch) {
+  playbackState = {
+    ...playbackState,
+    ...patch,
+    updatedAt: new Date().toISOString(),
+  };
+  return playbackState;
+}
+
+function sendPlaybackEvent(payload) {
+  const data = `data: ${JSON.stringify({ ...payload, state: playbackState })}\n\n`;
+  for (const res of playbackClients) {
+    res.write(data);
+  }
+}
+
+function commandPlayback(command, patch = {}) {
+  updatePlaybackState(patch);
+  sendPlaybackEvent({ command });
+  return playbackState;
+}
 
 // ─── Express setup ──────────────────────────────────────────────────────────
 const app = express();
 
-app.use(compression());
+app.use(compression({
+  filter: (req, res) => {
+    if (req.path === '/api/playback/events') return false;
+    return compression.filter(req, res);
+  },
+}));
 app.use(cors());
 app.use(express.json());
 
@@ -74,20 +115,17 @@ app.use(express.static(PUBLIC_DIR, { maxAge: '1m' }));
 
 // ─── Serve asset folders as virtual paths ────────────────────────────────────
 app.use('/assets/hafs', (req, res, next) => {
-  const cfg = loadConfig();
-  const dir = cfg.hafsDir.replace(/\//g, '\\');
+  const dir = resolveAssetDir(appConfig.hafsDir);
   express.static(dir, { maxAge: '1h' })(req, res, next);
 });
 
 app.use('/assets/mp3', (req, res, next) => {
-  const cfg = loadConfig();
-  const dir = cfg.mp3Dir.replace(/\//g, '\\');
+  const dir = resolveAssetDir(appConfig.mp3Dir);
   express.static(dir, { maxAge: '1h' })(req, res, next);
 });
 
 app.use('/assets/slide', (req, res, next) => {
-  const cfg = loadConfig();
-  const dir = cfg.slideDir.replace(/\//g, '\\');
+  const dir = resolveAssetDir(appConfig.slideDir);
   express.static(dir, { maxAge: '5m' })(req, res, next);
 });
 
@@ -101,29 +139,85 @@ if (existsSync(CLIENT_BUILD)) {
 
 // GET /api/config — returns full app config
 app.get('/api/config', (req, res) => {
-  const cfg = loadConfig();
-  res.json(cfg);
+  res.json(appConfig);
 });
 
 // PATCH /api/config — update config fields at runtime
 app.patch('/api/config', (req, res) => {
   try {
-    const { writeFileSync } = require('fs');
-    const current = loadConfig();
-    const updated = { ...current, ...req.body };
+    const updated = { ...appConfig, ...req.body };
     writeFileSync(join(ROOT, 'config.json'), JSON.stringify(updated, null, 2), 'utf8');
     appConfig = updated;
+    updatePlaybackState({ currentPage: clampPage(playbackState.currentPage || appConfig.startPage) });
     res.json({ ok: true, config: updated });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
 });
 
+// GET /api/playback/state — current server-side playback state
+app.get('/api/playback/state', (req, res) => {
+  res.json(playbackState);
+});
+
+// GET /api/playback/events — SSE command stream for OBS/browser scene
+app.get('/api/playback/events', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders?.();
+  res.write(`data: ${JSON.stringify({ command: 'state', state: playbackState })}\n\n`);
+
+  playbackClients.add(res);
+  req.on('close', () => {
+    playbackClients.delete(res);
+  });
+});
+
+app.post('/api/playback/play', (req, res) => {
+  res.json({ ok: true, state: commandPlayback('play', { playState: 'playing' }) });
+});
+
+app.post('/api/playback/pause', (req, res) => {
+  res.json({ ok: true, state: commandPlayback('pause', { playState: 'paused' }) });
+});
+
+app.post('/api/playback/stop', (req, res) => {
+  res.json({ ok: true, state: commandPlayback('stop', { playState: 'idle' }) });
+});
+
+app.post('/api/playback/next', (req, res) => {
+  const currentPage = clampPage(playbackState.currentPage + 1);
+  res.json({ ok: true, state: commandPlayback('next', { currentPage, playState: 'playing' }) });
+});
+
+app.post('/api/playback/prev', (req, res) => {
+  const currentPage = clampPage(playbackState.currentPage - 1);
+  res.json({ ok: true, state: commandPlayback('prev', { currentPage, playState: 'playing' }) });
+});
+
+app.post('/api/playback/jump', (req, res) => {
+  const page = clampPage(req.body?.page);
+  const command = req.body?.command === 'startJuz' ? 'startJuz' : 'jumpToPage';
+  updatePlaybackState({ currentPage: page, playState: 'playing' });
+  sendPlaybackEvent({ command, juz: req.body?.juz });
+  res.json({ ok: true, state: playbackState });
+});
+
+// POST /api/playback/report — scene-to-server state sync without issuing commands
+app.post('/api/playback/report', (req, res) => {
+  const patch = {};
+  if (req.body?.currentPage !== undefined) patch.currentPage = clampPage(req.body.currentPage);
+  if (req.body?.playState !== undefined) patch.playState = String(req.body.playState);
+  updatePlaybackState(patch);
+  sendPlaybackEvent({ command: 'state' });
+  res.json({ ok: true, state: playbackState });
+});
+
 // GET /api/slides — lists all images in slide folder
 app.get('/api/slides', (req, res) => {
   try {
-    const cfg = loadConfig();
-    const slideDir = cfg.slideDir.replace(/\//g, '\\');
+    const slideDir = resolveAssetDir(appConfig.slideDir);
     if (!existsSync(slideDir)) {
       return res.json({ slides: [] });
     }

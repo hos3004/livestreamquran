@@ -38,6 +38,8 @@ cd client; npm install; cd ..
 ```
 
 ### Step 2 — Run ingestion (first time or when adding pages)
+Copy `config.example.json` to `config.json` and adjust local paths before running ingest/server.
+
 ```powershell
 npm run ingest
 ```
