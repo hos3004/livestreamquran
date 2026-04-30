@@ -12,6 +12,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
 import { ControlsPanel }  from './components/ControlsPanel';
+import { ControlPage }    from './components/ControlPage';
 import { useManifest }    from './hooks/useManifest';
 import { useAudio }       from './hooks/useAudio';
 
@@ -26,6 +27,7 @@ export default function App() {
   const [showControls, setShowControls] = useState(true);
   const [renderMode, setRenderMode]   = useState(false);
   const [isObsMode, setIsObsMode]     = useState(false);
+  const [isControlMode, setIsControlMode] = useState(false);
   const [pageAdvanceMode, setPageAdvanceMode] = useState<PageAdvanceMode>('reset');
   const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const loadingSinceRef = useRef<number | null>(null);
@@ -39,12 +41,18 @@ export default function App() {
       const urlParams = new URLSearchParams(window.location.search);
       const isRender = urlParams.get('renderMode') === 'true';
       const obs = urlParams.get('mode') === 'obs' || urlParams.get('obs') === 'true';
+      const control = window.location.pathname === '/control';
       setRenderMode(isRender);
       setIsObsMode(obs);
+      setIsControlMode(control);
       
       const targetJuz = urlParams.get('juz');
+      const targetPage = urlParams.get('page');
       
       let start = Math.max(1, Math.min(config.startPage, manifest.length || 1));
+      if (targetPage) {
+        start = Math.max(1, Math.min(parseInt(targetPage, 10) || start, manifest.length || 604));
+      }
       
       if (isRender && targetJuz && manifest.length) {
          // Auto-find first page of this Juz
@@ -53,12 +61,15 @@ export default function App() {
          document.body.classList.add('render-mode');
       }
       
-      if (isRender || obs) {
+      if (isRender || obs || control) {
          setShowControls(false); // Hide UI
          setDebugMode(false);
       }
 
       setCurrentPage(start);
+      if (!control && urlParams.get('autoplay') === 'true') {
+        setIsPlaying(true);
+      }
     }
   }, [config, manifest]);
 
@@ -100,6 +111,13 @@ export default function App() {
     onEnded: handleAudioEnded,
   });
 
+  const handleStop = useCallback(() => {
+    clearAutoAdvanceTimer();
+    setPageAdvanceMode('reset');
+    setIsPlaying(false);
+    stop();
+  }, [clearAutoAdvanceTimer, stop]);
+
   // ─── Load audio when page changes ───────────────────────────────────────
   useEffect(() => {
     if (!manifest.length) return;
@@ -126,6 +144,18 @@ export default function App() {
       play();
     }
   }, [audioState.playState, isPlaying, play]);
+
+  useEffect(() => {
+    if (isControlMode || renderMode || !manifest.length) return;
+    fetch('/api/playback/report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        currentPage,
+        playState: isPlaying ? audioState.playState : 'paused',
+      }),
+    }).catch(() => {});
+  }, [isControlMode, renderMode, manifest.length, currentPage, isPlaying, audioState.playState]);
 
   // ─── Watchdog to rescue stuck audio ─────────────────────────────────────
   useEffect(() => {
@@ -258,6 +288,63 @@ export default function App() {
     setIsPlaying(true);
   }, [clearAutoAdvanceTimer, stop, manifest.length]);
 
+  const handleStartJuz = useCallback((juz: number) => {
+    const entry = manifest.find(item => item.juz === juz);
+    if (!entry) {
+      console.warn(`[App] Juz ${juz} not found in manifest`);
+      return;
+    }
+    handleJumpToPage(entry.page);
+  }, [manifest, handleJumpToPage]);
+
+  useEffect(() => {
+    if (isControlMode || renderMode) return;
+
+    const events = new EventSource('/api/playback/events');
+    events.onmessage = (event) => {
+      const payload = JSON.parse(event.data);
+      const state = payload.state || {};
+      switch (payload.command) {
+        case 'play':
+          handlePlay();
+          break;
+        case 'pause':
+          handlePause();
+          break;
+        case 'stop':
+          handleStop();
+          break;
+        case 'next':
+          handleNext();
+          break;
+        case 'prev':
+          handlePrev();
+          break;
+        case 'jumpToPage':
+          handleJumpToPage(Number(state.currentPage));
+          break;
+        case 'startJuz':
+          handleStartJuz(Number(payload.juz));
+          break;
+      }
+    };
+    events.onerror = () => {
+      console.warn('[App] Playback command stream disconnected.');
+    };
+
+    return () => events.close();
+  }, [
+    isControlMode,
+    renderMode,
+    handlePlay,
+    handlePause,
+    handleStop,
+    handleNext,
+    handlePrev,
+    handleJumpToPage,
+    handleStartJuz,
+  ]);
+
   // ─── Keyboard shortcuts ──────────────────────────────────────────────────
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -310,6 +397,10 @@ export default function App() {
         <p>Make sure to run: <code>npm run ingest</code> first, then restart the server.</p>
       </div>
     );
+  }
+
+  if (isControlMode) {
+    return <ControlPage manifest={manifest} />;
   }
 
   return (
