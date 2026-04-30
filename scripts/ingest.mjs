@@ -18,9 +18,13 @@ const ROOT = resolve(__dirname, '..');
 // ─── Load config ────────────────────────────────────────────────────────────
 const cfg = JSON.parse(readFileSync(join(ROOT, 'config.json'), 'utf8'));
 
-const HAFS_DIR  = cfg.hafsDir.replace(/\//g, '\\');
-const MP3_DIR   = cfg.mp3Dir.replace(/\//g, '\\');
-const SLIDE_DIR = cfg.slideDir.replace(/\//g, '\\');
+function resolveAssetDir(dir) {
+  return resolve(dir);
+}
+
+const HAFS_DIR  = resolveAssetDir(cfg.hafsDir);
+const MP3_DIR   = resolveAssetDir(cfg.mp3Dir);
+const SLIDE_DIR = resolveAssetDir(cfg.slideDir);
 const OUT_DIR   = join(ROOT, 'public');
 const OUT_FILE  = join(OUT_DIR, 'manifest.json');
 

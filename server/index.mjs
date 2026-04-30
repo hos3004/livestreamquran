@@ -8,13 +8,11 @@
 import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
-import { readFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { createRequire } from 'module';
 
-const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename);
 const ROOT       = resolve(__dirname, '..');
@@ -61,6 +59,10 @@ function loadConfig() {
 
 let appConfig = loadConfig();
 
+function resolveAssetDir(dir) {
+  return resolve(dir);
+}
+
 // ─── Express setup ──────────────────────────────────────────────────────────
 const app = express();
 
@@ -74,20 +76,17 @@ app.use(express.static(PUBLIC_DIR, { maxAge: '1m' }));
 
 // ─── Serve asset folders as virtual paths ────────────────────────────────────
 app.use('/assets/hafs', (req, res, next) => {
-  const cfg = loadConfig();
-  const dir = cfg.hafsDir.replace(/\//g, '\\');
+  const dir = resolveAssetDir(appConfig.hafsDir);
   express.static(dir, { maxAge: '1h' })(req, res, next);
 });
 
 app.use('/assets/mp3', (req, res, next) => {
-  const cfg = loadConfig();
-  const dir = cfg.mp3Dir.replace(/\//g, '\\');
+  const dir = resolveAssetDir(appConfig.mp3Dir);
   express.static(dir, { maxAge: '1h' })(req, res, next);
 });
 
 app.use('/assets/slide', (req, res, next) => {
-  const cfg = loadConfig();
-  const dir = cfg.slideDir.replace(/\//g, '\\');
+  const dir = resolveAssetDir(appConfig.slideDir);
   express.static(dir, { maxAge: '5m' })(req, res, next);
 });
 
@@ -101,16 +100,13 @@ if (existsSync(CLIENT_BUILD)) {
 
 // GET /api/config — returns full app config
 app.get('/api/config', (req, res) => {
-  const cfg = loadConfig();
-  res.json(cfg);
+  res.json(appConfig);
 });
 
 // PATCH /api/config — update config fields at runtime
 app.patch('/api/config', (req, res) => {
   try {
-    const { writeFileSync } = require('fs');
-    const current = loadConfig();
-    const updated = { ...current, ...req.body };
+    const updated = { ...appConfig, ...req.body };
     writeFileSync(join(ROOT, 'config.json'), JSON.stringify(updated, null, 2), 'utf8');
     appConfig = updated;
     res.json({ ok: true, config: updated });
@@ -122,8 +118,7 @@ app.patch('/api/config', (req, res) => {
 // GET /api/slides — lists all images in slide folder
 app.get('/api/slides', (req, res) => {
   try {
-    const cfg = loadConfig();
-    const slideDir = cfg.slideDir.replace(/\//g, '\\');
+    const slideDir = resolveAssetDir(appConfig.slideDir);
     if (!existsSync(slideDir)) {
       return res.json({ slides: [] });
     }

@@ -31,6 +31,7 @@ export const TopWindow: React.FC<Props> = ({ slides, config, x, y, width, height
   const { currentSrc, nextSrc, transitioning } = useSlideshow(
     slides, config.slideshowInterval, config.slideshowTransitionDuration,
   );
+  const hasSlides = slides.length > 0;
 
   // Two stable SVG image refs — we update href imperatively so the elements
   // (and their CSS KB animations) are never destroyed/recreated.
@@ -41,6 +42,8 @@ export const TopWindow: React.FC<Props> = ({ slides, config, x, y, width, height
   const frontIsA = useRef(true);
 
   useEffect(() => {
+    if (!hasSlides) return;
+
     const a = imgARef.current;
     const b = imgBRef.current;
     if (!a || !b) return;
@@ -78,7 +81,7 @@ export const TopWindow: React.FC<Props> = ({ slides, config, x, y, width, height
         frontIsA.current = true;
       }
     }
-  }, [transitioning, currentSrc, nextSrc, config.slideshowTransitionDuration]);
+  }, [hasSlides, transitioning, currentSrc, nextSrc, config.slideshowTransitionDuration]);
 
   const initialSrc = slides[0] ?? '';
 
@@ -98,6 +101,8 @@ export const TopWindow: React.FC<Props> = ({ slides, config, x, y, width, height
       <rect x={x} y={y} width={width} height={height} fill="#0a0a12" />
 
       <g clipPath={`url(#${clipId})`}>
+        {hasSlides && (
+          <>
         {/* Slot A — stable element, no key, href updated imperatively */}
         <image
           ref={imgARef}
@@ -112,7 +117,7 @@ export const TopWindow: React.FC<Props> = ({ slides, config, x, y, width, height
         {/* Slot B — starts invisible */}
         <image
           ref={imgBRef}
-          href={nextSrc || initialSrc || '/frame.png'}
+          href={nextSrc || initialSrc}
           x={x} y={y} width={width} height={height}
           preserveAspectRatio="xMidYMid slice"
           className={`slide-img ${pickVariant(initialSrc)}`}
@@ -120,6 +125,9 @@ export const TopWindow: React.FC<Props> = ({ slides, config, x, y, width, height
           role="img"
           aria-label="Slideshow Image B"
         />
+
+          </>
+        )}
 
         {/* Bottom gradient */}
         <rect x={x} y={y} width={width} height={height}

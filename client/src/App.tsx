@@ -25,8 +25,10 @@ export default function App() {
   const [debugMode,   setDebugMode]   = useState(false);
   const [showControls, setShowControls] = useState(true);
   const [renderMode, setRenderMode]   = useState(false);
+  const [isObsMode, setIsObsMode]     = useState(false);
   const [pageAdvanceMode, setPageAdvanceMode] = useState<PageAdvanceMode>('reset');
   const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const loadingSinceRef = useRef<number | null>(null);
 
 
   // ─── Initialize startPage when config loads ─────────────────────────────
@@ -36,7 +38,9 @@ export default function App() {
       initializedRef.current = true;
       const urlParams = new URLSearchParams(window.location.search);
       const isRender = urlParams.get('renderMode') === 'true';
+      const obs = urlParams.get('mode') === 'obs' || urlParams.get('obs') === 'true';
       setRenderMode(isRender);
+      setIsObsMode(obs);
       
       const targetJuz = urlParams.get('juz');
       
@@ -47,12 +51,21 @@ export default function App() {
          const juzStartPage = manifest.find(m => m.juz === parseInt(targetJuz, 10))?.page;
          if (juzStartPage) start = juzStartPage;
          document.body.classList.add('render-mode');
-         setShowControls(false); // Hide UI in render mode
+      }
+      
+      if (isRender || obs) {
+         setShowControls(false); // Hide UI
+         setDebugMode(false);
       }
 
       setCurrentPage(start);
     }
   }, [config, manifest]);
+
+  useEffect(() => {
+    if (!manifest.length) return;
+    setCurrentPage(page => Math.max(1, Math.min(page, manifest.length)));
+  }, [manifest.length]);
 
   const clearAutoAdvanceTimer = useCallback(() => {
     if (autoAdvanceTimerRef.current) {
@@ -105,7 +118,7 @@ export default function App() {
       const t = setTimeout(() => handleAudioEnded(), 2000);
       return () => clearTimeout(t);
     }
-  }, [currentPage, manifest, load, handleAudioEnded]);
+  }, [currentPage, manifest, load, handleAudioEnded, renderMode]);
 
   // ─── Auto-play when audio is ready ──────────────────────────────────────
   useEffect(() => {
@@ -113,6 +126,41 @@ export default function App() {
       play();
     }
   }, [audioState.playState, isPlaying, play]);
+
+  // ─── Watchdog to rescue stuck audio ─────────────────────────────────────
+  useEffect(() => {
+    if (!isPlaying || renderMode) return;
+    const id = window.setInterval(() => {
+      const ps = audioState.playState;
+      if (ps === 'paused' || ps === 'idle') {
+        console.warn('[Watchdog] Audio stuck, retrying play', {
+          currentPage,
+          playState: ps,
+        });
+        play();
+      } else if (ps === 'loading') {
+        const now = Date.now();
+        if (loadingSinceRef.current === null) {
+          loadingSinceRef.current = now;
+          return;
+        }
+        if (now - loadingSinceRef.current >= 10000) {
+          console.warn('[Watchdog] Audio loading too long, retrying play', {
+            currentPage,
+            playState: ps,
+          });
+          play();
+          loadingSinceRef.current = now;
+        }
+      } else {
+        loadingSinceRef.current = null;
+      }
+    }, 5000);
+    return () => {
+      loadingSinceRef.current = null;
+      window.clearInterval(id);
+    };
+  }, [isPlaying, renderMode, audioState.playState, currentPage, play]);
 
   // (Audio currentTime is read directly via audioRef in QuranWindow's own RAF loop)
 
@@ -178,13 +226,13 @@ export default function App() {
   // ─── Controls ────────────────────────────────────────────────────────────
   const handlePlay = useCallback(() => {
     setIsPlaying(true);
-    play();
-  }, [play]);
+  }, []);
 
   const handlePause = useCallback(() => {
+    clearAutoAdvanceTimer();
     setIsPlaying(false);
     pause();
-  }, [pause]);
+  }, [clearAutoAdvanceTimer, pause]);
 
   const handleNext = useCallback(() => {
     clearAutoAdvanceTimer();
@@ -206,9 +254,9 @@ export default function App() {
     clearAutoAdvanceTimer();
     setPageAdvanceMode('reset');
     stop();
-    setCurrentPage(page);
+    setCurrentPage(Math.max(1, Math.min(page, manifest.length || 604)));
     setIsPlaying(true);
-  }, [clearAutoAdvanceTimer, stop]);
+  }, [clearAutoAdvanceTimer, stop, manifest.length]);
 
   // ─── Keyboard shortcuts ──────────────────────────────────────────────────
   useEffect(() => {
@@ -230,17 +278,19 @@ export default function App() {
           break;
         case 'c':
         case 'C':
+          if (isObsMode) break;
           setShowControls(v => !v);
           break;
         case 'd':
         case 'D':
+          if (isObsMode) break;
           setDebugMode(v => !v);
           break;
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [isPlaying, handlePlay, handlePause, handleNext, handlePrev]);
+  }, [isPlaying, isObsMode, handlePlay, handlePause, handleNext, handlePrev]);
 
   // ─── Render ──────────────────────────────────────────────────────────────
   if (loading) {
@@ -279,7 +329,7 @@ export default function App() {
       </div>
 
       {/* Floating controls panel */}
-      {showControls && (
+      {showControls && !isObsMode && (
         <div className="controls-wrapper">
           <ControlsPanel
             config={config!}
@@ -299,7 +349,8 @@ export default function App() {
       )}
 
       {/* Top right actions */}
-      <div className="top-right-actions" style={{ position: 'fixed', top: 12, right: 16, zIndex: 9999, display: 'flex', gap: 8 }}>
+      {!isObsMode && (
+        <div className="top-right-actions" style={{ position: 'fixed', top: 12, right: 16, zIndex: 9999, display: 'flex', gap: 8 }}>
         <div 
           className="controls-hint" 
           onClick={() => {
@@ -320,7 +371,8 @@ export default function App() {
         <div className="controls-hint" onClick={() => setShowControls(v => !v)}>
           {showControls ? '✕ إخفاء الإعدادات' : '☰ الإعدادات'}
         </div>
-      </div>
+        </div>
+      )}
     </div>
   );
 }
