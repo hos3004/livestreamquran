@@ -11,6 +11,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
+import { BroadcastScenePreset2 } from './components/BroadcastScenePreset2';
 import { ControlsPanel }  from './components/ControlsPanel';
 import { useManifest }    from './hooks/useManifest';
 import { useAudio }       from './hooks/useAudio';
@@ -262,11 +263,13 @@ export default function App() {
     );
   }
 
+  const SceneComponent = config?.layoutPreset === 2 ? BroadcastScenePreset2 : BroadcastScene;
+
   return (
     <div className="app-root">
       {/* Full-scene SVG broadcast view */}
       <div className="scene-wrapper">
-        <BroadcastScene
+        <SceneComponent
           manifest={manifest}
           slides={slides}
           config={config!}
