@@ -1,5 +1,5 @@
 {
-  "reciterName": "ماهر المعيقلي",
+  "reciterName": "أحمد العجمي",
   "startPage": 1,
   "loopMode": true,
   "layoutPreset": 2,
@@ -7,7 +7,7 @@
   "slideshowTransitionDuration": 1500,
   "scrollZoomFactor": 0.5,
   "pageTransitionDuration": 800,
-  "enableGoldSweep": false,
+  "enableGoldSweep": true,
   "enableParallax": true,
   "enableTopDust": true,
   "goldSweepDuration": 15000,
@@ -16,7 +16,7 @@
   "parallaxDuration": 18000,
   "topDustDensity": 333,
   "topDustOpacity": 0.45,
-  "hafsDir": "D:/2025 apps/quran/hafs",
-  "mp3Dir": "D:/2025 apps/quran/mp3",
-  "slideDir": "D:/2025 apps/quran/slide"
+  "hafsDir": "data/hafs",
+  "mp3Dir": "data/reciters/ajmy",
+  "slideDir": "data/slides"
 }

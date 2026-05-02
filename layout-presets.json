@@ -3,7 +3,7 @@
     {
       "id": 2,
       "name": "Slider Left / Quran Right",
-      "frame": "/frame-preset2.png",
+      "frame": "/assets/frames/frame-preset2.png",
       "quranZoom": 0.82,
       "background": "#000000",
       "slide": { "x": 0, "y": 0, "w": 1225, "h": 610 },

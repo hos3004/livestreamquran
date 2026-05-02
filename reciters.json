@@ -1,5 +1,18 @@
 {
-  "audioRootDir": "reciters",
-  "activeReciterId": "",
-  "reciters": []
+  "audioRootDir": "data/reciters",
+  "activeReciterId": "ajmy",
+  "reciters": [
+    {
+      "id": "maher",
+      "name": "ماهر المعيقلي",
+      "folderName": "maher",
+      "audioDir": "data/reciters/maher"
+    },
+    {
+      "id": "ajmy",
+      "name": "أحمد العجمي",
+      "folderName": "ajmy",
+      "audioDir": "data/reciters/ajmy"
+    }
+  ]
 }

@@ -8,13 +8,18 @@
 import puppeteer from 'puppeteer';
 import { spawn } from 'child_process';
 import { readFileSync, existsSync } from 'fs';
-import { join, resolve, dirname } from 'path';
+import { join, resolve, dirname, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
+
+function resolveProjectPath(value, fallback = '') {
+  const input = typeof value === 'string' && value.trim() ? value.trim().replace(/\\/g, '/') : fallback;
+  return isAbsolute(input) ? input : resolve(ROOT, input);
+}
 
 const FPS = 30;
 let SCENE_W = 1920;
@@ -158,7 +163,7 @@ async function startRender() {
     if (m.audioPath) {
       // Decode audioPath e.g. "/assets/mp3/001.mp3" => "mp3Dir/001.mp3"
       const filename = m.audioPath.replace('/assets/mp3/', '');
-      const localPath = join(configObj.mp3Dir, filename).replace(/\\/g, '/');
+      const localPath = join(resolveProjectPath(configObj.mp3Dir, 'data/reciters/maher'), filename).replace(/\\/g, '/');
       
       if (existsSync(localPath)) {
         audioInputsArgs.push('-i', localPath);

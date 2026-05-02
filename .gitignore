@@ -36,3 +36,14 @@ Thumbs.db
 .vite/
 .pytest_cache/
 Microsoft/
+
+# Heavy audio folders - keep local only
+data/reciters/
+reciters/
+mp3/
+
+# Build outputs
+client/dist/
+node_modules/
+client/node_modules/
+

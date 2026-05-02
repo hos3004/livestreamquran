@@ -6,7 +6,7 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
-import { resolve, join } from 'path';
+import { resolve, join, isAbsolute } from 'path';
 import { parseFile } from 'music-metadata';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -15,12 +15,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
 
+function resolveProjectPath(value, fallback = '') {
+  const input = typeof value === 'string' && value.trim() ? value.trim().replace(/\\/g, '/') : fallback;
+  return isAbsolute(input) ? input : resolve(ROOT, input);
+}
+
 // ─── Load config ────────────────────────────────────────────────────────────
 const cfg = JSON.parse(readFileSync(join(ROOT, 'config.json'), 'utf8'));
 
-const HAFS_DIR  = cfg.hafsDir.replace(/\//g, '\\');
-const MP3_DIR   = cfg.mp3Dir.replace(/\//g, '\\');
-const SLIDE_DIR = cfg.slideDir.replace(/\//g, '\\');
+const HAFS_DIR  = resolveProjectPath(cfg.hafsDir, 'data/hafs');
+const MP3_DIR   = resolveProjectPath(cfg.mp3Dir, 'data/reciters/maher');
+const SLIDE_DIR = resolveProjectPath(cfg.slideDir, 'data/slides');
 const OUT_DIR   = join(ROOT, 'public');
 const OUT_FILE  = join(OUT_DIR, 'manifest.json');
 

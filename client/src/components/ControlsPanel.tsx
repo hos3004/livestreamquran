@@ -25,6 +25,8 @@ const numberOr = (value: string, fallback: number) => {
   return Number.isFinite(n) ? n : fallback;
 };
 
+const framePresetPath = (id: number) => `/assets/frames/frame-preset${id}.png`;
+
 export const ControlsPanel: React.FC<Props> = ({
   config,
   updateConfig,
@@ -72,7 +74,7 @@ export const ControlsPanel: React.FC<Props> = ({
     const source = activePreset ?? layoutPresets[0] ?? {
       id: 2,
       name: 'Preset 2',
-      frame: '/frame-preset2.png',
+      frame: framePresetPath(2),
       quranZoom: 0.7,
       background: '#000000',
       slide: { x: 0, y: 0, w: 1100, h: 600 },
@@ -84,7 +86,7 @@ export const ControlsPanel: React.FC<Props> = ({
       ...source,
       id,
       name: `Preset ${id}`,
-      frame: `/frame-preset${id}.png`,
+      frame: framePresetPath(id),
     };
     saveLayoutPresets([...layoutPresets, newPreset]);
     updateConfig({ layoutPreset: id });
@@ -271,7 +273,7 @@ export const ControlsPanel: React.FC<Props> = ({
                 </select>
                 <button className="ctrl-btn" onClick={addPreset}>+ Add Preset</button>
                 <button className="ctrl-btn" onClick={deleteActivePreset} disabled={!activePreset}>Delete Active Preset</button>
-                <span style={{ color: '#8888aa', fontSize: 12 }}>Images should live in client/public, for example: /frame-preset3.png</span>
+                <span style={{ color: '#8888aa', fontSize: 12 }}>Images should live in data/frames, for example: /assets/frames/frame-preset3.png</span>
               </div>
 
               {activePreset ? (

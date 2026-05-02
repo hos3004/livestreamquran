@@ -21,7 +21,11 @@ const makeId = (name: string, index: number) => {
   return cleaned || `reciter-${index}`;
 };
 
-export const AdminRecitersPage: React.FC = () => {
+interface AdminRecitersPageProps {
+  embedded?: boolean;
+}
+
+export const AdminRecitersPage: React.FC<AdminRecitersPageProps> = ({ embedded = false }) => {
   const [data, setData] = useState<RecitersFile>(emptyData);
   const [folders, setFolders] = useState<ScannedFolder[]>([]);
   const [newName, setNewName] = useState('');
@@ -136,37 +140,8 @@ export const AdminRecitersPage: React.FC = () => {
     }
   };
 
-  return (
-    <div className="admin-dashboard" dir="rtl">
-      <aside className="admin-sidebar">
-        <div className="admin-brand">
-          <div className="admin-brand-icon">🎙️</div>
-          <div>
-            <h1>القرّاء</h1>
-            <p>Reciters Library</p>
-          </div>
-        </div>
-        <nav className="admin-nav">
-          <a className="admin-nav-link" href="/admin"><span>⚙️</span><span>لوحة التحكم</span></a>
-          <a className="admin-nav-link active" href="/admin/reciters"><span>🎙️</span><span>القرّاء والصوتيات</span></a>
-          <a className="admin-nav-link" href="/admin/player"><span>▶️</span><span>Player</span></a>
-          <a className="admin-nav-link" href="/" target="_blank" rel="noreferrer"><span>📺</span><span>OBS</span></a>
-        </nav>
-      </aside>
-
-      <main className="admin-main">
-        <header className="admin-topbar">
-          <div>
-            <h2 className="mb-1">إدارة القرّاء ومجلدات الصوت</h2>
-            <p className="text-muted mb-0">اختر مجلدًا رئيسيًا يحتوي مجلدًا لكل قارئ، ثم اربط كل قارئ بمجلده.</p>
-          </div>
-          <div className="d-flex gap-2 flex-wrap">
-            <a className="btn btn-dark rounded-pill px-4" href="/admin">لوحة التحكم</a>
-            <a className="btn btn-primary rounded-pill px-4" href="/player" target="_blank" rel="noreferrer">Player</a>
-          </div>
-        </header>
-
-        <section className="admin-content">
+  const content = (
+    <>
           {loading ? (
             <div className="card border-0 shadow-sm rounded-4"><div className="card-body p-5 text-center">جاري التحميل...</div></div>
           ) : (
@@ -181,7 +156,7 @@ export const AdminRecitersPage: React.FC = () => {
                       dir="ltr"
                       value={data.audioRootDir}
                       onChange={e => setData({ ...data, audioRootDir: e.target.value })}
-                      placeholder="D:/2025 apps/quran/reciters"
+                      placeholder="data/reciters"
                     />
                     <div className="d-grid gap-2">
                       <button className="btn btn-primary" onClick={scanFolders}>فحص المجلدات</button>
@@ -254,6 +229,43 @@ export const AdminRecitersPage: React.FC = () => {
               </div>
             </div>
           )}
+    </>
+  );
+
+  if (embedded) return content;
+
+  return (
+    <div className="admin-dashboard" dir="rtl">
+      <aside className="admin-sidebar">
+        <div className="admin-brand">
+          <div className="admin-brand-icon">🎙️</div>
+          <div>
+            <h1>القرّاء</h1>
+            <p>Reciters Library</p>
+          </div>
+        </div>
+        <nav className="admin-nav">
+          <a className="admin-nav-link" href="/admin/"><span>⚙️</span><span>لوحة التحكم</span></a>
+          <a className="admin-nav-link active" href="/admin/?section=readers"><span>🎙️</span><span>القرّاء والصوتيات</span></a>
+          <a className="admin-nav-link" href="/admin/?section=player"><span>▶️</span><span>Player</span></a>
+          <a className="admin-nav-link" href="/" target="_blank" rel="noreferrer"><span>📺</span><span>OBS</span></a>
+        </nav>
+      </aside>
+
+      <main className="admin-main">
+        <header className="admin-topbar">
+          <div>
+            <h2 className="mb-1">إدارة القرّاء ومجلدات الصوت</h2>
+            <p className="text-muted mb-0">اختر مجلدًا رئيسيًا يحتوي مجلدًا لكل قارئ، ثم اربط كل قارئ بمجلده.</p>
+          </div>
+          <div className="d-flex gap-2 flex-wrap">
+            <a className="btn btn-dark rounded-pill px-4" href="/admin/">لوحة التحكم</a>
+            <a className="btn btn-primary rounded-pill px-4" href="/admin/?section=player" target="_blank" rel="noreferrer">Player</a>
+          </div>
+        </header>
+
+        <section className="admin-content">
+          {content}
         </section>
       </main>
     </div>

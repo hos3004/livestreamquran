@@ -4,32 +4,38 @@
  * Routes:
  *   /              Broadcast-only clean OBS scene
  *   /?mode=obs     Broadcast-only clean OBS scene, legacy OBS URL
- *   /player        Broadcast preview with playback controls
+ *   /?mode=player  Broadcast preview with playback controls
  *   /admin         Standalone Arabic admin dashboard
- *   /admin/player  Player embedded inside admin UI
- *   /admin/reciters Reciters and audio folders management
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
 import { BroadcastSceneDynamic } from './components/BroadcastSceneDynamic';
-import { AdminDashboard } from './components/AdminDashboard';
-import { AdminPlayerPage } from './components/AdminPlayerPage';
-import { AdminRecitersPage } from './components/AdminRecitersPage';
+import { AdminDashboard, type AdminSection } from './components/AdminDashboard';
 import { ControlsPanel } from './components/ControlsPanel';
 import { useManifest } from './hooks/useManifest';
 import { useAudio } from './hooks/useAudio';
 
 type PageAdvanceMode = 'reset' | 'continue';
 
+const adminSections: AdminSection[] = ['general', 'presets', 'effects', 'obs', 'readers', 'player'];
+
+const isAdminSection = (value: string | null): value is AdminSection => {
+  return !!value && adminSections.includes(value as AdminSection);
+};
+
 export default function App() {
   const { manifest, config, slides, layoutPresets, loading, error, updateConfig, saveLayoutPresets } = useManifest();
   const normalizedPath = window.location.pathname.replace(/\/$/, '') || '/';
   const urlParams = new URLSearchParams(window.location.search);
-  const isAdminRoute = normalizedPath === '/admin' || normalizedPath === '/admin/player' || normalizedPath === '/admin/reciters';
-  const isAdminPlayerRoute = normalizedPath === '/admin/player';
-  const isAdminRecitersRoute = normalizedPath === '/admin/reciters';
-  const isPlayerRoute = normalizedPath === '/player' || urlParams.get('mode') === 'player';
+  const sectionParam = urlParams.get('section');
+  const legacyAdminSection: AdminSection | null =
+    normalizedPath === '/admin/reciters' ? 'readers' :
+    normalizedPath === '/admin/player' || normalizedPath === '/player' ? 'player' :
+    null;
+  const adminSection = legacyAdminSection ?? (isAdminSection(sectionParam) ? sectionParam : 'general');
+  const isAdminRoute = normalizedPath === '/admin' || normalizedPath === '/admin/player' || normalizedPath === '/admin/reciters' || normalizedPath === '/player';
+  const isPlayerRoute = normalizedPath !== '/player' && urlParams.get('mode') === 'player';
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -42,6 +48,14 @@ export default function App() {
     document.body.classList.toggle('admin-page', isAdminRoute);
     return () => document.body.classList.remove('admin-page');
   }, [isAdminRoute]);
+
+  useEffect(() => {
+    if (normalizedPath === '/admin/reciters') {
+      window.history.replaceState(null, '', '/admin/?section=readers');
+    } else if (normalizedPath === '/admin/player' || normalizedPath === '/player') {
+      window.history.replaceState(null, '', '/admin/?section=player');
+    }
+  }, [normalizedPath]);
 
   const initializedRef = useRef(false);
   useEffect(() => {
@@ -234,14 +248,6 @@ export default function App() {
     );
   }
 
-  if (isAdminPlayerRoute) {
-    return <AdminPlayerPage />;
-  }
-
-  if (isAdminRecitersRoute) {
-    return <AdminRecitersPage />;
-  }
-
   if (isAdminRoute) {
     return (
       <AdminDashboard
@@ -249,6 +255,7 @@ export default function App() {
         updateConfig={updateConfig}
         layoutPresets={layoutPresets}
         saveLayoutPresets={saveLayoutPresets}
+        initialSection={adminSection}
       />
     );
   }

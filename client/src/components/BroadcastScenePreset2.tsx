@@ -82,7 +82,7 @@ export const BroadcastScenePreset2: React.FC<Props> = ({ manifest, slides, confi
       <TopWindow slides={slides} config={config} x={SLIDE_X} y={SLIDE_Y} width={SLIDE_W} height={SLIDE_H} />
       <rect x={PAGE_X} y={PAGE_Y} width={PAGE_W} height={PAGE_H} fill="url(#preset2QuranGlow)" />
       <QuranWindow prevEntry={prevEntry} entry={entry} nextEntry={nextEntry} config={preset2Config} pageAdvanceMode={pageAdvanceMode} isPlaying={isPlaying} audioRef={audioRef} x={PAGE_X} y={PAGE_Y} width={PAGE_W} height={PAGE_H} debugMode={debugMode} />
-      <image href="/frame-preset2.png" x={0} y={0} width={SCENE_W} height={SCENE_H} preserveAspectRatio="none" style={{ pointerEvents: 'none' }} />
+      <image href="/assets/frames/frame-preset2.png" x={0} y={0} width={SCENE_W} height={SCENE_H} preserveAspectRatio="none" style={{ pointerEvents: 'none' }} />
       <Preset2InfoBand entry={entry} config={config} x={INFO_X} y={INFO_Y} width={INFO_W} />
     </svg>
   );

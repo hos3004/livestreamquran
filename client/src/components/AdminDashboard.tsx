@@ -1,22 +1,31 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { AppConfig, LayoutPreset, LayoutRect } from '../types';
+import { AdminPlayerPage } from './AdminPlayerPage';
+import { AdminRecitersPage } from './AdminRecitersPage';
 
 interface Props {
   config: AppConfig;
   updateConfig: (patch: Partial<AppConfig>) => void;
   layoutPresets: LayoutPreset[];
   saveLayoutPresets: (layoutPresets: LayoutPreset[]) => Promise<unknown> | void;
+  initialSection?: AdminSection;
 }
 
-type AdminSection = 'general' | 'presets' | 'effects' | 'obs' | 'readers';
+export type AdminSection = 'general' | 'presets' | 'effects' | 'obs' | 'readers' | 'player';
 
 const numberOr = (value: string, fallback: number) => {
   const n = Number(value);
   return Number.isFinite(n) ? n : fallback;
 };
 
-export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPresets, saveLayoutPresets }) => {
-  const [section, setSection] = useState<AdminSection>('general');
+const framePresetPath = (id: number) => `/assets/frames/frame-preset${id}.png`;
+
+export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPresets, saveLayoutPresets, initialSection = 'general' }) => {
+  const [section, setSection] = useState<AdminSection>(initialSection);
+
+  useEffect(() => {
+    setSection(initialSection);
+  }, [initialSection]);
 
   const activePreset = useMemo(
     () => layoutPresets.find(p => p.id === config.layoutPreset) ?? null,
@@ -38,7 +47,7 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
     const source = activePreset ?? layoutPresets[0] ?? {
       id: 2,
       name: 'ثيم 2',
-      frame: '/frame-preset2.png',
+      frame: framePresetPath(2),
       quranZoom: 0.7,
       background: '#000000',
       slide: { x: 0, y: 0, w: 1100, h: 600 },
@@ -50,11 +59,11 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
       ...source,
       id,
       name: `ثيم ${id}`,
-      frame: `/frame-preset${id}.png`,
+      frame: framePresetPath(id),
     };
     saveLayoutPresets([...layoutPresets, newPreset]);
     updateConfig({ layoutPreset: id });
-    setSection('presets');
+    selectSection('presets');
   };
 
   const duplicateActivePreset = () => {
@@ -65,7 +74,7 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
       ...activePreset,
       id,
       name: `${activePreset.name} - نسخة`,
-      frame: `/frame-preset${id}.png`,
+      frame: framePresetPath(id),
     };
     saveLayoutPresets([...layoutPresets, copy]);
     updateConfig({ layoutPreset: id });
@@ -115,8 +124,14 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
     );
   };
 
+  const selectSection = (nextSection: AdminSection) => {
+    setSection(nextSection);
+    const url = nextSection === 'general' ? '/admin/' : `/admin/?section=${nextSection}`;
+    window.history.replaceState(null, '', url);
+  };
+
   const sectionButton = (id: AdminSection, label: string, icon: string) => (
-    <button className={`admin-nav-link ${section === id ? 'active' : ''}`} onClick={() => setSection(id)}>
+    <button className={`admin-nav-link ${section === id ? 'active' : ''}`} onClick={() => selectSection(id)}>
       <span>{icon}</span>
       <span>{label}</span>
     </button>
@@ -138,6 +153,7 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
           {sectionButton('effects', 'المؤثرات البصرية', '✨')}
           {sectionButton('obs', 'التشغيل و OBS', '📺')}
           {sectionButton('readers', 'القرّاء والصوتيات', '🎙️')}
+          {sectionButton('player', 'Player', '>')}
         </nav>
         <div className="admin-sidebar-footer">
           <a className="btn btn-outline-light w-100" href="/" target="_blank" rel="noreferrer">فتح شاشة البث</a>
@@ -214,7 +230,7 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
                       <button className="btn btn-outline-danger" onClick={deleteActivePreset} disabled={!activePreset}>حذف الثيم الحالي</button>
                     </div>
                     <hr />
-                    <p className="small text-muted mb-0">ضع صور الفريمات داخل <code>client/public</code> واكتب المسار مثل <code>/frame-preset3.png</code>.</p>
+                    <p className="small text-muted mb-0">ضع صور الفريمات داخل <code>data/frames</code> واكتب المسار مثل <code>/assets/frames/frame-preset3.png</code>.</p>
                   </div>
                 </div>
               </div>
@@ -309,12 +325,11 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
           )}
 
           {section === 'readers' && (
-            <div className="card border-0 shadow-sm rounded-4">
-              <div className="card-body p-5 text-center">
-                <h5 className="fw-bold">قسم القرّاء والصوتيات</h5>
-                <p className="text-muted mb-0">جاهز للتوسعة في المرحلة القادمة لإضافة مجلدات أصوات القراء وربط كل قارئ بمجلد MP3 مستقل.</p>
-              </div>
-            </div>
+            <AdminRecitersPage embedded />
+          )}
+
+          {section === 'player' && (
+            <AdminPlayerPage embedded />
           )}
         </section>
       </main>
