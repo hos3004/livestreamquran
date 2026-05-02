@@ -8,16 +8,16 @@ export const SCENE_H = 1080;
 
 const SLIDE_X = 0;
 const SLIDE_Y = 0;
-const SLIDE_W = 1125;
-const SLIDE_H = 570;
+const SLIDE_W = 1225;
+const SLIDE_H = 610;
 
-const PAGE_X = 1110;
-const PAGE_Y = 175;
-const PAGE_W = 625;
-const PAGE_H = 780;
+const PAGE_X = 1036;
+const PAGE_Y = 185;
+const PAGE_W = 825;
+const PAGE_H = 680;
 
 // Preset 2 only. This does not change config.json and does not affect Preset 1.
-const PRESET2_QURAN_ZOOM = 0.62;
+const PRESET2_QURAN_ZOOM = 0.82;
 
 const INFO_X = 470;
 const INFO_Y = 635;
