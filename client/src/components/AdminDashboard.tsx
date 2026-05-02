@@ -8,7 +8,7 @@ interface Props {
   saveLayoutPresets: (layoutPresets: LayoutPreset[]) => Promise<unknown> | void;
 }
 
-type AdminSection = 'general' | 'presets' | 'effects' | 'readers';
+type AdminSection = 'general' | 'presets' | 'effects' | 'obs' | 'readers';
 
 const numberOr = (value: string, fallback: number) => {
   const n = Number(value);
@@ -85,6 +85,15 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
     </div>
   );
 
+  const CommandBox = ({ title, command }: { title: string; command: string }) => (
+    <div className="card border-0 shadow-sm rounded-4 h-100">
+      <div className="card-body p-4">
+        <h6 className="fw-bold mb-3">{title}</h6>
+        <pre className="admin-command mb-0" dir="ltr"><code>{command}</code></pre>
+      </div>
+    </div>
+  );
+
   const RectEditor = ({ title, rectKey }: { title: string; rectKey: 'slide' | 'page' | 'info' }) => {
     if (!activePreset) return null;
     const rect = activePreset[rectKey];
@@ -127,6 +136,7 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
           {sectionButton('general', 'الإعدادات العامة', '⚙️')}
           {sectionButton('presets', 'الثيمات والتوزيع', '🎛️')}
           {sectionButton('effects', 'المؤثرات البصرية', '✨')}
+          {sectionButton('obs', 'التشغيل و OBS', '📺')}
           {sectionButton('readers', 'القرّاء والصوتيات', '🎙️')}
         </nav>
         <div className="admin-sidebar-footer">
@@ -258,6 +268,43 @@ export const AdminDashboard: React.FC<Props> = ({ config, updateConfig, layoutPr
                   <div className="col-md-4"><div className="form-check form-switch"><input className="form-check-input" type="checkbox" checked={config.enableTopDust} onChange={e => updateConfig({ enableTopDust: e.target.checked })} id="dust" /><label className="form-check-label" htmlFor="dust">جزيئات ضوء</label></div></div>
                 </div>
               </div>
+            </div>
+          )}
+
+          {section === 'obs' && (
+            <div className="row g-4">
+              <div className="col-lg-6">
+                <div className="card border-0 shadow-sm rounded-4 h-100">
+                  <div className="card-body p-4">
+                    <h5 className="fw-bold mb-3">رابط OBS Browser Source</h5>
+                    <p className="text-muted">استخدم هذا الرابط داخل OBS كـ Browser Source. هذه الصفحة نظيفة ولا تحتوي على لوحة تحكم.</p>
+                    <div className="input-group" dir="ltr">
+                      <span className="input-group-text">URL</span>
+                      <input className="form-control" readOnly value="http://localhost:5173" />
+                    </div>
+                    <div className="row g-3 mt-2">
+                      <div className="col-6"><div className="p-3 bg-light rounded-4 border"><div className="small text-muted">Width</div><strong>1920</strong></div></div>
+                      <div className="col-6"><div className="p-3 bg-light rounded-4 border"><div className="small text-muted">Height</div><strong>1080</strong></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="card border-0 shadow-sm rounded-4 h-100 bg-dark text-white">
+                  <div className="card-body p-4">
+                    <h5 className="fw-bold mb-3">روابط سريعة</h5>
+                    <div className="d-grid gap-2">
+                      <a className="btn btn-light" href="/" target="_blank" rel="noreferrer">فتح شاشة البث</a>
+                      <a className="btn btn-outline-light" href="/admin" target="_blank" rel="noreferrer">فتح لوحة التحكم</a>
+                      <a className="btn btn-outline-light" href="http://localhost:3737/api/layout-presets" target="_blank" rel="noreferrer">عرض ملف الثيمات JSON</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6"><CommandBox title="تشغيل السيرفر والواجهة معًا" command={'npm run dev'} /></div>
+              <div className="col-md-6"><CommandBox title="تشغيل السيرفر فقط" command={'npm run server'} /></div>
+              <div className="col-md-6"><CommandBox title="تشغيل واجهة التطوير فقط" command={'npm run client'} /></div>
+              <div className="col-md-6"><CommandBox title="بناء نسخة الإنتاج" command={'npm run build'} /></div>
             </div>
           )}
 
