@@ -6,12 +6,14 @@
  *   /?mode=obs    Broadcast-only clean OBS scene, legacy OBS URL
  *   /player       Broadcast preview with playback controls
  *   /admin        Standalone Arabic admin dashboard
+ *   /admin/player Player embedded inside admin UI
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
 import { BroadcastSceneDynamic } from './components/BroadcastSceneDynamic';
 import { AdminDashboard } from './components/AdminDashboard';
+import { AdminPlayerPage } from './components/AdminPlayerPage';
 import { ControlsPanel } from './components/ControlsPanel';
 import { useManifest } from './hooks/useManifest';
 import { useAudio } from './hooks/useAudio';
@@ -22,7 +24,8 @@ export default function App() {
   const { manifest, config, slides, layoutPresets, loading, error, updateConfig, saveLayoutPresets } = useManifest();
   const normalizedPath = window.location.pathname.replace(/\/$/, '') || '/';
   const urlParams = new URLSearchParams(window.location.search);
-  const isAdminRoute = normalizedPath === '/admin';
+  const isAdminRoute = normalizedPath === '/admin' || normalizedPath === '/admin/player';
+  const isAdminPlayerRoute = normalizedPath === '/admin/player';
   const isPlayerRoute = normalizedPath === '/player' || urlParams.get('mode') === 'player';
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -226,6 +229,10 @@ export default function App() {
         <p>Make sure to run: <code>npm run ingest</code> first, then restart the server.</p>
       </div>
     );
+  }
+
+  if (isAdminPlayerRoute) {
+    return <AdminPlayerPage />;
   }
 
   if (isAdminRoute) {
