@@ -2,14 +2,17 @@
  * App.tsx — Root component
  *
  * Routes:
- *   /       Broadcast-only clean OBS scene
- *   /admin  Standalone Arabic admin dashboard
+ *   /             Broadcast-only clean OBS scene
+ *   /?mode=obs    Broadcast-only clean OBS scene, legacy OBS URL
+ *   /player       Broadcast preview with playback controls
+ *   /admin        Standalone Arabic admin dashboard
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
 import { BroadcastSceneDynamic } from './components/BroadcastSceneDynamic';
 import { AdminDashboard } from './components/AdminDashboard';
+import { ControlsPanel } from './components/ControlsPanel';
 import { useManifest } from './hooks/useManifest';
 import { useAudio } from './hooks/useAudio';
 
@@ -17,7 +20,10 @@ type PageAdvanceMode = 'reset' | 'continue';
 
 export default function App() {
   const { manifest, config, slides, layoutPresets, loading, error, updateConfig, saveLayoutPresets } = useManifest();
-  const isAdminRoute = window.location.pathname.replace(/\/$/, '') === '/admin';
+  const normalizedPath = window.location.pathname.replace(/\/$/, '') || '/';
+  const urlParams = new URLSearchParams(window.location.search);
+  const isAdminRoute = normalizedPath === '/admin';
+  const isPlayerRoute = normalizedPath === '/player' || urlParams.get('mode') === 'player';
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -35,7 +41,6 @@ export default function App() {
   useEffect(() => {
     if (config && !initializedRef.current) {
       initializedRef.current = true;
-      const urlParams = new URLSearchParams(window.location.search);
       const isRender = urlParams.get('renderMode') === 'true';
       setRenderMode(isRender);
 
@@ -50,7 +55,7 @@ export default function App() {
 
       setCurrentPage(start);
     }
-  }, [config, manifest]);
+  }, [config, manifest, urlParams]);
 
   const clearAutoAdvanceTimer = useCallback(() => {
     if (autoAdvanceTimerRef.current) {
@@ -112,7 +117,6 @@ export default function App() {
       let pageLocalTime = 0;
       let isEnded = false;
 
-      const urlParams = new URLSearchParams(window.location.search);
       const targetJuz = parseInt(urlParams.get('juz') || '0', 10);
 
       let accum = 0;
@@ -139,7 +143,6 @@ export default function App() {
     };
 
     (window as any).getJuzDuration = () => {
-      const urlParams = new URLSearchParams(window.location.search);
       const targetJuz = parseInt(urlParams.get('juz') || '0', 10);
       let total = 0;
       for (const m of manifest) {
@@ -149,7 +152,7 @@ export default function App() {
       }
       return total;
     };
-  }, [renderMode, manifest]);
+  }, [renderMode, manifest, urlParams]);
 
   const handlePlay = useCallback(() => { setIsPlaying(true); play(); }, [play]);
   const handlePause = useCallback(() => { setIsPlaying(false); pause(); }, [pause]);
@@ -169,6 +172,14 @@ export default function App() {
     setCurrentPage(p => Math.max(p - 1, 1));
     setIsPlaying(true);
   }, [clearAutoAdvanceTimer, stop]);
+
+  const handleJumpToPage = useCallback((page: number) => {
+    clearAutoAdvanceTimer();
+    setPageAdvanceMode('reset');
+    stop();
+    setCurrentPage(Math.max(1, Math.min(page, manifest.length || 604)));
+    setIsPlaying(true);
+  }, [clearAutoAdvanceTimer, stop, manifest.length]);
 
   useEffect(() => {
     if (isAdminRoute) return;
@@ -229,35 +240,54 @@ export default function App() {
   }
 
   const selectedPreset = layoutPresets.find(p => p.id === config?.layoutPreset) ?? null;
+  const scene = selectedPreset ? (
+    <BroadcastSceneDynamic
+      preset={selectedPreset}
+      manifest={manifest}
+      slides={slides}
+      config={config!}
+      currentPage={currentPage}
+      pageAdvanceMode={pageAdvanceMode}
+      isPlaying={renderMode ? true : isPlaying}
+      audioRef={renderMode ? fakeAudioRef as any : audioRef}
+      debugMode={debugMode}
+    />
+  ) : (
+    <BroadcastScene
+      manifest={manifest}
+      slides={slides}
+      config={config!}
+      currentPage={currentPage}
+      pageAdvanceMode={pageAdvanceMode}
+      isPlaying={renderMode ? true : isPlaying}
+      audioRef={renderMode ? fakeAudioRef as any : audioRef}
+      debugMode={debugMode}
+    />
+  );
 
   return (
     <div className="app-root">
-      <div className="scene-wrapper">
-        {selectedPreset ? (
-          <BroadcastSceneDynamic
-            preset={selectedPreset}
-            manifest={manifest}
-            slides={slides}
+      <div className="scene-wrapper">{scene}</div>
+      {isPlayerRoute && (
+        <div className="controls-wrapper">
+          <ControlsPanel
             config={config!}
+            updateConfig={updateConfig}
+            layoutPresets={layoutPresets}
+            saveLayoutPresets={saveLayoutPresets}
             currentPage={currentPage}
-            pageAdvanceMode={pageAdvanceMode}
-            isPlaying={renderMode ? true : isPlaying}
-            audioRef={renderMode ? fakeAudioRef as any : audioRef}
+            totalPages={manifest.length}
+            isPlaying={isPlaying}
             debugMode={debugMode}
+            onPlay={handlePlay}
+            onPause={handlePause}
+            onNext={handleNext}
+            onPrev={handlePrev}
+            onJumpToPage={handleJumpToPage}
+            onToggleDebug={() => setDebugMode(v => !v)}
           />
-        ) : (
-          <BroadcastScene
-            manifest={manifest}
-            slides={slides}
-            config={config!}
-            currentPage={currentPage}
-            pageAdvanceMode={pageAdvanceMode}
-            isPlaying={renderMode ? true : isPlaying}
-            audioRef={renderMode ? fakeAudioRef as any : audioRef}
-            debugMode={debugMode}
-          />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
