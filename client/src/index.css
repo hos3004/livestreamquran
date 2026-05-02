@@ -260,6 +260,24 @@ body.render-mode * {
   border-radius: 8px;
 }
 
+.admin-command {
+  direction: ltr;
+  text-align: left;
+  white-space: pre-wrap;
+  background: #0f172a;
+  color: #dbeafe;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.admin-command code {
+  color: inherit;
+  background: transparent;
+  padding: 0;
+}
+
 .admin-sticky-card {
   top: 24px;
 }
