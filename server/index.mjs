@@ -8,8 +8,8 @@
 import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
-import { readFileSync, existsSync, readdirSync } from 'fs';
-import { resolve, join, extname } from 'path';
+import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
+import { resolve, join, extname, basename } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { createRequire } from 'module';
@@ -58,6 +58,12 @@ function loadConfig() {
   }
 }
 
+function saveConfig(updated) {
+  const { writeFileSync } = require('fs');
+  writeFileSync(join(ROOT, 'config.json'), JSON.stringify(updated, null, 2), 'utf8');
+  return updated;
+}
+
 function loadLayoutPresets() {
   try {
     return JSON.parse(readFileSync(join(ROOT, 'layout-presets.json'), 'utf8'));
@@ -65,6 +71,33 @@ function loadLayoutPresets() {
     console.warn('[WARN] layout-presets.json not found, using empty presets');
     return { presets: [] };
   }
+}
+
+function loadReciters() {
+  try {
+    return JSON.parse(readFileSync(join(ROOT, 'reciters.json'), 'utf8'));
+  } catch (e) {
+    console.warn('[WARN] reciters.json not found, using empty reciters');
+    return { audioRootDir: '', activeReciterId: '', reciters: [] };
+  }
+}
+
+function saveReciters(data) {
+  const { writeFileSync } = require('fs');
+  writeFileSync(join(ROOT, 'reciters.json'), JSON.stringify(data, null, 2), 'utf8');
+  return data;
+}
+
+function safeString(value, fallback = '') {
+  return typeof value === 'string' ? value.trim() : fallback;
+}
+
+function makeReciterId(name, fallbackIndex) {
+  const base = safeString(name, `reciter-${fallbackIndex}`)
+    .toLowerCase()
+    .replace(/[^a-z0-9\u0600-\u06FF]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return base || `reciter-${fallbackIndex}`;
 }
 
 let appConfig = loadConfig();
@@ -108,10 +141,8 @@ app.get('/api/config', (req, res) => {
 
 app.patch('/api/config', (req, res) => {
   try {
-    const { writeFileSync } = require('fs');
     const current = loadConfig();
-    const updated = { ...current, ...req.body };
-    writeFileSync(join(ROOT, 'config.json'), JSON.stringify(updated, null, 2), 'utf8');
+    const updated = saveConfig({ ...current, ...req.body });
     appConfig = updated;
     res.json({ ok: true, config: updated });
   } catch (e) {
@@ -140,6 +171,68 @@ app.patch('/api/layout-presets', (req, res) => {
     const data = { presets: cleaned };
     writeFileSync(join(ROOT, 'layout-presets.json'), JSON.stringify(data, null, 2), 'utf8');
     res.json({ ok: true, ...data });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get('/api/reciters', (req, res) => {
+  res.json(loadReciters());
+});
+
+app.patch('/api/reciters', (req, res) => {
+  try {
+    const current = loadReciters();
+    const audioRootDir = safeString(req.body?.audioRootDir, current.audioRootDir);
+    const activeReciterId = safeString(req.body?.activeReciterId, current.activeReciterId);
+    const reciters = Array.isArray(req.body?.reciters) ? req.body.reciters : current.reciters;
+    const cleaned = reciters.map((reciter, index) => {
+      const name = safeString(reciter.name, `القارئ ${index + 1}`);
+      const folderName = safeString(reciter.folderName, safeString(reciter.audioDir ? basename(reciter.audioDir) : '', `reciter-${index + 1}`));
+      const audioDir = safeString(reciter.audioDir, audioRootDir ? join(audioRootDir, folderName) : folderName);
+      return {
+        id: safeString(reciter.id, makeReciterId(name, index + 1)),
+        name,
+        folderName,
+        audioDir,
+      };
+    });
+    const data = saveReciters({ audioRootDir, activeReciterId, reciters: cleaned });
+    res.json({ ok: true, ...data });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.post('/api/reciters/scan', (req, res) => {
+  try {
+    const rootDir = safeString(req.body?.audioRootDir, loadReciters().audioRootDir);
+    if (!rootDir || !existsSync(rootDir)) {
+      return res.status(400).json({ error: 'Audio root directory does not exist', audioRootDir: rootDir });
+    }
+    const folders = readdirSync(rootDir)
+      .map(name => ({ name, fullPath: join(rootDir, name) }))
+      .filter(item => {
+        try { return statSync(item.fullPath).isDirectory(); } catch { return false; }
+      })
+      .map(item => ({ folderName: item.name, audioDir: item.fullPath }));
+    res.json({ ok: true, audioRootDir: rootDir, folders });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.post('/api/reciters/activate', (req, res) => {
+  try {
+    const id = safeString(req.body?.id);
+    const data = loadReciters();
+    const reciter = data.reciters.find(r => r.id === id);
+    if (!reciter) return res.status(404).json({ error: 'Reciter not found' });
+    const updatedReciters = saveReciters({ ...data, activeReciterId: reciter.id });
+    const cfg = loadConfig();
+    const updatedConfig = saveConfig({ ...cfg, reciterName: reciter.name, mp3Dir: reciter.audioDir });
+    appConfig = updatedConfig;
+    res.json({ ok: true, reciter, reciters: updatedReciters, config: updatedConfig });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -188,6 +281,7 @@ app.get('*', (req, res) => {
           <h1>🕌 Quran Broadcast Server Running</h1>
           <p>API: <a href="/api/config" style="color:#88f">/api/config</a></p>
           <p>Presets: <a href="/api/layout-presets" style="color:#88f">/api/layout-presets</a></p>
+          <p>Reciters: <a href="/api/reciters" style="color:#88f">/api/reciters</a></p>
           <p>To view the app, run: <code>npm run client</code> and open <a href="http://localhost:5173" style="color:#88f">http://localhost:5173</a></p>
           <p>Or build the client with <code>npm run build</code> and reload this page.</p>
         </body>
@@ -199,5 +293,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🕌 Quran Broadcast Server running on http://localhost:${PORT}`);
   console.log(`   Assets: /assets/hafs, /assets/mp3, /assets/slide`);
-  console.log(`   API:    /api/config, /api/slides, /api/manifest, /api/layout-presets`);
+  console.log(`   API:    /api/config, /api/slides, /api/manifest, /api/layout-presets, /api/reciters`);
 });
