@@ -40,6 +40,21 @@ export interface LayoutPresetsFile {
   presets: LayoutPreset[];
 }
 
+// ─── Reciters ────────────────────────────────────────────────────────────────
+
+export interface Reciter {
+  id: string;
+  name: string;
+  folderName: string;
+  audioDir: string;
+}
+
+export interface RecitersFile {
+  audioRootDir: string;
+  activeReciterId: string;
+  reciters: Reciter[];
+}
+
 // ─── App Config ──────────────────────────────────────────────────────────────
 
 export interface AppConfig {
