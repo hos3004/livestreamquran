@@ -1,31 +1,28 @@
 /**
  * App.tsx — Root component
  *
- * Owns playback state machine:
- *   - currentPage
- *   - play/pause/next/prev
- *   - elapsed time (drives QuranWindow scroll)
- *   - audio loading/playback
- *   - keyboard shortcuts
+ * Routes:
+ *   /       Broadcast-only clean OBS scene
+ *   /admin  Standalone Arabic admin dashboard
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
 import { BroadcastSceneDynamic } from './components/BroadcastSceneDynamic';
-import { ControlsPanel }  from './components/ControlsPanel';
-import { useManifest }    from './hooks/useManifest';
-import { useAudio }       from './hooks/useAudio';
+import { AdminDashboard } from './components/AdminDashboard';
+import { useManifest } from './hooks/useManifest';
+import { useAudio } from './hooks/useAudio';
 
 type PageAdvanceMode = 'reset' | 'continue';
 
 export default function App() {
   const { manifest, config, slides, layoutPresets, loading, error, updateConfig, saveLayoutPresets } = useManifest();
+  const isAdminRoute = window.location.pathname.replace(/\/$/, '') === '/admin';
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [isPlaying,   setIsPlaying]   = useState(false);
-  const [debugMode,   setDebugMode]   = useState(false);
-  const [showControls, setShowControls] = useState(true);
-  const [renderMode, setRenderMode]   = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [debugMode, setDebugMode] = useState(false);
+  const [renderMode, setRenderMode] = useState(false);
   const [pageAdvanceMode, setPageAdvanceMode] = useState<PageAdvanceMode>('reset');
   const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -36,16 +33,14 @@ export default function App() {
       const urlParams = new URLSearchParams(window.location.search);
       const isRender = urlParams.get('renderMode') === 'true';
       setRenderMode(isRender);
-      
+
       const targetJuz = urlParams.get('juz');
-      
       let start = Math.max(1, Math.min(config.startPage, manifest.length || 1));
-      
+
       if (isRender && targetJuz && manifest.length) {
-         const juzStartPage = manifest.find(m => m.juz === parseInt(targetJuz, 10))?.page;
-         if (juzStartPage) start = juzStartPage;
-         document.body.classList.add('render-mode');
-         setShowControls(false);
+        const juzStartPage = manifest.find(m => m.juz === parseInt(targetJuz, 10))?.page;
+        if (juzStartPage) start = juzStartPage;
+        document.body.classList.add('render-mode');
       }
 
       setCurrentPage(start);
@@ -85,28 +80,24 @@ export default function App() {
   });
 
   useEffect(() => {
+    if (isAdminRoute) return;
     if (!manifest.length) return;
     const entry = manifest[currentPage - 1];
     if (!entry) return;
 
     if (entry.audioPath) {
-      if (renderMode) {
-        // In render mode, do not actually load/play audio to save resources and avoid sync issues.
-      } else {
-        load(entry.audioPath);
-      }
+      if (!renderMode) load(entry.audioPath);
     } else {
       console.warn(`[App] Page ${currentPage}: no audio path, skipping`);
       const t = setTimeout(() => handleAudioEnded(), 2000);
       return () => clearTimeout(t);
     }
-  }, [currentPage, manifest, load, handleAudioEnded]);
+  }, [isAdminRoute, currentPage, manifest, load, handleAudioEnded, renderMode]);
 
   useEffect(() => {
-    if (audioState.playState === 'paused' && isPlaying) {
-      play();
-    }
-  }, [audioState.playState, isPlaying, play]);
+    if (isAdminRoute) return;
+    if (audioState.playState === 'paused' && isPlaying) play();
+  }, [isAdminRoute, audioState.playState, isPlaying, play]);
 
   const fakeAudioRef = useRef<{ currentTime: number; ended: boolean; _duration: number }>({ currentTime: 0, ended: false, _duration: 1 });
   useEffect(() => {
@@ -118,7 +109,7 @@ export default function App() {
 
       const urlParams = new URLSearchParams(window.location.search);
       const targetJuz = parseInt(urlParams.get('juz') || '0', 10);
-      
+
       let accum = 0;
       for (const m of manifest) {
         if (targetJuz && m.juz !== targetJuz) continue;
@@ -126,13 +117,10 @@ export default function App() {
 
         const dur = Math.max(0.1, m.audioDuration || 30);
         if (timelineSeconds >= accum && timelineSeconds < accum + dur + 1.0) {
-           targetPage = m.page;
-           pageLocalTime = timelineSeconds - accum;
-           
-           if (pageLocalTime > dur) {
-             isEnded = true;
-           }
-           break;
+          targetPage = m.page;
+          pageLocalTime = timelineSeconds - accum;
+          if (pageLocalTime > dur) isEnded = true;
+          break;
         }
         accum += dur + 1.0;
       }
@@ -144,6 +132,7 @@ export default function App() {
       document.body.style.setProperty('--render-time', `${timelineSeconds}s`);
       return { page: targetPage, localTime: pageLocalTime };
     };
+
     (window as any).getJuzDuration = () => {
       const urlParams = new URLSearchParams(window.location.search);
       const targetJuz = parseInt(urlParams.get('juz') || '0', 10);
@@ -157,15 +146,8 @@ export default function App() {
     };
   }, [renderMode, manifest]);
 
-  const handlePlay = useCallback(() => {
-    setIsPlaying(true);
-    play();
-  }, [play]);
-
-  const handlePause = useCallback(() => {
-    setIsPlaying(false);
-    pause();
-  }, [pause]);
+  const handlePlay = useCallback(() => { setIsPlaying(true); play(); }, [play]);
+  const handlePause = useCallback(() => { setIsPlaying(false); pause(); }, [pause]);
 
   const handleNext = useCallback(() => {
     clearAutoAdvanceTimer();
@@ -183,15 +165,8 @@ export default function App() {
     setIsPlaying(true);
   }, [clearAutoAdvanceTimer, stop]);
 
-  const handleJumpToPage = useCallback((page: number) => {
-    clearAutoAdvanceTimer();
-    setPageAdvanceMode('reset');
-    stop();
-    setCurrentPage(page);
-    setIsPlaying(true);
-  }, [clearAutoAdvanceTimer, stop]);
-
   useEffect(() => {
+    if (isAdminRoute) return;
     const handler = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement) return;
       switch (e.key) {
@@ -208,10 +183,6 @@ export default function App() {
           e.preventDefault();
           handlePrev();
           break;
-        case 'c':
-        case 'C':
-          setShowControls(v => !v);
-          break;
         case 'd':
         case 'D':
           setDebugMode(v => !v);
@@ -220,7 +191,7 @@ export default function App() {
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [isPlaying, handlePlay, handlePause, handleNext, handlePrev]);
+  }, [isAdminRoute, isPlaying, handlePlay, handlePause, handleNext, handlePrev]);
 
   if (loading) {
     return (
@@ -238,6 +209,17 @@ export default function App() {
         <pre>{error}</pre>
         <p>Make sure to run: <code>npm run ingest</code> first, then restart the server.</p>
       </div>
+    );
+  }
+
+  if (isAdminRoute) {
+    return (
+      <AdminDashboard
+        config={config!}
+        updateConfig={updateConfig}
+        layoutPresets={layoutPresets}
+        saveLayoutPresets={saveLayoutPresets}
+      />
     );
   }
 
@@ -270,50 +252,6 @@ export default function App() {
             debugMode={debugMode}
           />
         )}
-      </div>
-
-      {showControls && (
-        <div className="controls-wrapper">
-          <ControlsPanel
-            config={config!}
-            updateConfig={updateConfig}
-            layoutPresets={layoutPresets}
-            saveLayoutPresets={saveLayoutPresets}
-            currentPage={currentPage}
-            totalPages={manifest.length}
-            isPlaying={isPlaying}
-            debugMode={debugMode}
-            onPlay={handlePlay}
-            onPause={handlePause}
-            onNext={handleNext}
-            onPrev={handlePrev}
-            onJumpToPage={handleJumpToPage}
-            onToggleDebug={() => setDebugMode(v => !v)}
-          />
-        </div>
-      )}
-
-      <div className="top-right-actions" style={{ position: 'fixed', top: 12, right: 16, zIndex: 9999, display: 'flex', gap: 8 }}>
-        <div 
-          className="controls-hint" 
-          onClick={() => {
-            if (!document.fullscreenElement) {
-              document.documentElement.requestFullscreen().catch(console.warn);
-            } else {
-              document.exitFullscreen().catch(console.warn);
-            }
-          }}
-          title="Toggle Fullscreen"
-          style={{ display: 'flex', alignItems: 'center', gap: 6 }}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-          </svg>
-          ملء الشاشة
-        </div>
-        <div className="controls-hint" onClick={() => setShowControls(v => !v)}>
-          {showControls ? '✕ إخفاء الإعدادات' : '☰ الإعدادات'}
-        </div>
       </div>
     </div>
   );
