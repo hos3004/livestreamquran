@@ -22,6 +22,7 @@ export interface AppConfig {
   reciterName: string;
   startPage: number;
   loopMode: boolean;
+  layoutPreset: 1 | 2;                // 1 = original layout, 2 = left slideshow + right Quran frame
   slideshowInterval: number;         // ms
   slideshowTransitionDuration: number; // ms
   scrollZoomFactor: number;          // 1.0 = default fit
