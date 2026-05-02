@@ -1,0 +1,14 @@
+{
+  "presets": [
+    {
+      "id": 2,
+      "name": "Slider Left / Quran Right",
+      "frame": "/frame-preset2.png",
+      "quranZoom": 0.82,
+      "background": "#000000",
+      "slide": { "x": 0, "y": 0, "w": 1225, "h": 610 },
+      "page": { "x": 1036, "y": 185, "w": 825, "h": 680 },
+      "info": { "x": 470, "y": 635, "w": 500, "h": 300 }
+    }
+  ]
+}
