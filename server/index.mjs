@@ -9,7 +9,7 @@ import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
-import { resolve, join, extname, basename } from 'path';
+import { resolve, join, extname, basename, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { createRequire } from 'module';
@@ -36,6 +36,15 @@ function loadEnv() {
 loadEnv();
 
 const PORT = parseInt(process.env.PORT || '3737', 10);
+
+function normalizePath(input) {
+  const value = safeString(input);
+  if (!value) return '';
+  const normalized = value.replace(/\\/g, '/');
+  return isAbsolute(normalized) || /^[A-Za-z]:\//.test(normalized)
+    ? normalized
+    : join(ROOT, normalized).replace(/\\/g, '/');
+}
 
 function loadConfig() {
   try {
@@ -78,7 +87,7 @@ function loadReciters() {
     return JSON.parse(readFileSync(join(ROOT, 'reciters.json'), 'utf8'));
   } catch (e) {
     console.warn('[WARN] reciters.json not found, using empty reciters');
-    return { audioRootDir: '', activeReciterId: '', reciters: [] };
+    return { audioRootDir: 'reciters', activeReciterId: '', reciters: [] };
   }
 }
 
@@ -113,19 +122,19 @@ app.use(express.static(PUBLIC_DIR, { maxAge: '1m' }));
 
 app.use('/assets/hafs', (req, res, next) => {
   const cfg = loadConfig();
-  const dir = cfg.hafsDir.replace(/\//g, '\\');
+  const dir = normalizePath(cfg.hafsDir).replace(/\//g, '\\');
   express.static(dir, { maxAge: '1h' })(req, res, next);
 });
 
 app.use('/assets/mp3', (req, res, next) => {
   const cfg = loadConfig();
-  const dir = cfg.mp3Dir.replace(/\//g, '\\');
+  const dir = normalizePath(cfg.mp3Dir).replace(/\//g, '\\');
   express.static(dir, { maxAge: '1h' })(req, res, next);
 });
 
 app.use('/assets/slide', (req, res, next) => {
   const cfg = loadConfig();
-  const dir = cfg.slideDir.replace(/\//g, '\\');
+  const dir = normalizePath(cfg.slideDir).replace(/\//g, '\\');
   express.static(dir, { maxAge: '5m' })(req, res, next);
 });
 
@@ -183,18 +192,19 @@ app.get('/api/reciters', (req, res) => {
 app.patch('/api/reciters', (req, res) => {
   try {
     const current = loadReciters();
-    const audioRootDir = safeString(req.body?.audioRootDir, current.audioRootDir);
+    const audioRootDir = safeString(req.body?.audioRootDir, current.audioRootDir || 'reciters');
     const activeReciterId = safeString(req.body?.activeReciterId, current.activeReciterId);
     const reciters = Array.isArray(req.body?.reciters) ? req.body.reciters : current.reciters;
+    const resolvedRoot = normalizePath(audioRootDir);
     const cleaned = reciters.map((reciter, index) => {
       const name = safeString(reciter.name, `القارئ ${index + 1}`);
       const folderName = safeString(reciter.folderName, safeString(reciter.audioDir ? basename(reciter.audioDir) : '', `reciter-${index + 1}`));
-      const audioDir = safeString(reciter.audioDir, audioRootDir ? join(audioRootDir, folderName) : folderName);
+      const audioDir = safeString(reciter.audioDir, audioRootDir ? join(resolvedRoot, folderName).replace(/\\/g, '/') : folderName);
       return {
         id: safeString(reciter.id, makeReciterId(name, index + 1)),
         name,
         folderName,
-        audioDir,
+        audioDir: normalizePath(audioDir),
       };
     });
     const data = saveReciters({ audioRootDir, activeReciterId, reciters: cleaned });
@@ -206,17 +216,18 @@ app.patch('/api/reciters', (req, res) => {
 
 app.post('/api/reciters/scan', (req, res) => {
   try {
-    const rootDir = safeString(req.body?.audioRootDir, loadReciters().audioRootDir);
+    const requestedRoot = safeString(req.body?.audioRootDir, loadReciters().audioRootDir || 'reciters');
+    const rootDir = normalizePath(requestedRoot);
     if (!rootDir || !existsSync(rootDir)) {
-      return res.status(400).json({ error: 'Audio root directory does not exist', audioRootDir: rootDir });
+      return res.status(400).json({ error: 'Audio root directory does not exist', audioRootDir: requestedRoot, resolvedPath: rootDir });
     }
     const folders = readdirSync(rootDir)
-      .map(name => ({ name, fullPath: join(rootDir, name) }))
+      .map(name => ({ name, fullPath: join(rootDir, name).replace(/\\/g, '/') }))
       .filter(item => {
         try { return statSync(item.fullPath).isDirectory(); } catch { return false; }
       })
       .map(item => ({ folderName: item.name, audioDir: item.fullPath }));
-    res.json({ ok: true, audioRootDir: rootDir, folders });
+    res.json({ ok: true, audioRootDir: requestedRoot, resolvedPath: rootDir, folders });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -228,11 +239,12 @@ app.post('/api/reciters/activate', (req, res) => {
     const data = loadReciters();
     const reciter = data.reciters.find(r => r.id === id);
     if (!reciter) return res.status(404).json({ error: 'Reciter not found' });
+    const resolvedAudioDir = normalizePath(reciter.audioDir);
     const updatedReciters = saveReciters({ ...data, activeReciterId: reciter.id });
     const cfg = loadConfig();
-    const updatedConfig = saveConfig({ ...cfg, reciterName: reciter.name, mp3Dir: reciter.audioDir });
+    const updatedConfig = saveConfig({ ...cfg, reciterName: reciter.name, mp3Dir: resolvedAudioDir });
     appConfig = updatedConfig;
-    res.json({ ok: true, reciter, reciters: updatedReciters, config: updatedConfig });
+    res.json({ ok: true, reciter: { ...reciter, audioDir: resolvedAudioDir }, reciters: updatedReciters, config: updatedConfig });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -241,7 +253,7 @@ app.post('/api/reciters/activate', (req, res) => {
 app.get('/api/slides', (req, res) => {
   try {
     const cfg = loadConfig();
-    const slideDir = cfg.slideDir.replace(/\//g, '\\');
+    const slideDir = normalizePath(cfg.slideDir).replace(/\//g, '\\');
     if (!existsSync(slideDir)) {
       return res.json({ slides: [] });
     }
