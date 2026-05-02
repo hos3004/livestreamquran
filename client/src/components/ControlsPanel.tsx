@@ -40,7 +40,6 @@ export const ControlsPanel: React.FC<Props> = ({
 
   return (
     <div className="controls-panel">
-      {/* Primary controls row */}
       <div className="controls-row">
         <button className="ctrl-btn" onClick={onPrev} title="Previous page">◀◀</button>
         <button className="ctrl-btn primary" onClick={isPlaying ? onPause : onPlay} title="Play / Pause">
@@ -50,7 +49,6 @@ export const ControlsPanel: React.FC<Props> = ({
 
         <div className="ctrl-sep" />
 
-        {/* Jump to page */}
         <input
           className="ctrl-input"
           type="number"
@@ -65,7 +63,6 @@ export const ControlsPanel: React.FC<Props> = ({
 
         <div className="ctrl-sep" />
 
-        {/* Loop toggle */}
         <label className="ctrl-label">
           <input
             type="checkbox"
@@ -75,19 +72,28 @@ export const ControlsPanel: React.FC<Props> = ({
           Loop
         </label>
 
-        {/* Debug toggle */}
         <button className={`ctrl-btn ${debugMode ? 'active' : ''}`} onClick={onToggleDebug}>
           {debugMode ? '🐛 Debug ON' : '🐛 Debug'}
         </button>
 
-        {/* Settings toggle */}
         <button className="ctrl-btn" onClick={() => setSettingsOpen(s => !s)}>⚙️ Settings</button>
       </div>
 
-      {/* Settings panel */}
       {settingsOpen && (
         <div className="settings-panel">
           <h3>Settings</h3>
+
+          <label>
+            Layout preset
+            <select
+              className="ctrl-input"
+              value={config.layoutPreset ?? 1}
+              onChange={e => updateConfig({ layoutPreset: Number(e.target.value) as 1 | 2 })}
+            >
+              <option value={1}>Preset 1 - Original</option>
+              <option value={2}>Preset 2 - Slider Left / Quran Right</option>
+            </select>
+          </label>
 
           <label>
             Reciter name
@@ -146,7 +152,6 @@ export const ControlsPanel: React.FC<Props> = ({
             />
           </label>
 
-          {/* Visual Effects Section */}
           <div style={{ gridColumn: '1 / -1', marginTop: 8 }}>
             <h4 style={{ color: '#c9a84c', fontSize: '13px', marginBottom: 4 }}>Visual Effects</h4>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '8px' }}>
