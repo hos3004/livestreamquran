@@ -2,6 +2,7 @@
   "reciterName": "ماهر المعيقلي",
   "startPage": 1,
   "loopMode": true,
+  "layoutPreset": 2,
   "slideshowInterval": 8000,
   "slideshowTransitionDuration": 1500,
   "scrollZoomFactor": 0.5,
