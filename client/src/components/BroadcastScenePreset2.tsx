@@ -16,6 +16,9 @@ const PAGE_Y = 175;
 const PAGE_W = 625;
 const PAGE_H = 780;
 
+// Preset 2 only. This does not change config.json and does not affect Preset 1.
+const PRESET2_QURAN_ZOOM = 0.62;
+
 const INFO_X = 470;
 const INFO_Y = 635;
 const INFO_W = 500;
@@ -62,6 +65,7 @@ export const BroadcastScenePreset2: React.FC<Props> = ({ manifest, slides, confi
   const prevEntry = manifest[entryIndex - 1] ?? null;
   const entry = manifest[entryIndex] ?? null;
   const nextEntry = manifest[entryIndex + 1] ?? null;
+  const preset2Config: AppConfig = { ...config, scrollZoomFactor: PRESET2_QURAN_ZOOM };
 
   return (
     <svg viewBox={`0 0 ${SCENE_W} ${SCENE_H}`} xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block', background: '#000000' }}>
@@ -77,7 +81,7 @@ export const BroadcastScenePreset2: React.FC<Props> = ({ manifest, slides, confi
       <rect width={SCENE_W} height={SCENE_H} fill="#000000" />
       <TopWindow slides={slides} config={config} x={SLIDE_X} y={SLIDE_Y} width={SLIDE_W} height={SLIDE_H} />
       <rect x={PAGE_X} y={PAGE_Y} width={PAGE_W} height={PAGE_H} fill="url(#preset2QuranGlow)" />
-      <QuranWindow prevEntry={prevEntry} entry={entry} nextEntry={nextEntry} config={config} pageAdvanceMode={pageAdvanceMode} isPlaying={isPlaying} audioRef={audioRef} x={PAGE_X} y={PAGE_Y} width={PAGE_W} height={PAGE_H} debugMode={debugMode} />
+      <QuranWindow prevEntry={prevEntry} entry={entry} nextEntry={nextEntry} config={preset2Config} pageAdvanceMode={pageAdvanceMode} isPlaying={isPlaying} audioRef={audioRef} x={PAGE_X} y={PAGE_Y} width={PAGE_W} height={PAGE_H} debugMode={debugMode} />
       <image href="/frame-preset2.png" x={0} y={0} width={SCENE_W} height={SCENE_H} preserveAspectRatio="none" style={{ pointerEvents: 'none' }} />
       <Preset2InfoBand entry={entry} config={config} x={INFO_X} y={INFO_Y} width={INFO_W} />
     </svg>
