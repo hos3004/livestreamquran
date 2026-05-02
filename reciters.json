@@ -1,12 +1,5 @@
 {
-  "audioRootDir": "D:/2025 apps/quran/reciters",
-  "activeReciterId": "maher",
-  "reciters": [
-    {
-      "id": "maher",
-      "name": "ماهر المعيقلي",
-      "folderName": "maher",
-      "audioDir": "D:/2025 apps/quran/mp3"
-    }
-  ]
+  "audioRootDir": "reciters",
+  "activeReciterId": "",
+  "reciters": []
 }
