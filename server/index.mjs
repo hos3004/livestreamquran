@@ -19,8 +19,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename);
 const ROOT       = resolve(__dirname, '..');
 
-// ─── Load config & env ──────────────────────────────────────────────────────
-// Simple manual .env loader (avoid extra deps)
 function loadEnv() {
   const envPath = join(ROOT, '.env');
   if (!existsSync(envPath)) return;
@@ -48,6 +46,7 @@ function loadConfig() {
       reciterName: 'القارئ',
       startPage: 1,
       loopMode: true,
+      layoutPreset: 1,
       slideshowInterval: 8000,
       slideshowTransitionDuration: 1500,
       scrollZoomFactor: 1.0,
@@ -59,20 +58,26 @@ function loadConfig() {
   }
 }
 
+function loadLayoutPresets() {
+  try {
+    return JSON.parse(readFileSync(join(ROOT, 'layout-presets.json'), 'utf8'));
+  } catch (e) {
+    console.warn('[WARN] layout-presets.json not found, using empty presets');
+    return { presets: [] };
+  }
+}
+
 let appConfig = loadConfig();
 
-// ─── Express setup ──────────────────────────────────────────────────────────
 const app = express();
 
 app.use(compression());
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '2mb' }));
 
-// ─── Serve static public/ (manifest.json, etc.) ─────────────────────────────
 const PUBLIC_DIR = join(ROOT, 'public');
 app.use(express.static(PUBLIC_DIR, { maxAge: '1m' }));
 
-// ─── Serve asset folders as virtual paths ────────────────────────────────────
 app.use('/assets/hafs', (req, res, next) => {
   const cfg = loadConfig();
   const dir = cfg.hafsDir.replace(/\//g, '\\');
@@ -91,21 +96,16 @@ app.use('/assets/slide', (req, res, next) => {
   express.static(dir, { maxAge: '5m' })(req, res, next);
 });
 
-// ─── Serve frontend build (for OBS production use) ──────────────────────────
 const CLIENT_BUILD = join(ROOT, 'client', 'dist');
 if (existsSync(CLIENT_BUILD)) {
   app.use(express.static(CLIENT_BUILD));
 }
 
-// ─── API routes ─────────────────────────────────────────────────────────────
-
-// GET /api/config — returns full app config
 app.get('/api/config', (req, res) => {
   const cfg = loadConfig();
   res.json(cfg);
 });
 
-// PATCH /api/config — update config fields at runtime
 app.patch('/api/config', (req, res) => {
   try {
     const { writeFileSync } = require('fs');
@@ -119,7 +119,32 @@ app.patch('/api/config', (req, res) => {
   }
 });
 
-// GET /api/slides — lists all images in slide folder
+app.get('/api/layout-presets', (req, res) => {
+  res.json(loadLayoutPresets());
+});
+
+app.patch('/api/layout-presets', (req, res) => {
+  try {
+    const { writeFileSync } = require('fs');
+    const presets = Array.isArray(req.body?.presets) ? req.body.presets : [];
+    const cleaned = presets.map((preset, index) => ({
+      id: Number(preset.id) || index + 2,
+      name: String(preset.name || `Preset ${index + 2}`),
+      frame: String(preset.frame || '/frame-preset2.png'),
+      quranZoom: Number(preset.quranZoom) || 0.6,
+      background: String(preset.background || '#000000'),
+      slide: preset.slide,
+      page: preset.page,
+      info: preset.info,
+    }));
+    const data = { presets: cleaned };
+    writeFileSync(join(ROOT, 'layout-presets.json'), JSON.stringify(data, null, 2), 'utf8');
+    res.json({ ok: true, ...data });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
 app.get('/api/slides', (req, res) => {
   try {
     const cfg = loadConfig();
@@ -142,7 +167,6 @@ app.get('/api/slides', (req, res) => {
   }
 });
 
-// GET /api/manifest — proxy to public/manifest.json (for convenience)
 app.get('/api/manifest', (req, res) => {
   const manifestPath = join(PUBLIC_DIR, 'manifest.json');
   if (!existsSync(manifestPath)) {
@@ -151,7 +175,6 @@ app.get('/api/manifest', (req, res) => {
   res.sendFile(manifestPath);
 });
 
-// SPA fallback — serve client app for all other routes
 app.get('*', (req, res) => {
   const indexPath = join(CLIENT_BUILD, 'index.html');
   if (existsSync(indexPath)) {
@@ -164,6 +187,7 @@ app.get('*', (req, res) => {
         <body style="background:#000;color:#fff;font-family:sans-serif;padding:40px">
           <h1>🕌 Quran Broadcast Server Running</h1>
           <p>API: <a href="/api/config" style="color:#88f">/api/config</a></p>
+          <p>Presets: <a href="/api/layout-presets" style="color:#88f">/api/layout-presets</a></p>
           <p>To view the app, run: <code>npm run client</code> and open <a href="http://localhost:5173" style="color:#88f">http://localhost:5173</a></p>
           <p>Or build the client with <code>npm run build</code> and reload this page.</p>
         </body>
@@ -172,9 +196,8 @@ app.get('*', (req, res) => {
   }
 });
 
-// ─── Start ───────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`🕌 Quran Broadcast Server running on http://localhost:${PORT}`);
   console.log(`   Assets: /assets/hafs, /assets/mp3, /assets/slide`);
-  console.log(`   API:    /api/config, /api/slides, /api/manifest`);
+  console.log(`   API:    /api/config, /api/slides, /api/manifest, /api/layout-presets`);
 });
