@@ -11,7 +11,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { BroadcastScene } from './components/BroadcastScene';
-import { BroadcastScenePreset2 } from './components/BroadcastScenePreset2';
+import { BroadcastSceneDynamic } from './components/BroadcastSceneDynamic';
 import { ControlsPanel }  from './components/ControlsPanel';
 import { useManifest }    from './hooks/useManifest';
 import { useAudio }       from './hooks/useAudio';
@@ -19,7 +19,7 @@ import { useAudio }       from './hooks/useAudio';
 type PageAdvanceMode = 'reset' | 'continue';
 
 export default function App() {
-  const { manifest, config, slides, loading, error, updateConfig } = useManifest();
+  const { manifest, config, slides, layoutPresets, loading, error, updateConfig, saveLayoutPresets } = useManifest();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isPlaying,   setIsPlaying]   = useState(false);
@@ -29,8 +29,6 @@ export default function App() {
   const [pageAdvanceMode, setPageAdvanceMode] = useState<PageAdvanceMode>('reset');
   const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-
-  // ─── Initialize startPage when config loads ─────────────────────────────
   const initializedRef = useRef(false);
   useEffect(() => {
     if (config && !initializedRef.current) {
@@ -44,11 +42,10 @@ export default function App() {
       let start = Math.max(1, Math.min(config.startPage, manifest.length || 1));
       
       if (isRender && targetJuz && manifest.length) {
-         // Auto-find first page of this Juz
          const juzStartPage = manifest.find(m => m.juz === parseInt(targetJuz, 10))?.page;
          if (juzStartPage) start = juzStartPage;
          document.body.classList.add('render-mode');
-         setShowControls(false); // Hide UI in render mode
+         setShowControls(false);
       }
 
       setCurrentPage(start);
@@ -64,7 +61,6 @@ export default function App() {
 
   useEffect(() => clearAutoAdvanceTimer, [clearAutoAdvanceTimer]);
 
-  // ─── Audio engine ────────────────────────────────────────────────────────
   const handleAudioEnded = useCallback(() => {
     clearAutoAdvanceTimer();
     setCurrentPage(prev => {
@@ -88,7 +84,6 @@ export default function App() {
     onEnded: handleAudioEnded,
   });
 
-  // ─── Load audio when page changes ───────────────────────────────────────
   useEffect(() => {
     if (!manifest.length) return;
     const entry = manifest[currentPage - 1];
@@ -102,63 +97,50 @@ export default function App() {
       }
     } else {
       console.warn(`[App] Page ${currentPage}: no audio path, skipping`);
-      // Auto advance after a brief pause
       const t = setTimeout(() => handleAudioEnded(), 2000);
       return () => clearTimeout(t);
     }
   }, [currentPage, manifest, load, handleAudioEnded]);
 
-  // ─── Auto-play when audio is ready ──────────────────────────────────────
   useEffect(() => {
     if (audioState.playState === 'paused' && isPlaying) {
       play();
     }
   }, [audioState.playState, isPlaying, play]);
 
-  // (Audio currentTime is read directly via audioRef in QuranWindow's own RAF loop)
-
-  // ─── Render Mode Timeline Override ──────────────────────────────────────────────
   const fakeAudioRef = useRef<{ currentTime: number; ended: boolean; _duration: number }>({ currentTime: 0, ended: false, _duration: 1 });
   useEffect(() => {
     if (!renderMode) return;
-    // Expose global renderSeek function for Puppeteer to call
     (window as any).renderSeek = (timelineSeconds: number) => {
-      // Find the page that corresponds to this global timeline second
       let targetPage = 1;
       let pageLocalTime = 0;
       let isEnded = false;
 
-      // In render mode, we assume the ?juz=X dictates the bounds, or we just render from the current page onwards
-      // Actually we just need to iterate manifest to map timelineSeconds to page & local time
-      // For simplicity, let's assume timelineSeconds is relative to the start of the current Juz
-      // Let's compute a global timeline for the generated video:
       const urlParams = new URLSearchParams(window.location.search);
       const targetJuz = parseInt(urlParams.get('juz') || '0', 10);
       
       let accum = 0;
       for (const m of manifest) {
-        if (targetJuz && m.juz !== targetJuz) continue; // Skip pages not in the Juz
-        if (!targetPage) targetPage = m.page; // fallback first match
+        if (targetJuz && m.juz !== targetJuz) continue;
+        if (!targetPage) targetPage = m.page;
 
         const dur = Math.max(0.1, m.audioDuration || 30);
-        if (timelineSeconds >= accum && timelineSeconds < accum + dur + 1.0) { // + 1s post scroll
+        if (timelineSeconds >= accum && timelineSeconds < accum + dur + 1.0) {
            targetPage = m.page;
            pageLocalTime = timelineSeconds - accum;
            
            if (pageLocalTime > dur) {
-             isEnded = true; // Still showing page but audio ended (post scroll gap)
+             isEnded = true;
            }
            break;
         }
-        accum += dur + 1.0; // Assume 1s gap between pages
+        accum += dur + 1.0;
       }
 
       setCurrentPage(targetPage);
       fakeAudioRef.current.currentTime = pageLocalTime;
       fakeAudioRef.current.ended = isEnded;
       fakeAudioRef.current._duration = manifest.find(m => m.page === targetPage)?.audioDuration || 30;
-      
-      // Update global CSS variable for animations so they sync exactly to the timeline
       document.body.style.setProperty('--render-time', `${timelineSeconds}s`);
       return { page: targetPage, localTime: pageLocalTime };
     };
@@ -169,14 +151,12 @@ export default function App() {
       for (const m of manifest) {
         if (targetJuz && m.juz !== targetJuz) continue;
         const dur = Math.max(0.1, m.audioDuration || 30);
-        total += dur + 1.0; // duration + 1s gap
+        total += dur + 1.0;
       }
       return total;
     };
   }, [renderMode, manifest]);
 
-
-  // ─── Controls ────────────────────────────────────────────────────────────
   const handlePlay = useCallback(() => {
     setIsPlaying(true);
     play();
@@ -211,7 +191,6 @@ export default function App() {
     setIsPlaying(true);
   }, [clearAutoAdvanceTimer, stop]);
 
-  // ─── Keyboard shortcuts ──────────────────────────────────────────────────
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement) return;
@@ -243,7 +222,6 @@ export default function App() {
     return () => window.removeEventListener('keydown', handler);
   }, [isPlaying, handlePlay, handlePause, handleNext, handlePrev]);
 
-  // ─── Render ──────────────────────────────────────────────────────────────
   if (loading) {
     return (
       <div className="loading-screen">
@@ -263,30 +241,44 @@ export default function App() {
     );
   }
 
-  const SceneComponent = config?.layoutPreset === 2 ? BroadcastScenePreset2 : BroadcastScene;
+  const selectedPreset = layoutPresets.find(p => p.id === config?.layoutPreset) ?? null;
 
   return (
     <div className="app-root">
-      {/* Full-scene SVG broadcast view */}
       <div className="scene-wrapper">
-        <SceneComponent
-          manifest={manifest}
-          slides={slides}
-          config={config!}
-          currentPage={currentPage}
-          pageAdvanceMode={pageAdvanceMode}
-          isPlaying={renderMode ? true : isPlaying}
-          audioRef={renderMode ? fakeAudioRef as any : audioRef}
-          debugMode={debugMode}
-        />
+        {selectedPreset ? (
+          <BroadcastSceneDynamic
+            preset={selectedPreset}
+            manifest={manifest}
+            slides={slides}
+            config={config!}
+            currentPage={currentPage}
+            pageAdvanceMode={pageAdvanceMode}
+            isPlaying={renderMode ? true : isPlaying}
+            audioRef={renderMode ? fakeAudioRef as any : audioRef}
+            debugMode={debugMode}
+          />
+        ) : (
+          <BroadcastScene
+            manifest={manifest}
+            slides={slides}
+            config={config!}
+            currentPage={currentPage}
+            pageAdvanceMode={pageAdvanceMode}
+            isPlaying={renderMode ? true : isPlaying}
+            audioRef={renderMode ? fakeAudioRef as any : audioRef}
+            debugMode={debugMode}
+          />
+        )}
       </div>
 
-      {/* Floating controls panel */}
       {showControls && (
         <div className="controls-wrapper">
           <ControlsPanel
             config={config!}
             updateConfig={updateConfig}
+            layoutPresets={layoutPresets}
+            saveLayoutPresets={saveLayoutPresets}
             currentPage={currentPage}
             totalPages={manifest.length}
             isPlaying={isPlaying}
@@ -301,7 +293,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Top right actions */}
       <div className="top-right-actions" style={{ position: 'fixed', top: 12, right: 16, zIndex: 9999, display: 'flex', gap: 8 }}>
         <div 
           className="controls-hint" 
