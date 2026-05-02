@@ -1,15 +1,16 @@
 /**
  * useManifest.ts
- * Fetches manifest.json once and caches it. Also fetches app config and slides list.
+ * Fetches manifest.json once and caches it. Also fetches app config, slides list, and layout presets.
  */
 
 import { useState, useEffect } from 'react';
-import type { ManifestEntry, AppConfig } from '../types';
+import type { ManifestEntry, AppConfig, LayoutPreset } from '../types';
 
 interface ManifestState {
   manifest: ManifestEntry[];
   config: AppConfig | null;
   slides: string[];
+  layoutPresets: LayoutPreset[];
   loading: boolean;
   error: string | null;
 }
@@ -42,6 +43,7 @@ export function useManifest() {
     manifest: [],
     config: null,
     slides: [],
+    layoutPresets: [],
     loading: true,
     error: null,
   });
@@ -51,10 +53,11 @@ export function useManifest() {
 
     async function load() {
       try {
-        const [manifestRes, configRes, slidesRes] = await Promise.all([
+        const [manifestRes, configRes, slidesRes, presetsRes] = await Promise.all([
           fetch('/manifest.json'),
           fetch('/api/config'),
           fetch('/api/slides'),
+          fetch('/api/layout-presets'),
         ]);
 
         if (!manifestRes.ok) throw new Error(`manifest.json not found (${manifestRes.status}). Run: npm run ingest`);
@@ -63,9 +66,17 @@ export function useManifest() {
         const serverConfig: Partial<AppConfig> = configRes.ok ? await configRes.json() : {};
         const config: AppConfig = { ...DEFAULT_CONFIG, ...serverConfig };
         const slidesData = slidesRes.ok ? await slidesRes.json() : { slides: [] };
+        const presetsData = presetsRes.ok ? await presetsRes.json() : { presets: [] };
 
         if (!cancelled) {
-          setState({ manifest, config, slides: slidesData.slides ?? [], loading: false, error: null });
+          setState({
+            manifest,
+            config,
+            slides: slidesData.slides ?? [],
+            layoutPresets: presetsData.presets ?? [],
+            loading: false,
+            error: null,
+          });
         }
       } catch (err: unknown) {
         if (!cancelled) {
@@ -83,7 +94,6 @@ export function useManifest() {
       ...s,
       config: s.config ? { ...s.config, ...patch } : null,
     }));
-    // Also persist to server
     fetch('/api/config', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
@@ -91,5 +101,14 @@ export function useManifest() {
     }).catch(console.warn);
   };
 
-  return { ...state, updateConfig };
+  const saveLayoutPresets = (layoutPresets: LayoutPreset[]) => {
+    setState(s => ({ ...s, layoutPresets }));
+    return fetch('/api/layout-presets', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ presets: layoutPresets }),
+    }).catch(console.warn);
+  };
+
+  return { ...state, updateConfig, saveLayoutPresets };
 }
