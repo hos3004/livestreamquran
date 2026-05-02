@@ -26,6 +26,11 @@ export default function App() {
   const [pageAdvanceMode, setPageAdvanceMode] = useState<PageAdvanceMode>('reset');
   const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  useEffect(() => {
+    document.body.classList.toggle('admin-page', isAdminRoute);
+    return () => document.body.classList.remove('admin-page');
+  }, [isAdminRoute]);
+
   const initializedRef = useRef(false);
   useEffect(() => {
     if (config && !initializedRef.current) {
