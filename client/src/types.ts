@@ -16,13 +16,37 @@ export interface ManifestEntry {
   juz: number;
 }
 
+// ─── Dynamic Layout Presets ──────────────────────────────────────────────────
+
+export interface LayoutRect {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+export interface LayoutPreset {
+  id: number;
+  name: string;
+  frame: string;
+  quranZoom: number;
+  background?: string;
+  slide: LayoutRect;
+  page: LayoutRect;
+  info: LayoutRect;
+}
+
+export interface LayoutPresetsFile {
+  presets: LayoutPreset[];
+}
+
 // ─── App Config ──────────────────────────────────────────────────────────────
 
 export interface AppConfig {
   reciterName: string;
   startPage: number;
   loopMode: boolean;
-  layoutPreset: 1 | 2;                // 1 = original layout, 2 = left slideshow + right Quran frame
+  layoutPreset: number;              // 1 = original layout, 2+ = dynamic layouts from layout-presets.json
   slideshowInterval: number;         // ms
   slideshowTransitionDuration: number; // ms
   scrollZoomFactor: number;          // 1.0 = default fit
