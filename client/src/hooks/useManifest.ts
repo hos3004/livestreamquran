@@ -18,6 +18,7 @@ const DEFAULT_CONFIG: AppConfig = {
   reciterName: 'القارئ',
   startPage: 1,
   loopMode: true,
+  layoutPreset: 1,
   slideshowInterval: 8000,
   slideshowTransitionDuration: 1500,
   scrollZoomFactor: 1.0,
@@ -59,8 +60,9 @@ export function useManifest() {
         if (!manifestRes.ok) throw new Error(`manifest.json not found (${manifestRes.status}). Run: npm run ingest`);
 
         const manifest: ManifestEntry[] = await manifestRes.json();
-        const config: AppConfig        = configRes.ok ? await configRes.json() : DEFAULT_CONFIG;
-        const slidesData               = slidesRes.ok ? await slidesRes.json() : { slides: [] };
+        const serverConfig: Partial<AppConfig> = configRes.ok ? await configRes.json() : {};
+        const config: AppConfig = { ...DEFAULT_CONFIG, ...serverConfig };
+        const slidesData = slidesRes.ok ? await slidesRes.json() : { slides: [] };
 
         if (!cancelled) {
           setState({ manifest, config, slides: slidesData.slides ?? [], loading: false, error: null });
