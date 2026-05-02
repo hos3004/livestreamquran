@@ -1,9 +1,7 @@
 /* ─────────────────────────────────────────────────────────────────────────────
    Quran Broadcast — Global Styles
-   Design: dark premium Islamic aesthetic with gold accents
    ───────────────────────────────────────────────────────────────────────────── */
 
-/* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -15,7 +13,12 @@ html, body {
   color: #e0e0ff;
 }
 
-/* ── Root container ── */
+body.admin-page {
+  overflow: auto;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
 .app-root {
   position: fixed;
   inset: 0;
@@ -27,7 +30,6 @@ html, body {
   overflow: hidden;
 }
 
-/* ── Scene wrapper: scales the 1920×1080 SVG to fit viewport ── */
 .scene-wrapper {
   position: absolute;
   inset: 0;
@@ -38,45 +40,19 @@ html, body {
 }
 
 .scene-wrapper svg {
-  /* 
-   * Scale the 1920×1080 viewBox to fill the viewport while maintaining aspect ratio.
-   * SVG viewBox handles this naturally with width/height: 100%.
-   */
   width: 100vw;
   height: 100vh;
-  /* If aspect ratio doesn't match, letterbox */
   max-width: calc(100vh * 16 / 9);
   max-height: calc(100vw * 9 / 16);
 }
 
-/* ── Ken Burns animations ─────────────────────────────────────────── */
+@keyframes kb-zoom-tl { from { transform: scale(1.0) translate(0px, 0px); } to { transform: scale(1.08) translate(-20px, -12px); } }
+@keyframes kb-zoom-tr { from { transform: scale(1.0) translate(0px, 0px); } to { transform: scale(1.08) translate(20px, -12px); } }
+@keyframes kb-zoom-bl { from { transform: scale(1.0) translate(0px, 0px); } to { transform: scale(1.08) translate(-20px, 12px); } }
+@keyframes kb-zoom-br { from { transform: scale(1.0) translate(0px, 0px); } to { transform: scale(1.08) translate(20px, 12px); } }
+@keyframes kb-pan-left { from { transform: scale(1.05) translate(30px, 0px); } to { transform: scale(1.05) translate(-30px, 0px); } }
+@keyframes kb-pan-right { from { transform: scale(1.05) translate(-30px, 0px); } to { transform: scale(1.05) translate(30px, 0px); } }
 
-@keyframes kb-zoom-tl {
-  from { transform: scale(1.0) translate(0px, 0px); }
-  to   { transform: scale(1.08) translate(-20px, -12px); }
-}
-@keyframes kb-zoom-tr {
-  from { transform: scale(1.0) translate(0px, 0px); }
-  to   { transform: scale(1.08) translate(20px, -12px); }
-}
-@keyframes kb-zoom-bl {
-  from { transform: scale(1.0) translate(0px, 0px); }
-  to   { transform: scale(1.08) translate(-20px, 12px); }
-}
-@keyframes kb-zoom-br {
-  from { transform: scale(1.0) translate(0px, 0px); }
-  to   { transform: scale(1.08) translate(20px, 12px); }
-}
-@keyframes kb-pan-left {
-  from { transform: scale(1.05) translate(30px, 0px); }
-  to   { transform: scale(1.05) translate(-30px, 0px); }
-}
-@keyframes kb-pan-right {
-  from { transform: scale(1.05) translate(-30px, 0px); }
-  to   { transform: scale(1.05) translate(30px, 0px); }
-}
-
-/* Transform origin is center of the SVG image element */
 .slide-img {
   transform-box: fill-box;
   transform-origin: center;
@@ -93,16 +69,9 @@ html, body {
 .slide-img.kb-pan-left  { animation-name: kb-pan-left; }
 .slide-img.kb-pan-right { animation-name: kb-pan-right; }
 
-/* ── Spinner ── */
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Dust Particles ── */
-.dust-particle {
-  animation: dust-float ease-in-out infinite alternate;
-}
-
+.dust-particle { animation: dust-float ease-in-out infinite alternate; }
 @keyframes dust-float {
   0% { transform: translate(0, 0); opacity: 0; }
   25% { opacity: 1; }
@@ -110,36 +79,24 @@ html, body {
   100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
 }
 
-/* ── Parallax Frame ── */
 .parallax-frame {
   animation: parallax-shift var(--parallax-duration, 18s) ease-in-out infinite alternate;
   transform-origin: 50% 50%;
   transform-box: fill-box;
 }
-
 @keyframes parallax-shift {
   0% { transform: scale(1.02) translate(calc(var(--px) * -1), calc(var(--py) * -1)); }
   100% { transform: scale(1.02) translate(var(--px), var(--py)); }
 }
 
-/* ── Gold Sweep ── */
-.gold-sweep-rect {
-  animation: gold-sweep var(--sweep-duration, 15s) linear infinite;
-}
+.gold-sweep-rect { animation: gold-sweep var(--sweep-duration, 15s) linear infinite; }
+@keyframes gold-sweep { 0% { transform: translateX(-1920px); } 100% { transform: translateX(1920px); } }
 
-@keyframes gold-sweep {
-  0% { transform: translateX(-1920px); }
-  100% { transform: translateX(1920px); }
-}
-
-/* ── Render Mode Sync ── */
 body.render-mode * {
-  /* Pause all animations and sync to JS controlled variable */
   animation-play-state: paused !important;
   animation-delay: calc(var(--render-time, 0s) * -1) !important;
 }
 
-/* ── Loading / Error screens ── */
 .loading-screen,
 .error-screen {
   position: fixed;
@@ -182,135 +139,133 @@ body.render-mode * {
   border-radius: 4px;
 }
 
-/* ── Controls Panel ── */
-.controls-wrapper {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 0 16px 12px;
-  background: linear-gradient(to top, rgba(5,5,16,0.95) 60%, transparent);
-  pointer-events: auto;
-}
-
-.controls-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.controls-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.ctrl-btn {
-  padding: 6px 14px;
-  border: 1px solid #c9a84c55;
-  border-radius: 6px;
-  background: rgba(15, 15, 35, 0.85);
-  color: #c9a84c;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
-  backdrop-filter: blur(8px);
-}
-.ctrl-btn:hover  { background: rgba(201, 168, 76, 0.15); border-color: #c9a84c; }
-.ctrl-btn.primary { font-size: 18px; padding: 4px 18px; background: rgba(201,168,76,0.12); }
-.ctrl-btn.active { background: rgba(201,168,76,0.25); border-color: #c9a84c; }
-
-.ctrl-sep {
-  width: 1px;
-  height: 24px;
-  background: #33334d;
-  margin: 0 4px;
-}
-
-.ctrl-input {
-  padding: 5px 10px;
-  background: rgba(15,15,35,0.85);
-  border: 1px solid #44446655;
-  border-radius: 6px;
-  color: #e0e0ff;
-  font-size: 13px;
-  width: 160px;
-  backdrop-filter: blur(8px);
-}
-.ctrl-input::placeholder { color: #555577; }
-
-.ctrl-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: #8888aa;
-  cursor: pointer;
-  user-select: none;
-}
-.ctrl-label input { cursor: pointer; accent-color: #c9a84c; }
-
-/* Settings panel */
-.settings-panel {
-  background: rgba(10,10,25,0.95);
-  border: 1px solid #c9a84c33;
-  border-radius: 10px;
-  padding: 16px;
+/* ─── Standalone Admin Dashboard ─────────────────────────────────────────── */
+.admin-dashboard {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-  backdrop-filter: blur(12px);
-  max-width: 900px;
+  grid-template-columns: 290px 1fr;
+  background: #f5f7fb;
+  color: #1f2937;
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
 }
 
-.settings-panel h3 {
-  grid-column: 1 / -1;
-  color: #c9a84c;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.settings-panel label {
+.admin-sidebar {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #111827 0%, #172033 100%);
+  color: #fff;
+  padding: 24px 18px;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 12px;
-  color: #8888aa;
+  gap: 24px;
 }
 
-.settings-panel input[type="text"],
-.settings-panel input[type="number"] {
-  padding: 5px 8px;
-  background: rgba(15,15,40,0.9);
-  border: 1px solid #44446655;
-  border-radius: 5px;
-  color: #e0e0ff;
-  font-size: 13px;
-}
-
-/* ── Top right actions ── */
-.top-right-actions {
-  position: fixed;
-  top: 12px;
-  right: 16px;
-  z-index: 101;
+.admin-brand {
   display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 8px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d4a72c, #f8df94);
+  color: #111827;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  box-shadow: 0 10px 25px rgba(212,167,44,0.25);
+}
+
+.admin-brand h1 { font-size: 20px; margin: 0; font-weight: 800; }
+.admin-brand p { font-size: 12px; margin: 2px 0 0; color: rgba(255,255,255,0.55); direction: ltr; }
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
-.controls-hint {
-  font-size: 12px;
-  color: #555577;
-  cursor: pointer;
-  user-select: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  background: rgba(5,5,16,0.7);
-  transition: color 0.15s, background 0.15s;
+.admin-nav-link {
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,0.72);
+  padding: 12px 14px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: right;
+  transition: 0.18s ease;
 }
-.controls-hint:hover { color: #c9a84c; background: rgba(15,15,35,0.9); }
+
+.admin-nav-link:hover,
+.admin-nav-link.active {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.admin-sidebar-footer {
+  margin-top: auto;
+}
+
+.admin-main {
+  min-width: 0;
+  padding: 28px;
+}
+
+.admin-topbar {
+  background: #fff;
+  border-radius: 24px;
+  padding: 22px 26px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.admin-topbar h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.admin-content .card {
+  border: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+.admin-content .form-control,
+.admin-content .form-select {
+  border-radius: 14px;
+  border-color: #dbe3ef;
+  padding: 10px 13px;
+}
+
+.admin-content .form-control:focus,
+.admin-content .form-select:focus {
+  border-color: #d4a72c;
+  box-shadow: 0 0 0 .2rem rgba(212,167,44,.15);
+}
+
+.admin-content code {
+  color: #8a5b00;
+  background: #fff7dc;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.admin-sticky-card {
+  top: 24px;
+}
+
+@media (max-width: 992px) {
+  .admin-dashboard { grid-template-columns: 1fr; }
+  .admin-sidebar { min-height: auto; position: relative; }
+  .admin-topbar { flex-direction: column; align-items: flex-start; }
+}
