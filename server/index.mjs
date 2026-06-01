@@ -93,12 +93,14 @@ function safeString(value, fallback = '') {
 }
 
 function resolveProjectPath(value, fallback = '') {
-  const input = safeString(value, fallback).replace(/\\/g, '/');
+  const input = (safeString(value) || safeString(fallback)).replace(/\\/g, '/');
+  if (!input) return ROOT;
   return isAbsolute(input) ? input : resolve(ROOT, input);
 }
 
 function toProjectRelative(value, fallback = '') {
-  const input = safeString(value, fallback).replace(/\\/g, '/');
+  const input = (safeString(value) || safeString(fallback)).replace(/\\/g, '/');
+  if (!input) return '';
   const resolved = resolveProjectPath(input, fallback);
   const rel = relative(ROOT, resolved);
   if (rel && !rel.startsWith('..') && !isAbsolute(rel)) {
@@ -130,10 +132,49 @@ function makeReciterId(name, fallbackIndex) {
 }
 
 let appConfig = loadConfig();
+let playbackState = {
+  currentPage: Math.max(1, Number(appConfig.startPage) || 1),
+  playState: 'idle',
+  updatedAt: new Date().toISOString(),
+};
+const playbackClients = new Set();
+
+function clampPage(page) {
+  const parsed = Number.parseInt(page, 10);
+  if (!Number.isFinite(parsed)) return playbackState.currentPage;
+  return Math.max(1, Math.min(parsed, 604));
+}
+
+function updatePlaybackState(patch) {
+  playbackState = {
+    ...playbackState,
+    ...patch,
+    updatedAt: new Date().toISOString(),
+  };
+  return playbackState;
+}
+
+function sendPlaybackEvent(payload) {
+  const data = `data: ${JSON.stringify({ ...payload, state: playbackState })}\n\n`;
+  for (const res of playbackClients) {
+    res.write(data);
+  }
+}
+
+function commandPlayback(command, patch = {}) {
+  updatePlaybackState(patch);
+  sendPlaybackEvent({ command });
+  return playbackState;
+}
 
 const app = express();
 
-app.use(compression());
+app.use(compression({
+  filter: (req, res) => {
+    if (req.path === '/api/playback/events') return false;
+    return compression.filter(req, res);
+  },
+}));
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 
@@ -178,10 +219,67 @@ app.patch('/api/config', (req, res) => {
     const current = loadConfig();
     const updated = saveConfig({ ...current, ...req.body });
     appConfig = updated;
+    updatePlaybackState({ currentPage: clampPage(playbackState.currentPage || appConfig.startPage) });
     res.json({ ok: true, config: updated });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+app.get('/api/playback/state', (req, res) => {
+  res.json(playbackState);
+});
+
+app.get('/api/playback/events', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders?.();
+  res.write(`data: ${JSON.stringify({ command: 'state', state: playbackState })}\n\n`);
+
+  playbackClients.add(res);
+  req.on('close', () => {
+    playbackClients.delete(res);
+  });
+});
+
+app.post('/api/playback/play', (req, res) => {
+  res.json({ ok: true, state: commandPlayback('play', { playState: 'playing' }) });
+});
+
+app.post('/api/playback/pause', (req, res) => {
+  res.json({ ok: true, state: commandPlayback('pause', { playState: 'paused' }) });
+});
+
+app.post('/api/playback/stop', (req, res) => {
+  res.json({ ok: true, state: commandPlayback('stop', { playState: 'idle' }) });
+});
+
+app.post('/api/playback/next', (req, res) => {
+  const currentPage = clampPage(playbackState.currentPage + 1);
+  res.json({ ok: true, state: commandPlayback('next', { currentPage, playState: 'playing' }) });
+});
+
+app.post('/api/playback/prev', (req, res) => {
+  const currentPage = clampPage(playbackState.currentPage - 1);
+  res.json({ ok: true, state: commandPlayback('prev', { currentPage, playState: 'playing' }) });
+});
+
+app.post('/api/playback/jump', (req, res) => {
+  const page = clampPage(req.body?.page);
+  const command = req.body?.command === 'startJuz' ? 'startJuz' : 'jumpToPage';
+  updatePlaybackState({ currentPage: page, playState: 'playing' });
+  sendPlaybackEvent({ command, juz: req.body?.juz });
+  res.json({ ok: true, state: playbackState });
+});
+
+app.post('/api/playback/report', (req, res) => {
+  const patch = {};
+  if (req.body?.currentPage !== undefined) patch.currentPage = clampPage(req.body.currentPage);
+  if (req.body?.playState !== undefined) patch.playState = String(req.body.playState);
+  updatePlaybackState(patch);
+  sendPlaybackEvent({ command: 'state' });
+  res.json({ ok: true, state: playbackState });
 });
 
 app.get('/api/layout-presets', (req, res) => {
@@ -356,6 +454,7 @@ app.get('*', (req, res) => {
         <body style="background:#000;color:#fff;font-family:sans-serif;padding:40px">
           <h1>🕌 Quran Broadcast Server Running</h1>
           <p>API: <a href="/api/config" style="color:#88f">/api/config</a></p>
+          <p>Playback: <a href="/api/playback/state" style="color:#88f">/api/playback/state</a></p>
           <p>Presets: <a href="/api/layout-presets" style="color:#88f">/api/layout-presets</a></p>
           <p>Reciters: <a href="/api/reciters" style="color:#88f">/api/reciters</a></p>
           <p>To view the app, run: <code>npm run client</code> and open <a href="http://localhost:5173" style="color:#88f">http://localhost:5173</a></p>
@@ -369,5 +468,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🕌 Quran Broadcast Server running on http://localhost:${PORT}`);
   console.log(`   Assets: /assets/hafs, /assets/mp3, /assets/slide, /assets/frames`);
-  console.log(`   API:    /api/config, /api/slides, /api/manifest, /api/layout-presets, /api/reciters`);
+  console.log(`   API:    /api/config, /api/playback/state, /api/slides, /api/manifest, /api/layout-presets, /api/reciters`);
 });

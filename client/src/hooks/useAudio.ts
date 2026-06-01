@@ -24,7 +24,11 @@ interface UseAudioOptions {
 export function useAudio(options: UseAudioOptions = {}) {
   const audioRef       = useRef<HTMLAudioElement | null>(null);
   const optionsRef     = useRef<UseAudioOptions>({});
+  const preloadRef     = useRef<HTMLAudioElement | null>(null);
   
+  const opIdRef = useRef(0);
+  const internalPauseRef = useRef(false);
+
   useEffect(() => {
     optionsRef.current = options;
   }, [options]);
@@ -36,6 +40,45 @@ export function useAudio(options: UseAudioOptions = {}) {
     error: null,
   });
 
+  const isCurrentOp = useCallback((opId: number) => opIdRef.current === opId, []);
+
+  const waitForCanPlay = useCallback((audio: HTMLAudioElement, opId: number) => {
+    if (audio.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      return Promise.resolve();
+    }
+
+    return new Promise<void>((resolve, reject) => {
+      const cleanup = () => {
+        audio.removeEventListener('canplay', onCanPlay);
+        audio.removeEventListener('canplaythrough', onCanPlay);
+        audio.removeEventListener('error', onError);
+      };
+      const onCanPlay = () => {
+        cleanup();
+        resolve();
+      };
+      const onError = () => {
+        cleanup();
+        reject(new Error(audio.error?.message || 'Audio error'));
+      };
+
+      audio.addEventListener('canplay', onCanPlay, { once: true });
+      audio.addEventListener('canplaythrough', onCanPlay, { once: true });
+      audio.addEventListener('error', onError, { once: true });
+
+      if (!isCurrentOp(opId)) {
+        cleanup();
+        resolve();
+      }
+    });
+  }, [isCurrentOp]);
+
+  const isInterruptError = (error: unknown) => {
+    const msg = error instanceof Error ? error.message : String(error || '');
+    return msg.includes('interrupted by a call to pause')
+      || msg.includes('interrupted by a new load request');
+  };
+
   // Create audio element once
   useEffect(() => {
     const audio = new Audio();
@@ -44,7 +87,10 @@ export function useAudio(options: UseAudioOptions = {}) {
 
     const onCanPlay  = () => setState(s => ({ ...s, playState: s.playState === 'loading' ? 'paused' : s.playState }));
     const onPlaying  = () => setState(s => ({ ...s, playState: 'playing', error: null }));
-    const onPause    = () => setState(s => ({ ...s, playState: 'paused' }));
+    const onPause    = () => {
+      if (internalPauseRef.current) return;
+      setState(s => ({ ...s, playState: 'paused' }));
+    };
     const onEnded    = () => {
       setState(s => ({ ...s, playState: 'ended' }));
       optionsRef.current.onEnded?.();
@@ -80,50 +126,82 @@ export function useAudio(options: UseAudioOptions = {}) {
       audio.removeEventListener('error',         onError);
       audio.removeEventListener('timeupdate',    onTimeUpdate);
       audio.removeEventListener('durationchange', onDurationChange);
+      
+      opIdRef.current += 1;
+      internalPauseRef.current = true;
       audio.pause();
-      audio.src = '';
+      internalPauseRef.current = false;
+      audio.removeAttribute('src');
+      audio.load();
       audioRef.current = null;
+
+      if (preloadRef.current) {
+        preloadRef.current.pause();
+        preloadRef.current.removeAttribute('src');
+        preloadRef.current.load();
+        preloadRef.current = null;
+      }
     };
   }, []);
 
   const load = useCallback((src: string) => {
     const audio = audioRef.current;
     if (!audio) return;
+    
+    const opId = ++opIdRef.current;
+    internalPauseRef.current = true;
     audio.pause();
+    internalPauseRef.current = false;
+    
     audio.src = src;
     audio.load();
     setState({ playState: 'loading', currentTime: 0, duration: 0, error: null });
+    return opId;
   }, []);
 
   const play = useCallback(async () => {
     const audio = audioRef.current;
     if (!audio) return;
     
+    const currentOpId = ++opIdRef.current;
+    
     try {
-      // Ensure the audio is in a ready state before playing
-      if (audio.readyState === 0) {
-        // If audio hasn't loaded yet, wait for it to load
-        await new Promise<void>((resolve) => {
-          const onCanPlay = () => {
-            audio.removeEventListener('canplay', onCanPlay);
-            resolve();
-          };
-          audio.addEventListener('canplay', onCanPlay);
-        });
-      }
+      await waitForCanPlay(audio, currentOpId);
+      
+      if (!isCurrentOp(currentOpId)) return;
       
       await audio.play();
+      
+      if (!isCurrentOp(currentOpId)) return;
     } catch (e: any) {
-      console.warn('Audio play failed:', e.message);
-      // Additional handling for autoplay policies
+      if (!isCurrentOp(currentOpId)) return;
+      
+      const msg = e.message || '';
+      if (isInterruptError(e)) {
+        console.warn('Audio play interrupted by a newer operation:', msg);
+        return;
+      }
+      
       if (e.name === 'NotAllowedError') {
-        console.warn('Playback prevented by autoplay policy. User needs to interact with the page first.');
+        console.warn('Playback prevented by autoplay policy.');
+        return;
+      }
+
+      console.warn('Audio play failed:', msg);
+      if (audio.error) {
+        const audioMsg = audio.error.message || msg || 'Audio error';
+        setState(s => ({ ...s, playState: 'error', error: audioMsg }));
+        optionsRef.current.onError?.(audioMsg);
       }
     }
-  }, []);
+  }, [isCurrentOp, waitForCanPlay]);
 
   const pause = useCallback(() => {
-    audioRef.current?.pause();
+    const audio = audioRef.current;
+    if (!audio) return;
+    opIdRef.current += 1;
+    internalPauseRef.current = false;
+    audio.pause();
   }, []);
 
   const seek = useCallback((time: number) => {
@@ -135,16 +213,27 @@ export function useAudio(options: UseAudioOptions = {}) {
   const stop = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
+    opIdRef.current += 1;
+    internalPauseRef.current = true;
     audio.pause();
+    internalPauseRef.current = false;
     audio.currentTime = 0;
     setState(s => ({ ...s, playState: 'idle', currentTime: 0 }));
   }, []);
 
   // Preload a URL without changing current playback
   const preload = useCallback((src: string) => {
+    if (preloadRef.current) {
+      preloadRef.current.pause();
+      preloadRef.current.removeAttribute('src');
+      preloadRef.current.load();
+    }
+
     const a = new Audio();
     a.preload = 'auto';
     a.src = src;
+    a.load();
+    preloadRef.current = a;
   }, []);
 
   return { state, load, play, pause, seek, stop, preload, audioRef };

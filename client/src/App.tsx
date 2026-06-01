@@ -5,6 +5,7 @@
  *   /              Broadcast-only clean OBS scene
  *   /?mode=obs     Broadcast-only clean OBS scene, legacy OBS URL
  *   /?mode=player  Broadcast preview with playback controls
+ *   /control       Separate live playback control page
  *   /admin         Standalone Arabic admin dashboard
  */
 
@@ -13,6 +14,7 @@ import { BroadcastScene } from './components/BroadcastScene';
 import { BroadcastSceneDynamic } from './components/BroadcastSceneDynamic';
 import { AdminDashboard, type AdminSection } from './components/AdminDashboard';
 import { ControlsPanel } from './components/ControlsPanel';
+import { ControlPage } from './components/ControlPage';
 import { useManifest } from './hooks/useManifest';
 import { useAudio } from './hooks/useAudio';
 
@@ -35,7 +37,10 @@ export default function App() {
     null;
   const adminSection = legacyAdminSection ?? (isAdminSection(sectionParam) ? sectionParam : 'general');
   const isAdminRoute = normalizedPath === '/admin' || normalizedPath === '/admin/player' || normalizedPath === '/admin/reciters' || normalizedPath === '/player';
-  const isPlayerRoute = normalizedPath !== '/player' && urlParams.get('mode') === 'player';
+  const isControlRoute = normalizedPath === '/control';
+  const isPlayerRoute = !isControlRoute && normalizedPath !== '/player' && urlParams.get('mode') === 'player';
+  const isSceneRoute = !isAdminRoute && !isControlRoute;
+  const isObsRoute = isSceneRoute && !isPlayerRoute;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -43,6 +48,7 @@ export default function App() {
   const [renderMode, setRenderMode] = useState(false);
   const [pageAdvanceMode, setPageAdvanceMode] = useState<PageAdvanceMode>('reset');
   const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const loadingSinceRef = useRef<number | null>(null);
 
   useEffect(() => {
     document.body.classList.toggle('admin-page', isAdminRoute);
@@ -65,7 +71,12 @@ export default function App() {
       setRenderMode(isRender);
 
       const targetJuz = urlParams.get('juz');
+      const targetPage = urlParams.get('page');
       let start = Math.max(1, Math.min(config.startPage, manifest.length || 1));
+
+      if (targetPage) {
+        start = Math.max(1, Math.min(parseInt(targetPage, 10) || start, manifest.length || 604));
+      }
 
       if (isRender && targetJuz && manifest.length) {
         const juzStartPage = manifest.find(m => m.juz === parseInt(targetJuz, 10))?.page;
@@ -74,8 +85,16 @@ export default function App() {
       }
 
       setCurrentPage(start);
+      if (isSceneRoute && urlParams.get('autoplay') === 'true') {
+        setIsPlaying(true);
+      }
     }
-  }, [config, manifest, urlParams]);
+  }, [config, manifest, isSceneRoute, urlParams]);
+
+  useEffect(() => {
+    if (!manifest.length) return;
+    setCurrentPage(page => Math.max(1, Math.min(page, manifest.length)));
+  }, [manifest.length]);
 
   const clearAutoAdvanceTimer = useCallback(() => {
     if (autoAdvanceTimerRef.current) {
@@ -109,8 +128,15 @@ export default function App() {
     onEnded: handleAudioEnded,
   });
 
+  const handleStop = useCallback(() => {
+    clearAutoAdvanceTimer();
+    setPageAdvanceMode('reset');
+    setIsPlaying(false);
+    stop();
+  }, [clearAutoAdvanceTimer, stop]);
+
   useEffect(() => {
-    if (isAdminRoute) return;
+    if (!isSceneRoute) return;
     if (!manifest.length) return;
     const entry = manifest[currentPage - 1];
     if (!entry) return;
@@ -122,12 +148,58 @@ export default function App() {
       const t = setTimeout(() => handleAudioEnded(), 2000);
       return () => clearTimeout(t);
     }
-  }, [isAdminRoute, currentPage, manifest, load, handleAudioEnded, renderMode]);
+  }, [isSceneRoute, currentPage, manifest, load, handleAudioEnded, renderMode]);
 
   useEffect(() => {
-    if (isAdminRoute) return;
+    if (!isSceneRoute) return;
     if (audioState.playState === 'paused' && isPlaying) play();
-  }, [isAdminRoute, audioState.playState, isPlaying, play]);
+  }, [isSceneRoute, audioState.playState, isPlaying, play]);
+
+  useEffect(() => {
+    if (!isSceneRoute || renderMode || !manifest.length) return;
+    fetch('/api/playback/report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        currentPage,
+        playState: isPlaying ? audioState.playState : 'paused',
+      }),
+    }).catch(() => {});
+  }, [isSceneRoute, renderMode, manifest.length, currentPage, isPlaying, audioState.playState]);
+
+  useEffect(() => {
+    if (!isSceneRoute || !isPlaying || renderMode) return;
+    const id = window.setInterval(() => {
+      const ps = audioState.playState;
+      if (ps === 'paused' || ps === 'idle') {
+        console.warn('[Watchdog] Audio stuck, retrying play', {
+          currentPage,
+          playState: ps,
+        });
+        play();
+      } else if (ps === 'loading') {
+        const now = Date.now();
+        if (loadingSinceRef.current === null) {
+          loadingSinceRef.current = now;
+          return;
+        }
+        if (now - loadingSinceRef.current >= 10000) {
+          console.warn('[Watchdog] Audio loading too long, retrying play', {
+            currentPage,
+            playState: ps,
+          });
+          play();
+          loadingSinceRef.current = now;
+        }
+      } else {
+        loadingSinceRef.current = null;
+      }
+    }, 5000);
+    return () => {
+      loadingSinceRef.current = null;
+      window.clearInterval(id);
+    };
+  }, [isSceneRoute, isPlaying, renderMode, audioState.playState, currentPage, play]);
 
   const fakeAudioRef = useRef<{ currentTime: number; ended: boolean; _duration: number }>({ currentTime: 0, ended: false, _duration: 1 });
   useEffect(() => {
@@ -174,8 +246,16 @@ export default function App() {
     };
   }, [renderMode, manifest, urlParams]);
 
-  const handlePlay = useCallback(() => { setIsPlaying(true); play(); }, [play]);
-  const handlePause = useCallback(() => { setIsPlaying(false); pause(); }, [pause]);
+  const handlePlay = useCallback(() => {
+    setIsPlaying(true);
+    play();
+  }, [play]);
+
+  const handlePause = useCallback(() => {
+    clearAutoAdvanceTimer();
+    setIsPlaying(false);
+    pause();
+  }, [clearAutoAdvanceTimer, pause]);
 
   const handleNext = useCallback(() => {
     clearAutoAdvanceTimer();
@@ -201,8 +281,65 @@ export default function App() {
     setIsPlaying(true);
   }, [clearAutoAdvanceTimer, stop, manifest.length]);
 
+  const handleStartJuz = useCallback((juz: number) => {
+    const entry = manifest.find(item => item.juz === juz);
+    if (!entry) {
+      console.warn(`[App] Juz ${juz} not found in manifest`);
+      return;
+    }
+    handleJumpToPage(entry.page);
+  }, [manifest, handleJumpToPage]);
+
   useEffect(() => {
-    if (isAdminRoute) return;
+    if (!isSceneRoute || renderMode) return;
+
+    const events = new EventSource('/api/playback/events');
+    events.onmessage = (event) => {
+      const payload = JSON.parse(event.data);
+      const state = payload.state || {};
+      switch (payload.command) {
+        case 'play':
+          handlePlay();
+          break;
+        case 'pause':
+          handlePause();
+          break;
+        case 'stop':
+          handleStop();
+          break;
+        case 'next':
+          handleNext();
+          break;
+        case 'prev':
+          handlePrev();
+          break;
+        case 'jumpToPage':
+          handleJumpToPage(Number(state.currentPage));
+          break;
+        case 'startJuz':
+          handleStartJuz(Number(payload.juz));
+          break;
+      }
+    };
+    events.onerror = () => {
+      console.warn('[App] Playback command stream disconnected.');
+    };
+
+    return () => events.close();
+  }, [
+    isSceneRoute,
+    renderMode,
+    handlePlay,
+    handlePause,
+    handleStop,
+    handleNext,
+    handlePrev,
+    handleJumpToPage,
+    handleStartJuz,
+  ]);
+
+  useEffect(() => {
+    if (!isSceneRoute) return;
     const handler = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement) return;
       switch (e.key) {
@@ -221,13 +358,14 @@ export default function App() {
           break;
         case 'd':
         case 'D':
+          if (isObsRoute) break;
           setDebugMode(v => !v);
           break;
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [isAdminRoute, isPlaying, handlePlay, handlePause, handleNext, handlePrev]);
+  }, [isSceneRoute, isObsRoute, isPlaying, handlePlay, handlePause, handleNext, handlePrev]);
 
   if (loading) {
     return (
@@ -246,6 +384,10 @@ export default function App() {
         <p>Make sure to run: <code>npm run ingest</code> first, then restart the server.</p>
       </div>
     );
+  }
+
+  if (isControlRoute) {
+    return <ControlPage manifest={manifest} />;
   }
 
   if (isAdminRoute) {

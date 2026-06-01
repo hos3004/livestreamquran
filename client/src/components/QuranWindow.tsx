@@ -66,6 +66,7 @@ export const QuranWindow: React.FC<Props> = ({
   const nextImgRef = useRef<HTMLImageElement | null>(null);
   const durationRef = useRef(30);
   const rafRef = useRef<number | null>(null);
+  const nextAudioPreloadRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     durationRef.current = entry?.audioDuration ?? 30;
@@ -127,12 +128,22 @@ export const QuranWindow: React.FC<Props> = ({
     setPrevLayout(null);
     setPrevLoaded(false);
 
+    let cancelled = false;
+
     loadLayout(imagePath)
       .then((layout) => {
+        if (cancelled) return;
         setPrevLayout(layout);
         setPrevLoaded(preloaded.current.has(imagePath));
       })
-      .catch(console.warn);
+      .catch((err) => {
+        if (cancelled) return;
+        console.warn('[QuranWindow] Failed to load previous layout:', imagePath, err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [prevEntry?.imagePath, loadLayout]);
 
   useEffect(() => {
@@ -156,12 +167,22 @@ export const QuranWindow: React.FC<Props> = ({
     setCurrLayout(null);
     setCurrLoaded(false);
 
+    let cancelled = false;
+
     loadLayout(imagePath)
       .then((layout) => {
+        if (cancelled) return;
         setCurrLayout(layout);
         setCurrLoaded(preloaded.current.has(imagePath));
       })
-      .catch(console.warn);
+      .catch((err) => {
+        if (cancelled) return;
+        console.warn('[QuranWindow] Failed to load current layout:', imagePath, err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [entry?.imagePath, loadLayout]);
 
   useEffect(() => {
@@ -185,20 +206,41 @@ export const QuranWindow: React.FC<Props> = ({
     setNextLayout(null);
     setNextLoaded(false);
 
+    let cancelled = false;
+
     loadLayout(imagePath)
       .then((layout) => {
+        if (cancelled) return;
         setNextLayout(layout);
         setNextLoaded(preloaded.current.has(imagePath));
       })
-      .catch(console.warn);
+      .catch((err) => {
+        if (cancelled) return;
+        console.warn('[QuranWindow] Failed to load next layout:', imagePath, err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [nextEntry?.imagePath, loadLayout]);
 
   useEffect(() => {
     if (!nextEntry?.audioPath) return;
 
     const audio = new Audio();
-    audio.preload = 'metadata';
+    audio.preload = 'auto';
     audio.src = nextEntry.audioPath;
+    audio.load();
+    nextAudioPreloadRef.current = audio;
+
+    return () => {
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      if (nextAudioPreloadRef.current === audio) {
+        nextAudioPreloadRef.current = null;
+      }
+    };
   }, [nextEntry?.audioPath]);
 
   const activePrevLayout = prevEntry?.imagePath
@@ -302,8 +344,14 @@ export const QuranWindow: React.FC<Props> = ({
     
     const initialY = entryInitialYRef.current;
     const endY = height * 0.6 - (contentY + contentH);
+    const animatedImagePath = entry?.imagePath ?? null;
+    let cancelled = false;
 
     const animate = () => {
+      if (cancelled || entryInitializedRef.current !== animatedImagePath) {
+        return;
+      }
+
       const container = containerRef.current;
       if (!container) {
         rafRef.current = requestAnimationFrame(animate);
@@ -337,9 +385,10 @@ export const QuranWindow: React.FC<Props> = ({
     rafRef.current = requestAnimationFrame(animate);
 
     return () => {
+      cancelled = true;
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [activeCurrLayout, currLoaded, height, audioRef, pageAdvanceMode]);
+  }, [activeCurrLayout, currLoaded, entry?.imagePath, height, audioRef, pageAdvanceMode]);
 
 
 
@@ -357,6 +406,10 @@ export const QuranWindow: React.FC<Props> = ({
     if (nextEntry?.imagePath) preloaded.current.add(nextEntry.imagePath);
     setNextLoaded(true);
   }, [nextEntry?.imagePath]);
+
+  const onImageError = useCallback((label: string, imagePath?: string | null) => {
+    console.warn(`[QuranWindow] Failed to render ${label} image:`, imagePath);
+  }, []);
 
   useEffect(() => {
     const img = prevImgRef.current;
@@ -419,6 +472,7 @@ export const QuranWindow: React.FC<Props> = ({
                   src={p.entry.imagePath}
                   alt={`Page ${p.entry.page}`}
                   onLoad={p.onLoad}
+                  onError={() => onImageError(p.type, p.entry?.imagePath)}
                   draggable={false}
                   style={{
                     position: 'absolute',
